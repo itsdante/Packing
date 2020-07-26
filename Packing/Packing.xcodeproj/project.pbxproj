@@ -10,6 +10,7 @@
 		6D7600FD24C7DB450015BE49 /* SelectGenderPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7600FC24C7DB450015BE49 /* SelectGenderPage.swift */; };
 		6D7600FF24C7E0770015BE49 /* SelectLuggagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7600FE24C7E0770015BE49 /* SelectLuggagePage.swift */; };
 		6D76010124C7E1A80015BE49 /* InputBookingNumberPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76010024C7E1A80015BE49 /* InputBookingNumberPage.swift */; };
+		6D76014424CD9DCB0015BE49 /* ActivityPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76014324CD9DCB0015BE49 /* ActivityPage.swift */; };
 		FECAA3AB24B3944C004B85AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECAA3AA24B3944C004B85AD /* AppDelegate.swift */; };
 		FECAA3AD24B3944C004B85AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECAA3AC24B3944C004B85AD /* SceneDelegate.swift */; };
 		FECAA3AF24B3944C004B85AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECAA3AE24B3944C004B85AD /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 		6D7600FC24C7DB450015BE49 /* SelectGenderPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderPage.swift; sourceTree = "<group>"; };
 		6D7600FE24C7E0770015BE49 /* SelectLuggagePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLuggagePage.swift; sourceTree = "<group>"; };
 		6D76010024C7E1A80015BE49 /* InputBookingNumberPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBookingNumberPage.swift; sourceTree = "<group>"; };
+		6D76014324CD9DCB0015BE49 /* ActivityPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPage.swift; sourceTree = "<group>"; };
 		FECAA3A724B3944C004B85AD /* Packing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Packing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECAA3AA24B3944C004B85AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FECAA3AC24B3944C004B85AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				6D7600FC24C7DB450015BE49 /* SelectGenderPage.swift */,
 				6D76010024C7E1A80015BE49 /* InputBookingNumberPage.swift */,
 				6D7600FE24C7E0770015BE49 /* SelectLuggagePage.swift */,
+				6D76014324CD9DCB0015BE49 /* ActivityPage.swift */,
 			);
 			path = Packing;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				6D76010124C7E1A80015BE49 /* InputBookingNumberPage.swift in Sources */,
 				FECAA3AB24B3944C004B85AD /* AppDelegate.swift in Sources */,
 				FECAA3AD24B3944C004B85AD /* SceneDelegate.swift in Sources */,
+				6D76014424CD9DCB0015BE49 /* ActivityPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

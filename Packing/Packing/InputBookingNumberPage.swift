@@ -29,6 +29,7 @@ struct InputBookingNumberPage: View {
 //            }
             NextButton()
             .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.28)
+            
         }
         
         
