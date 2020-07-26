@@ -12,39 +12,54 @@ let activities : [String] = ["beach","hike","formal events","winter sport","swim
 
 struct ActivityPage: View {
     var body: some View {
-        NavigationView{
-        ZStack{
-            VStack(alignment: .leading, spacing: 3){
-                Text("Activities")
-                    .font(.custom("Poppins", size: 22))
-                Text("What Activities Will You Do")
-            }.position(x: 125, y: 10)
-            VStack(spacing: 41){
-                HStack(spacing: 18){
-                    ForEach(0 ..< 3) { item in
-                        ActivityCard(num: item)
+            NavigationView{
+            ZStack{
+                VStack(alignment: .leading, spacing: 3){
+                    Text("Activities")
+                        .font(.custom("Poppins", size: 22))
+                    Text("What Activities Will You Do")
+                }.position(x: 125, y: 10)
+                VStack(spacing: 41){
+                    HStack(spacing: 18){
+                        ForEach(0 ..< 3) { item in
+                            
+                            Button(action: {print("\(item)")}) {
+                                ActivityCard(num: item)
+                            }.buttonStyle(PlainButtonStyle())
+                        }
                     }
-                }
-                HStack(spacing: 18){
-                    ForEach(3 ..< 6) { item in
-                        ActivityCard(num: item)
+                    HStack(spacing: 18){
+                        ForEach(3 ..< 6) { item in
+                            
+                           Button(action: {print("\(item)")}) {
+                                
+                                ActivityCard(num: item)
+                            }.buttonStyle(PlainButtonStyle())
+                        }
                     }
-                }
-                HStack(spacing: 18){
-                    ForEach(6 ..< 9) { item in
-                        ActivityCard(num: item)
+                    HStack(spacing: 18){
+                        ForEach(6 ..< 9) { item in
+                            Button(action: {print("\(item)")}) {
+                                
+                                ActivityCard(num: item)
+                            }.buttonStyle(PlainButtonStyle())
+                        }
                     }
-                }
-            }.position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.35)
-            Image("ButtonL")
-            .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.05)
-                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.75)
+                }.position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.35)
+                
+                NavigationLink(destination: SelectGenderPage())
+                {
+                    Image("ButtonL")
+                    .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.05)
+                        .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.75)
+                }.buttonStyle(PlainButtonStyle())
+                
+            }
+        }
         }
     }
-    }
-}
 
 struct ActivityPage_Previews: PreviewProvider {
     static var previews: some View {
