@@ -13,12 +13,12 @@ let activities : [String] = ["beach","hike","formal events","winter sport","swim
 struct ActivityPage: View {
     var body: some View {
             NavigationView{
-            ZStack{
+            VStack{
                 VStack(alignment: .leading, spacing: 3){
                     Text("Activities")
                         .font(.custom("Poppins", size: 22))
                     Text("What Activities Will You Do")
-                }.position(x: 125, y: 10)
+                }.position(x: UIScreen.main.bounds.width * 0.33, y: -UIScreen.main.bounds.height * 0.01)
                 VStack(spacing: 41){
                     HStack(spacing: 18){
                         ForEach(0 ..< 3) { item in
@@ -45,7 +45,7 @@ struct ActivityPage: View {
                             }.buttonStyle(PlainButtonStyle())
                         }
                     }
-                }.position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.35)
+                }.position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.07)
                 
                 NavigationLink(destination: SelectGenderPage())
                 {
@@ -53,8 +53,9 @@ struct ActivityPage: View {
                     .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.05)
-                        .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.75)
+                        .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.27)
                 }.buttonStyle(PlainButtonStyle())
+                .position(x: UIScreen.main.bounds.width / 2, y: 2)
                 
             }
         }
