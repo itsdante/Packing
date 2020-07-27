@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SelectGenderPage: View {
     var body: some View {
+        NavigationView{
         ZStack{
             VStack(alignment: .leading){
                 Text("Gender")
@@ -17,12 +18,15 @@ struct SelectGenderPage: View {
                 Text("Choose Your Gender")
                     .font(.custom("SF Pro Display", size: 14))
                     .fontWeight(.regular)
-                }.position(x: UIScreen.main.bounds.width * 0.7 / 2, y: UIScreen.main.bounds.height * 0.04)
+            }.position(x: UIScreen.main.bounds.width * 0.22, y: UIScreen.main.bounds.height * 0.04)
             GenderCard()
+                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
+            NavigationLink(destination: ActivityPage()){
             NextButton()
-            .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.86)
-            
+                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
+            }
         }
+    }
     }
 }
 

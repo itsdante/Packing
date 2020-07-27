@@ -13,7 +13,7 @@ struct InputBookingNumberPage: View {
     
     
     var body: some View {
-        
+        NavigationView{
         VStack(alignment: .center){
             Text("Add New Trip")
                 
@@ -33,6 +33,7 @@ struct InputBookingNumberPage: View {
         }
         
         
+    }
     }
 }
 

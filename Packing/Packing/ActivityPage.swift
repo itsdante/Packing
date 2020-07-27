@@ -47,7 +47,7 @@ struct ActivityPage: View {
                     }
                 }.position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.07)
                 
-                NavigationLink(destination: SelectGenderPage())
+                NavigationLink(destination: SelectLuggagePage())
                 {
                     Image("ButtonL")
                     .resizable()

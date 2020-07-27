@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SelectLuggagePage: View {
     var body: some View {
+        NavigationView{
         ZStack{
             VStack(alignment: .leading, spacing: 6){
                 Text("Luggage")
@@ -18,12 +19,14 @@ struct SelectLuggagePage: View {
                     .font(.custom("SF Pro Display", size: 14))
                     .fontWeight(.regular)
                 }
-            .position(x: UIScreen.main.bounds.width * 0.7 / 2, y: UIScreen.main.bounds.height * 0.04)
+            .position(x: UIScreen.main.bounds.width * 0.38, y: UIScreen.main.bounds.height * 0.04)
             LuggageCard()
+                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
             
             NextButton()
-                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.86)
+                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
         }
+    }
     }
 }
 
