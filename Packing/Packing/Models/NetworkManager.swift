@@ -12,7 +12,7 @@ class NetworkManager: ObservableObject {
     
     @Published var weathers = [WeatherList]()
     
-    let weatherUrl = "https://api.openweathermap.org/data/2.5/forecast?appid=4158bab88630d914d32fa04385f6b5df&units=metric"
+    let weatherUrl = "https://api.openweathermap.org/data/2.5/forecast?appid=86f431f8abc8b2f04d2b698f8327624b&units=metric"
     
     func fetchData(cityName: String) {
         let urlString = "\(weatherUrl)&q=\(cityName)"

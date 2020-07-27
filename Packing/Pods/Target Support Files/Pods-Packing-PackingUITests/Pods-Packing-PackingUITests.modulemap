@@ -1,0 +1,6 @@
+framework module Pods_Packing_PackingUITests {
+  umbrella header "Pods-Packing-PackingUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
