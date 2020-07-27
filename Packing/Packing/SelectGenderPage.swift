@@ -22,13 +22,18 @@ struct SelectGenderPage: View {
             GenderCard()
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
             NavigationLink(destination: ActivityPage()){
-            NextButton()
+            Image("ButtonL")
+                .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.05)
+                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.27)
+            }.buttonStyle(PlainButtonStyle())
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
             }
         }
     }
     }
-}
+
 
 struct SelectGenderPage_Previews: PreviewProvider {
     static var previews: some View {

@@ -10,7 +10,6 @@ import SwiftUI
 
 struct SelectLuggagePage: View {
     var body: some View {
-        NavigationView{
         ZStack{
             VStack(alignment: .leading, spacing: 6){
                 Text("Luggage")
@@ -26,7 +25,7 @@ struct SelectLuggagePage: View {
             NextButton()
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
         }
-    }
+    
     }
 }
 

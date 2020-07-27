@@ -12,7 +12,6 @@ let activities : [String] = ["beach","hike","formal events","winter sport","swim
 
 struct ActivityPage: View {
     var body: some View {
-            NavigationView{
             VStack{
                 VStack(alignment: .leading, spacing: 3){
                     Text("Activities")
@@ -55,10 +54,10 @@ struct ActivityPage: View {
                         .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.05)
                         .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.27)
                 }.buttonStyle(PlainButtonStyle())
-                .position(x: UIScreen.main.bounds.width / 2, y: 2)
+                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.01)
                 
             }
-        }
+        
         }
     }
 
