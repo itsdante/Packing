@@ -27,9 +27,6 @@
 		FECAA3BA24B3944F004B85AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FECAA3B824B3944F004B85AD /* LaunchScreen.storyboard */; };
 		FECAA3C524B39450004B85AD /* PackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECAA3C424B39450004B85AD /* PackingTests.swift */; };
 		FECAA3D024B39450004B85AD /* PackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECAA3CF24B39450004B85AD /* PackingUITests.swift */; };
-		FEE7024224CF19CD00F0F862 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7024124CF19CD00F0F862 /* UserModel.swift */; };
-		FEE7024424CF1EF300F0F862 /* PackingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7024324CF1EF300F0F862 /* PackingListModel.swift */; };
-		FEE7024624CF23AE00F0F862 /* RestrictionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7024524CF23AE00F0F862 /* RestrictionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,9 +73,6 @@
 		FECAA3CB24B39450004B85AD /* PackingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PackingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECAA3CF24B39450004B85AD /* PackingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingUITests.swift; sourceTree = "<group>"; };
 		FECAA3D124B39450004B85AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FEE7024124CF19CD00F0F862 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		FEE7024324CF1EF300F0F862 /* PackingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListModel.swift; sourceTree = "<group>"; };
-		FEE7024524CF23AE00F0F862 /* RestrictionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +116,6 @@
 				89A7BF1024C83A30008734ED /* NetworkManager.swift */,
 				89A7BF0E24C83A25008734ED /* WeatherData.swift */,
 				89A7BF0C24C83A18008734ED /* WeatherModel.swift */,
-				FEE7024124CF19CD00F0F862 /* UserModel.swift */,
-				FEE7024324CF1EF300F0F862 /* PackingListModel.swift */,
-				FEE7024524CF23AE00F0F862 /* RestrictionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,17 +333,14 @@
 				FECAA3AF24B3944C004B85AD /* ViewController.swift in Sources */,
 				FECAA3B524B3944C004B85AD /* Packing.xcdatamodeld in Sources */,
 				89A7BF0A24C839F5008734ED /* UIColor+Extensions.swift in Sources */,
-				FEE7024624CF23AE00F0F862 /* RestrictionModel.swift in Sources */,
 				89A7BF1724C83A8B008734ED /* WeatherView.swift in Sources */,
 				89A7BF1524C83A78008734ED /* WeatherScrollView.swift in Sources */,
 				89A7BF1124C83A30008734ED /* NetworkManager.swift in Sources */,
 				89A7BF0D24C83A18008734ED /* WeatherModel.swift in Sources */,
 				6D7600FF24C7E0770015BE49 /* SelectLuggagePage.swift in Sources */,
 				89A7BF0F24C83A25008734ED /* WeatherData.swift in Sources */,
-				FEE7024424CF1EF300F0F862 /* PackingListModel.swift in Sources */,
 				6D76010124C7E1A80015BE49 /* InputBookingNumberPage.swift in Sources */,
 				FECAA3AB24B3944C004B85AD /* AppDelegate.swift in Sources */,
-				FEE7024224CF19CD00F0F862 /* UserModel.swift in Sources */,
 				FECAA3AD24B3944C004B85AD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
