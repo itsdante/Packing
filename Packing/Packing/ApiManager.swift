@@ -7,7 +7,7 @@ static let sharedInstance = APIManager() //api managernya
 static let getPostsEndpoint = "/recipes" //endpoint belakang tiap orang beda
 
 //contoh function
-func getRecipeWithId(recipeId: Int, onSuccess: @escaping(JSON) -> Void, onFailure: @escaping(Error) -> Void){
+func getWeather(recipeId: Int, onSuccess: @escaping(JSON) -> Void, onFailure: @escaping(Error) -> Void){
     let url : String = baseurl + APIManager.getPostsEndpoint + String(recipeId)
     let request : NSMutableURLRequest = NSMutableURLRequest(url: NSURL(string: url)! as URL)
     request.httpMethod = "GET"
@@ -29,7 +29,7 @@ func getRecipeWithId(recipeId: Int, onSuccess: @escaping(JSON) -> Void, onFailur
     })
     task.resume()
 }
-func getRecipe(onSuccess: @escaping(JSON) -> Void, onFailure: @escaping(Error) -> Void){
+func getBooking(onSuccess: @escaping(JSON) -> Void, onFailure: @escaping(Error) -> Void){
        let url : String = baseurl + APIManager.getPostsEndpoint
        let request : NSMutableURLRequest = NSMutableURLRequest(url: NSURL(string: url)! as URL)
        request.httpMethod = "GET"
@@ -52,3 +52,5 @@ func getRecipe(onSuccess: @escaping(JSON) -> Void, onFailure: @escaping(Error) -
        })
        task.resume()
    }
+}
+
