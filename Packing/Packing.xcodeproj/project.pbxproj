@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,31 @@
 		6D7600FF24C7E0770015BE49 /* SelectLuggagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7600FE24C7E0770015BE49 /* SelectLuggagePage.swift */; };
 		6D76010124C7E1A80015BE49 /* InputBookingNumberPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76010024C7E1A80015BE49 /* InputBookingNumberPage.swift */; };
 		6D76014424CD9DCB0015BE49 /* ActivityPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76014324CD9DCB0015BE49 /* ActivityPage.swift */; };
+		8938EAF924CF321300D8AFFC /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EAF824CF321300D8AFFC /* ItemList.swift */; };
+		8938EAFB24CF323100D8AFFC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EAFA24CF323100D8AFFC /* ItemCell.swift */; };
+		8938EAFE24CF324800D8AFFC /* LuggageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EAFD24CF324800D8AFFC /* LuggageView.swift */; };
+		8938EB0324CF341400D8AFFC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EB0224CF341400D8AFFC /* Item.swift */; };
+		8938EB0524CF342800D8AFFC /* Luggage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EB0424CF342800D8AFFC /* Luggage.swift */; };
+		8938EB0724CF343400D8AFFC /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EB0624CF343400D8AFFC /* Trip.swift */; };
+		895094DB24CFC1B20034CAA7 /* CustomSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895094DA24CFC1B20034CAA7 /* CustomSegmentedPicker.swift */; };
+		895094EE24CFC2100034CAA7 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094DC24CFC20F0034CAA7 /* Poppins-Black.ttf */; };
+		895094EF24CFC2100034CAA7 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094DD24CFC20F0034CAA7 /* Poppins-BlackItalic.ttf */; };
+		895094F024CFC2100034CAA7 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094DE24CFC20F0034CAA7 /* Poppins-ExtraLight.ttf */; };
+		895094F124CFC2100034CAA7 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094DF24CFC20F0034CAA7 /* Poppins-ThinItalic.ttf */; };
+		895094F224CFC2100034CAA7 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094E024CFC20F0034CAA7 /* Poppins-ExtraBold.ttf */; };
+		895094F324CFC2100034CAA7 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094E124CFC2100034CAA7 /* Poppins-ExtraBoldItalic.ttf */; };
+		895094F424CFC2100034CAA7 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094E224CFC2100034CAA7 /* Poppins-Light.ttf */; };
+		895094F524CFC2100034CAA7 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094E324CFC2100034CAA7 /* Poppins-SemiBold.ttf */; };
+		895094F624CFC2100034CAA7 /* Poppins-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094E424CFC2100034CAA7 /* Poppins-LightItalic.ttf */; };
+		895094F724CFC2100034CAA7 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094E524CFC2100034CAA7 /* Poppins-Italic.ttf */; };
+		895094F824CFC2100034CAA7 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094E624CFC2100034CAA7 /* Poppins-MediumItalic.ttf */; };
+		895094F924CFC2100034CAA7 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094E724CFC2100034CAA7 /* Poppins-Regular.ttf */; };
+		895094FA24CFC2100034CAA7 /* Poppins-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094E824CFC2100034CAA7 /* Poppins-SemiBoldItalic.ttf */; };
+		895094FB24CFC2100034CAA7 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094E924CFC2100034CAA7 /* Poppins-Thin.ttf */; };
+		895094FC24CFC2100034CAA7 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094EA24CFC2100034CAA7 /* Poppins-Medium.ttf */; };
+		895094FD24CFC2100034CAA7 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094EB24CFC2100034CAA7 /* Poppins-ExtraLightItalic.ttf */; };
+		895094FE24CFC2100034CAA7 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094EC24CFC2100034CAA7 /* Poppins-Bold.ttf */; };
+		895094FF24CFC2100034CAA7 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094ED24CFC2100034CAA7 /* Poppins-BoldItalic.ttf */; };
 		89A7BF0A24C839F5008734ED /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF0924C839F5008734ED /* UIColor+Extensions.swift */; };
 		89A7BF0D24C83A18008734ED /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF0C24C83A18008734ED /* WeatherModel.swift */; };
 		89A7BF0F24C83A25008734ED /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF0E24C83A25008734ED /* WeatherData.swift */; };
@@ -19,7 +44,6 @@
 		89A7BF1324C83A5F008734ED /* WeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1224C83A5F008734ED /* WeatherCardView.swift */; };
 		89A7BF1524C83A78008734ED /* WeatherScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1424C83A78008734ED /* WeatherScrollView.swift */; };
 		89A7BF1724C83A8B008734ED /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1624C83A8B008734ED /* WeatherView.swift */; };
-		89A7BF1924C83AB5008734ED /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89A7BF1824C83AB5008734ED /* Poppins-Medium.ttf */; };
 		CB07B442DAF0F4CEEFF62324 /* Pods_Packing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D6FEACBCD90E97265732CE /* Pods_Packing.framework */; };
 		FE32F8A5675B22FDE6780D50 /* Pods_PackingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF64CFEAEF01DBCDDA86BCA /* Pods_PackingTests.framework */; };
 		FE3FD50124CE73EE000CCA69 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FD50024CE73ED000CCA69 /* ApiManager.swift */; };
@@ -60,6 +84,31 @@
 		6D76010024C7E1A80015BE49 /* InputBookingNumberPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBookingNumberPage.swift; sourceTree = "<group>"; };
 		6D76014324CD9DCB0015BE49 /* ActivityPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityPage.swift; sourceTree = "<group>"; };
 		7E3B852D586247CF7D9A4850 /* Pods-Packing-PackingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packing-PackingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Packing-PackingUITests/Pods-Packing-PackingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8938EAF824CF321300D8AFFC /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
+		8938EAFA24CF323100D8AFFC /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		8938EAFD24CF324800D8AFFC /* LuggageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuggageView.swift; sourceTree = "<group>"; };
+		8938EB0224CF341400D8AFFC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		8938EB0424CF342800D8AFFC /* Luggage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Luggage.swift; sourceTree = "<group>"; };
+		8938EB0624CF343400D8AFFC /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		895094DA24CFC1B20034CAA7 /* CustomSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedPicker.swift; sourceTree = "<group>"; };
+		895094DC24CFC20F0034CAA7 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		895094DD24CFC20F0034CAA7 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
+		895094DE24CFC20F0034CAA7 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		895094DF24CFC20F0034CAA7 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
+		895094E024CFC20F0034CAA7 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		895094E124CFC2100034CAA7 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		895094E224CFC2100034CAA7 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		895094E324CFC2100034CAA7 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		895094E424CFC2100034CAA7 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
+		895094E524CFC2100034CAA7 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		895094E624CFC2100034CAA7 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		895094E724CFC2100034CAA7 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		895094E824CFC2100034CAA7 /* Poppins-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		895094E924CFC2100034CAA7 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		895094EA24CFC2100034CAA7 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		895094EB24CFC2100034CAA7 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		895094EC24CFC2100034CAA7 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		895094ED24CFC2100034CAA7 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
 		89A7BF0924C839F5008734ED /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		89A7BF0C24C83A18008734ED /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		89A7BF0E24C83A25008734ED /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -67,7 +116,6 @@
 		89A7BF1224C83A5F008734ED /* WeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCardView.swift; sourceTree = "<group>"; };
 		89A7BF1424C83A78008734ED /* WeatherScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScrollView.swift; sourceTree = "<group>"; };
 		89A7BF1624C83A8B008734ED /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
-		89A7BF1824C83AB5008734ED /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		C0E0E2A3D31FD8B3865D0987 /* Pods-Packing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packing.debug.xcconfig"; path = "Target Support Files/Pods-Packing/Pods-Packing.debug.xcconfig"; sourceTree = "<group>"; };
 		D0D6FEACBCD90E97265732CE /* Pods_Packing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Packing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAF65B3349A8770CCDB3C25 /* Pods-Packing-PackingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packing-PackingUITests.release.xcconfig"; path = "Target Support Files/Pods-Packing-PackingUITests/Pods-Packing-PackingUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,12 +177,81 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		89A7BF0524C839BD008734ED /* Views */ = {
+		8938EAF624CF31D000D8AFFC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				8938EB0624CF343400D8AFFC /* Trip.swift */,
+				8938EB0424CF342800D8AFFC /* Luggage.swift */,
+				8938EB0224CF341400D8AFFC /* Item.swift */,
+				89A7BF0C24C83A18008734ED /* WeatherModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		8938EAF724CF31F600D8AFFC /* Luggage */ = {
+			isa = PBXGroup;
+			children = (
+				8938EAFD24CF324800D8AFFC /* LuggageView.swift */,
+				8938EAF824CF321300D8AFFC /* ItemList.swift */,
+				8938EAFA24CF323100D8AFFC /* ItemCell.swift */,
+				895094DA24CFC1B20034CAA7 /* CustomSegmentedPicker.swift */,
+			);
+			path = Luggage;
+			sourceTree = "<group>";
+		};
+		8938EAFF24CF325700D8AFFC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FECAA3AA24B3944C004B85AD /* AppDelegate.swift */,
+				FECAA3AC24B3944C004B85AD /* SceneDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8938EB0024CF327100D8AFFC /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				FECAA3B324B3944C004B85AD /* Packing.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		8938EB0124CF334600D8AFFC /* NewTrip */ = {
+			isa = PBXGroup;
+			children = (
+				6D76010024C7E1A80015BE49 /* InputBookingNumberPage.swift */,
+				6D7600FC24C7DB450015BE49 /* SelectGenderPage.swift */,
+				6D76014324CD9DCB0015BE49 /* ActivityPage.swift */,
+				6D7600FE24C7E0770015BE49 /* SelectLuggagePage.swift */,
+			);
+			path = NewTrip;
+			sourceTree = "<group>";
+		};
+		8938EB0824CF395300D8AFFC /* Weather */ = {
 			isa = PBXGroup;
 			children = (
 				89A7BF1624C83A8B008734ED /* WeatherView.swift */,
 				89A7BF1424C83A78008734ED /* WeatherScrollView.swift */,
 				89A7BF1224C83A5F008734ED /* WeatherCardView.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		8938EB0924CF3C5800D8AFFC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				89A7BF1024C83A30008734ED /* NetworkManager.swift */,
+				89A7BF0E24C83A25008734ED /* WeatherData.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		89A7BF0524C839BD008734ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8938EB0124CF334600D8AFFC /* NewTrip */,
+				8938EAF724CF31F600D8AFFC /* Luggage */,
+				8938EB0824CF395300D8AFFC /* Weather */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,9 +259,7 @@
 		89A7BF0624C839C5008734ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				89A7BF1024C83A30008734ED /* NetworkManager.swift */,
-				89A7BF0E24C83A25008734ED /* WeatherData.swift */,
-				89A7BF0C24C83A18008734ED /* WeatherModel.swift */,
+				8938EAF624CF31D000D8AFFC /* Entities */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,7 +275,24 @@
 		89A7BF0824C839D4008734ED /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				89A7BF1824C83AB5008734ED /* Poppins-Medium.ttf */,
+				895094DC24CFC20F0034CAA7 /* Poppins-Black.ttf */,
+				895094DD24CFC20F0034CAA7 /* Poppins-BlackItalic.ttf */,
+				895094EC24CFC2100034CAA7 /* Poppins-Bold.ttf */,
+				895094ED24CFC2100034CAA7 /* Poppins-BoldItalic.ttf */,
+				895094E024CFC20F0034CAA7 /* Poppins-ExtraBold.ttf */,
+				895094E124CFC2100034CAA7 /* Poppins-ExtraBoldItalic.ttf */,
+				895094DE24CFC20F0034CAA7 /* Poppins-ExtraLight.ttf */,
+				895094EB24CFC2100034CAA7 /* Poppins-ExtraLightItalic.ttf */,
+				895094E524CFC2100034CAA7 /* Poppins-Italic.ttf */,
+				895094E224CFC2100034CAA7 /* Poppins-Light.ttf */,
+				895094E424CFC2100034CAA7 /* Poppins-LightItalic.ttf */,
+				895094EA24CFC2100034CAA7 /* Poppins-Medium.ttf */,
+				895094E624CFC2100034CAA7 /* Poppins-MediumItalic.ttf */,
+				895094E724CFC2100034CAA7 /* Poppins-Regular.ttf */,
+				895094E324CFC2100034CAA7 /* Poppins-SemiBold.ttf */,
+				895094E824CFC2100034CAA7 /* Poppins-SemiBoldItalic.ttf */,
+				895094E924CFC2100034CAA7 /* Poppins-Thin.ttf */,
+				895094DF24CFC20F0034CAA7 /* Poppins-ThinItalic.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -175,7 +307,6 @@
 				FEAD3DF0A1C4E5B1D7202791 /* Pods-PackingTests.debug.xcconfig */,
 				2874565E1E70706AC1FF1BC8 /* Pods-PackingTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -206,21 +337,17 @@
 			isa = PBXGroup;
 			children = (
 				89A7BF0824C839D4008734ED /* Fonts */,
+				8938EB0924CF3C5800D8AFFC /* API */,
+				8938EB0024CF327100D8AFFC /* Persistence */,
+				8938EAFF24CF325700D8AFFC /* Common */,
 				89A7BF0724C839CA008734ED /* Extensions */,
 				89A7BF0624C839C5008734ED /* Models */,
 				89A7BF0524C839BD008734ED /* Views */,
-				FECAA3AA24B3944C004B85AD /* AppDelegate.swift */,
-				FECAA3AC24B3944C004B85AD /* SceneDelegate.swift */,
 				FECAA3AE24B3944C004B85AD /* ViewController.swift */,
 				FECAA3B024B3944C004B85AD /* Main.storyboard */,
 				FECAA3B624B3944F004B85AD /* Assets.xcassets */,
 				FECAA3B824B3944F004B85AD /* LaunchScreen.storyboard */,
 				FECAA3BB24B3944F004B85AD /* Info.plist */,
-				FECAA3B324B3944C004B85AD /* Packing.xcdatamodeld */,
-				6D7600FC24C7DB450015BE49 /* SelectGenderPage.swift */,
-				6D76010024C7E1A80015BE49 /* InputBookingNumberPage.swift */,
-				6D7600FE24C7E0770015BE49 /* SelectLuggagePage.swift */,
-				6D76014324CD9DCB0015BE49 /* ActivityPage.swift */,
 			);
 			path = Packing;
 			sourceTree = "<group>";
@@ -352,9 +479,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895094F024CFC2100034CAA7 /* Poppins-ExtraLight.ttf in Resources */,
+				895094FA24CFC2100034CAA7 /* Poppins-SemiBoldItalic.ttf in Resources */,
+				895094FD24CFC2100034CAA7 /* Poppins-ExtraLightItalic.ttf in Resources */,
+				895094F424CFC2100034CAA7 /* Poppins-Light.ttf in Resources */,
+				895094FB24CFC2100034CAA7 /* Poppins-Thin.ttf in Resources */,
+				895094F524CFC2100034CAA7 /* Poppins-SemiBold.ttf in Resources */,
+				895094EE24CFC2100034CAA7 /* Poppins-Black.ttf in Resources */,
+				895094FE24CFC2100034CAA7 /* Poppins-Bold.ttf in Resources */,
 				FECAA3BA24B3944F004B85AD /* LaunchScreen.storyboard in Resources */,
-				89A7BF1924C83AB5008734ED /* Poppins-Medium.ttf in Resources */,
+				895094FF24CFC2100034CAA7 /* Poppins-BoldItalic.ttf in Resources */,
+				895094F824CFC2100034CAA7 /* Poppins-MediumItalic.ttf in Resources */,
+				895094F324CFC2100034CAA7 /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				895094EF24CFC2100034CAA7 /* Poppins-BlackItalic.ttf in Resources */,
+				895094F724CFC2100034CAA7 /* Poppins-Italic.ttf in Resources */,
+				895094F924CFC2100034CAA7 /* Poppins-Regular.ttf in Resources */,
+				895094F624CFC2100034CAA7 /* Poppins-LightItalic.ttf in Resources */,
+				895094F224CFC2100034CAA7 /* Poppins-ExtraBold.ttf in Resources */,
 				FECAA3B724B3944F004B85AD /* Assets.xcassets in Resources */,
+				895094FC24CFC2100034CAA7 /* Poppins-Medium.ttf in Resources */,
+				895094F124CFC2100034CAA7 /* Poppins-ThinItalic.ttf in Resources */,
 				FECAA3B224B3944C004B85AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,17 +627,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8938EB0724CF343400D8AFFC /* Trip.swift in Sources */,
+				8938EB0324CF341400D8AFFC /* Item.swift in Sources */,
 				FE3FD50124CE73EE000CCA69 /* ApiManager.swift in Sources */,
 				6D7600FD24C7DB450015BE49 /* SelectGenderPage.swift in Sources */,
+				8938EAFB24CF323100D8AFFC /* ItemCell.swift in Sources */,
+				8938EAF924CF321300D8AFFC /* ItemList.swift in Sources */,
+				8938EB0524CF342800D8AFFC /* Luggage.swift in Sources */,
 				89A7BF1324C83A5F008734ED /* WeatherCardView.swift in Sources */,
 				FECAA3AF24B3944C004B85AD /* ViewController.swift in Sources */,
 				FECAA3B524B3944C004B85AD /* Packing.xcdatamodeld in Sources */,
+				895094DB24CFC1B20034CAA7 /* CustomSegmentedPicker.swift in Sources */,
 				89A7BF0A24C839F5008734ED /* UIColor+Extensions.swift in Sources */,
 				89A7BF1724C83A8B008734ED /* WeatherView.swift in Sources */,
 				89A7BF1524C83A78008734ED /* WeatherScrollView.swift in Sources */,
 				89A7BF1124C83A30008734ED /* NetworkManager.swift in Sources */,
 				89A7BF0D24C83A18008734ED /* WeatherModel.swift in Sources */,
 				6D7600FF24C7E0770015BE49 /* SelectLuggagePage.swift in Sources */,
+				8938EAFE24CF324800D8AFFC /* LuggageView.swift in Sources */,
 				89A7BF0F24C83A25008734ED /* WeatherData.swift in Sources */,
 				6D76010124C7E1A80015BE49 /* InputBookingNumberPage.swift in Sources */,
 				FECAA3AB24B3944C004B85AD /* AppDelegate.swift in Sources */,

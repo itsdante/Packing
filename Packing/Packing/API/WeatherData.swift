@@ -9,10 +9,10 @@
 import Foundation
 
 struct WeatherData: Decodable {
-    let list: [List]
+    let list: [ListWeather]
 }
 
-struct List: Decodable {
+struct ListWeather: Decodable {
     let dt: Int
     let main: Main
     let weather: [Weather]
