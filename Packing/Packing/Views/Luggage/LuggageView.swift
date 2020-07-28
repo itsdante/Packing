@@ -14,21 +14,20 @@ struct LuggageView: View {
     @State private var selected = 0
     
     var body: some View {
-        NavigationView {
-            VStack {
-                CustomSegmentedPickerView(selected: $selected)
-                Spacer()
-                if selected == 0 {
-                    ScrollView {
-                        ForEach(trip.luggages) { luggage in
-                            ItemList(luggage: luggage)
-                        }
+        VStack {
+            CustomSegmentedPickerView(selected: $selected)
+                .padding(.top, 20)
+            Spacer()
+            if selected == 0 {
+                ScrollView {
+                    ForEach(trip.luggages) { luggage in
+                        ItemList(luggage: luggage)
                     }
                 }
-                
             }
-            .navigationBarTitle("My Luggage")
+            
         }
+        .navigationBarTitle("My Luggage", displayMode: .inline)
     }
 }
 
