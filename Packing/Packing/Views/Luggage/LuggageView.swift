@@ -9,13 +9,33 @@
 import SwiftUI
 
 struct LuggageView: View {
+    var trip: Trip
+    
+    @State private var selected = 0
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                CustomSegmentedPickerView(selected: $selected)
+                Spacer()
+                if selected == 0 {
+                    ScrollView {
+                        ForEach(trip.luggages) { luggage in
+                            ItemList(luggage: luggage)
+                        }
+                    }
+                }
+                
+            }
+            .navigationBarTitle("My Luggage")
+        }
     }
 }
 
+#if DEBUG
 struct LuggageView_Previews: PreviewProvider {
     static var previews: some View {
-        LuggageView()
+        LuggageView(trip: trip)
     }
 }
+#endif

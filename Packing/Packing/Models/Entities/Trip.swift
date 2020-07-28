@@ -20,3 +20,8 @@ struct Trip: Identifiable {
     var createdAt: Date
     var luggages: [Luggage]
 }
+
+#if DEBUG
+let luggageArray = [luggage1, luggage2]
+let trip = Trip(bookingNumber: "71938JC", airline: "Lion Air", flightNumber: "GA4828", origin: "CGK", destination: "HND", departureDate: Date(), arrivalDate: Date(), createdAt: Date(), luggages: luggageArray)
+#endif

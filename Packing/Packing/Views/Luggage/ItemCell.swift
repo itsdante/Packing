@@ -11,8 +11,6 @@ import SwiftUI
 struct ItemCell: View {
     private static let completedSymbol: String = "checkmark.circle.fill"
     private static let emptySymbol: String = "circle"
-    private static let symbolWidth: CGFloat = 20
-    private static let symbolHeight: CGFloat = 20
     private static let completedColor: Color = Color(UIColor.init(hex: 0x654CFF))
     private static let emptyColor: Color = Color(.secondaryLabel)
     
@@ -25,7 +23,7 @@ struct ItemCell: View {
         HStack {
             Image(systemName: item.isCompleted ? ItemCell.completedSymbol : ItemCell.emptySymbol)
                 .resizable()
-                .frame(width: ItemCell.symbolWidth, height: ItemCell.symbolHeight)
+                .frame(width: 20, height: 20)
                 .foregroundColor(item.isCompleted ? ItemCell.completedColor : ItemCell.emptyColor)
                 .onTapGesture {
                     
@@ -34,13 +32,15 @@ struct ItemCell: View {
                 .font(ItemCell.itemFont)
                 .foregroundColor(ItemCell.itemColor)
                 .strikethrough(item.isCompleted)
-        }.padding(.vertical, 5)
+        }
+        .padding(.vertical, 5)
     }
 }
 
+#if DEBUG
 struct ItemCell_Previews: PreviewProvider {
     static var previews: some View {
-        let item = Item(name: "Passport", quantity: 1, isCompleted: false, createdAt: Date())
-        return ItemCell(item: item)
+        return ItemCell(item: item1).previewLayout(.sizeThatFits)
     }
 }
+#endif

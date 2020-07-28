@@ -15,3 +15,14 @@ struct Item: Identifiable {
     var isCompleted: Bool
     var createdAt: Date
 }
+
+#if DEBUG
+let item1 = Item(name: "Passport", quantity: 1, isCompleted: false, createdAt: Date())
+let item2 = Item(name: "Documents", quantity: 1, isCompleted: false, createdAt: Date())
+let item3 = Item(name: "Wallet", quantity: 1, isCompleted: true, createdAt: Date())
+
+let item4 = Item(name: "Toothbrush", quantity: 1, isCompleted: false, createdAt: Date())
+let item5 = Item(name: "Toothpaste", quantity: 1, isCompleted: false, createdAt: Date())
+let item6 = Item(name: "Soap", quantity: 1, isCompleted: true, createdAt: Date())
+let item7 = Item(name: "Shampoo", quantity: 1, isCompleted: true, createdAt: Date())
+#endif

@@ -45,3 +45,11 @@ struct Luggage: Identifiable {
         }
     }
 }
+
+#if DEBUG
+let itemArray1 = [item1, item2, item3]
+let luggage1 = Luggage(category: "Essentials", isCheckedIn: false, items: itemArray1)
+
+let itemArray2 = [item4, item5, item6, item7]
+let luggage2 = Luggage(category: "Toiletries", isCheckedIn: false, items: itemArray2)
+#endif
