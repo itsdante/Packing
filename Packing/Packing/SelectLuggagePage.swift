@@ -11,27 +11,50 @@ import SwiftUI
 struct SelectLuggagePage: View {
     var body: some View {
         ZStack{
-            VStack(alignment: .leading, spacing: 6){
-                Text("Luggage")
-                    .font(.custom("Poppins-SemiBold", size: 22))
-                Text("What Kind of Luggage Will You Bring?")
-                    .font(.custom("SF Pro Display", size: 14))
-                    .fontWeight(.regular)
-                }
-            .position(x: UIScreen.main.bounds.width * 0.38, y: UIScreen.main.bounds.height * 0.04)
-            LuggageCard()
-                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
+            VStack(alignment: .leading,
+                   spacing: 6){
+                    Text("Luggage")
+                        .font(.custom(
+                            "Poppins-SemiBold",
+                            size: 22))
+                    Text("What Kind of Luggage Will You Bring?")
+                        .font(.custom(
+                            "SF Pro Display",
+                            size: 14))
+                        .fontWeight(.regular)
+            }
+            .position(
+                x: UIScreen.main.bounds.width * 0.38,
+                y: UIScreen.main.bounds.height * 0.04)
             
-            NextButton()
-                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
+            LuggageCard()
+                .position(
+                    x: UIScreen.main.bounds.width / 2,
+                    y: UIScreen.main.bounds.height * 0.3)
+            
+            Button(action: {
+                print("asdadasdd")
+            }) {
+                Image("ButtonL")
+                    .renderingMode(.original)
+                    .frame(
+                        width: UIScreen.main.bounds.width * 0.76,
+                        height: UIScreen.main.bounds.height * 0.045)
+            }
+            .position(
+                x: UIScreen.main.bounds.width / 2,
+                y: UIScreen.main.bounds.height * 0.7)
         }
-    
+        
     }
 }
 
 struct SelectLuggagePage_Previews: PreviewProvider {
     static var previews: some View {
-        SelectLuggagePage()
+        NavigationView{
+            SelectLuggagePage()
+        }
+        
     }
 }
 
@@ -43,7 +66,9 @@ struct LuggageCard: View {
             }){
                 Image("CarryOn")
                     .renderingMode(.original)
-                    .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.23)
+                    .frame(
+                        width: UIScreen.main.bounds.width * 0.4,
+                        height: UIScreen.main.bounds.height * 0.23)
             }
             
             
@@ -55,22 +80,12 @@ struct LuggageCard: View {
             }){
                 Image("CheckIn")
                     .renderingMode(.original)
-                    .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.23)
+                    .frame(
+                        width: UIScreen.main.bounds.width * 0.4,
+                        height: UIScreen.main.bounds.height * 0.23)
                 
                 
             }
-        }
-    }
-}
-
-struct NextButton: View {
-    var body: some View {
-        Button(action: {
-            print("asdadasdd")
-        }) {
-            Image("ButtonL")
-                .renderingMode(.original)
-                .frame(width: UIScreen.main.bounds.width * 0.76, height: UIScreen.main.bounds.height * 0.045)
         }
     }
 }

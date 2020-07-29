@@ -27,8 +27,6 @@ struct InputBookingNumberPage: View {
 //                    .renderingMode(.original)
 //                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.28)
 //            }
-            NextButton()
-            .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.28)
             
         }
         

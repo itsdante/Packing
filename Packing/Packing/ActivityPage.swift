@@ -11,59 +11,76 @@ import SwiftUI
 let activities : [String] = ["beach","hike","formal events","winter sport","swimming","gym","photography","business","party/festivals"]
 
 struct ActivityPage: View {
+    var gender:String
     var body: some View {
-            VStack{
-                VStack(alignment: .leading, spacing: 3){
-                    Text("Activities")
-                        .font(.custom("Poppins", size: 22))
-                    Text("What Activities Will You Do")
-                }.position(x: UIScreen.main.bounds.width * 0.33, y: -UIScreen.main.bounds.height * 0.01)
-                VStack(spacing: 41){
-                    HStack(spacing: 18){
-                        ForEach(0 ..< 3) { item in
+        VStack{
+            VStack(alignment: .leading, spacing: 3){
+                Text("Activities")
+                    .font(.custom("Poppins", size: 22))
+                Text("What Activities Will You Do")
+            }.position(
+                x: UIScreen.main.bounds.width * 0.33,
+                y: -UIScreen.main.bounds.height * 0.01)
+            VStack(spacing: 41){
+                HStack(spacing: 18){
+                    ForEach(0 ..< 3) { item in
+                        
+                        Button(action: {
+                            print("\(item)")
+                            print("\(sendedGender)")
+                        }) {
+                            ActivityCard(num: item)
+                        }.buttonStyle(PlainButtonStyle())
+                    }
+                }
+                HStack(spacing: 18){
+                    ForEach(3 ..< 6) { item in
+                        
+                        Button(action: {print("\(item)")}) {
                             
-                            Button(action: {print("\(item)")}) {
-                                ActivityCard(num: item)
-                            }.buttonStyle(PlainButtonStyle())
-                        }
+                            ActivityCard(num: item)
+                        }.buttonStyle(PlainButtonStyle())
                     }
-                    HStack(spacing: 18){
-                        ForEach(3 ..< 6) { item in
+                }
+                HStack(spacing: 18){
+                    ForEach(6 ..< 9) { item in
+                        Button(action: {print("\(item)")}) {
                             
-                           Button(action: {print("\(item)")}) {
-                                
-                                ActivityCard(num: item)
-                            }.buttonStyle(PlainButtonStyle())
-                        }
+                            ActivityCard(num: item)
+                        }.buttonStyle(PlainButtonStyle())
                     }
-                    HStack(spacing: 18){
-                        ForEach(6 ..< 9) { item in
-                            Button(action: {print("\(item)")}) {
-                                
-                                ActivityCard(num: item)
-                            }.buttonStyle(PlainButtonStyle())
-                        }
-                    }
-                }.position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.07)
-                
-                NavigationLink(destination: SelectLuggagePage())
-                {
-                    Image("ButtonL")
+                }
+            }.position(
+                x: UIScreen.main.bounds.width / 2,
+                y: UIScreen.main.bounds.height * 0.07)
+            
+            NavigationLink(destination: SelectLuggagePage())
+            {
+                Image("ButtonL")
                     .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.05)
-                        .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.27)
-                }.buttonStyle(PlainButtonStyle())
-                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.01)
-                
-            }
-        
+                    .aspectRatio(contentMode: .fill)
+                    .frame(
+                        width: UIScreen.main.bounds.width * 0.936,
+                        height: UIScreen.main.bounds.height * 0.05)
+                    .position(
+                        x: UIScreen.main.bounds.width / 2,
+                        y: UIScreen.main.bounds.height * 0.27)
+            }.buttonStyle(PlainButtonStyle())
+                .position(
+                    x: UIScreen.main.bounds.width / 2,
+                    y: UIScreen.main.bounds.height * 0.01)
+            
         }
+        
     }
+}
+
 
 struct ActivityPage_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityPage()
+        NavigationView{
+            ActivityPage(gender: "Male")
+        }
     }
 }
 
@@ -76,19 +93,32 @@ struct ActivityCard: View {
     var body: some View {
         ZStack{
             Rectangle()
-                .frame(width: 102, height: 115)
+                .frame(
+                    width: 102,
+                    height: 115)
                 .foregroundColor(.white)
                 .cornerRadius(20)
                 //                .shadow(radius: 10)
-                .shadow(color: .init(UIColor(red: 0.396, green: 0.298, blue: 1, alpha: 0.08)), radius: 21, x: 0, y: 6)
+                .shadow(color: .init(UIColor(
+                    red: 0.396,
+                    green: 0.298,
+                    blue: 1,
+                    alpha: 0.08)),
+                        radius: 21,
+                        x: 0,
+                        y: 6)
             
             VStack(spacing: 7){
                 Image("\(activities[num])")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.main.bounds.width * 0.12, height: UIScreen.main.bounds.height * 0.07)
+                    .frame(
+                        width: UIScreen.main.bounds.width * 0.12,
+                        height: UIScreen.main.bounds.height * 0.07)
                 Text("\(activities[num].capitalized)")
             }
         }
     }
 }
+
+
