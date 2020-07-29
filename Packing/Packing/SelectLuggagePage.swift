@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct SelectLuggagePage: View {
+    @State var luggage : String
     var body: some View {
         ZStack{
             VStack(alignment: .leading,
@@ -27,7 +28,7 @@ struct SelectLuggagePage: View {
                 x: UIScreen.main.bounds.width * 0.38,
                 y: UIScreen.main.bounds.height * 0.04)
             
-            LuggageCard()
+            LuggageCard(luggage: $luggage)
                 .position(
                     x: UIScreen.main.bounds.width / 2,
                     y: UIScreen.main.bounds.height * 0.3)
@@ -52,23 +53,40 @@ struct SelectLuggagePage: View {
 struct SelectLuggagePage_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            SelectLuggagePage()
+            SelectLuggagePage(luggage: "CarryOn")
         }
         
     }
 }
 
 struct LuggageCard: View {
+    @Binding var luggage : String
+    @State var isCarryOn : Bool = false
+    @State var isCheckedIn : Bool = false
     var body: some View {
         HStack {
             Button(action: {
+                self.isCarryOn = true
+                self.isCheckedIn = false
+                self.luggage = "CarryOn"
                 print("asdadsdsadasda1")
             }){
+                if(isCarryOn == true)
+                {
+                    Image("CarryOnSelected")
+                    .renderingMode(.original)
+                    .frame(
+                        width: UIScreen.main.bounds.width * 0.4,
+                        height: UIScreen.main.bounds.height * 0.23)
+                }
+                else
+                {
                 Image("CarryOn")
                     .renderingMode(.original)
                     .frame(
                         width: UIScreen.main.bounds.width * 0.4,
                         height: UIScreen.main.bounds.height * 0.23)
+                }
             }
             
             
@@ -76,14 +94,28 @@ struct LuggageCard: View {
             Spacer()
                 .frame(width: UIScreen.main.bounds.width * 0.05)
             Button(action: {
+                self.isCarryOn = false
+                self.isCheckedIn = true
+                self.luggage = "CheckIn"
                 print("asdadsdsadasda1")
             }){
+                
+                if(isCheckedIn == true)
+                {
+                    Image("CheckInSelected")
+                    .renderingMode(.original)
+                    .frame(
+                        width: UIScreen.main.bounds.width * 0.4,
+                        height: UIScreen.main.bounds.height * 0.23)
+                }
+                else
+                {
                 Image("CheckIn")
                     .renderingMode(.original)
                     .frame(
                         width: UIScreen.main.bounds.width * 0.4,
                         height: UIScreen.main.bounds.height * 0.23)
-                
+                }
                 
             }
         }

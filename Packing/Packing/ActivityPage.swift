@@ -14,6 +14,7 @@ struct ActivityPage: View {
     var gender:String
     var body: some View {
         VStack{
+            
             VStack(alignment: .leading, spacing: 3){
                 Text("Activities")
                     .font(.custom("Poppins", size: 22))
@@ -21,6 +22,7 @@ struct ActivityPage: View {
             }.position(
                 x: UIScreen.main.bounds.width * 0.33,
                 y: -UIScreen.main.bounds.height * 0.01)
+            
             VStack(spacing: 41){
                 HStack(spacing: 18){
                     ForEach(0 ..< 3) { item in
@@ -54,7 +56,7 @@ struct ActivityPage: View {
                 x: UIScreen.main.bounds.width / 2,
                 y: UIScreen.main.bounds.height * 0.07)
             
-            NavigationLink(destination: SelectLuggagePage())
+            NavigationLink(destination: SelectLuggagePage(luggage: ""))
             {
                 Image("ButtonL")
                     .resizable()

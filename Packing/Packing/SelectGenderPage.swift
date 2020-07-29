@@ -8,9 +8,11 @@
 
 import SwiftUI
 
+var a = ""
 
 struct SelectGenderPage: View {
     @State var isMale : Bool = false
+    @State var isFemale : Bool = false
     @State var sendedGender : String = ""
     var body: some View {
         
@@ -33,30 +35,57 @@ struct SelectGenderPage: View {
                 
                 HStack {
                     Button(action: {
+                        
+                        self.isMale = true
+                        self.isFemale = false
                         self.sendedGender = "Male"
                         print(self.sendedGender)
                     }){
+                        if(isMale == true)
+                        {
+                            Image("ManSelected")
+                            .renderingMode(.original)
+                            .frame(
+                                width: UIScreen.main.bounds.width * 0.4,
+                                height: UIScreen.main.bounds.height * 0.23)
+                        }
+                        else
+                        {
                         Image("Man")
                             .renderingMode(.original)
                             .frame(
                                 width: UIScreen.main.bounds.width * 0.4,
                                 height: UIScreen.main.bounds.height * 0.23)
-                    }
+                        }
+                        }
                     
                     
                     
                     Spacer()
                         .frame(width: UIScreen.main.bounds.width * 0.05)
                     Button(action: {
+                        self.isMale = false
+                        self.isFemale = true
                         self.sendedGender = "Female"
                         print(self.sendedGender)
                     }){
+                       
+                        if(isFemale == true)
+                        {
+                            Image("WomanSelected")
+                            .renderingMode(.original)
+                            .frame(
+                                width: UIScreen.main.bounds.width * 0.4,
+                                height: UIScreen.main.bounds.height * 0.23)
+                        }
+                        else
+                        {
                         Image("Woman")
                             .renderingMode(.original)
                             .frame(
                                 width: UIScreen.main.bounds.width * 0.4,
                                 height: UIScreen.main.bounds.height * 0.23)
-                        
+                        }
                         
                     }
                 }
