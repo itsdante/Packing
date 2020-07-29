@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-let activities : [String] = ["beach","hike","formal events","winter sport","swimming","gym","photography","business","party/festivals"]
+let activities : [String] = ["beach","hike","formal events","winter sport","swimming","gym","photography","business","party"]
 
 struct ActivityPage: View {
     var gender:String
@@ -110,15 +110,13 @@ struct ActivityCard: View {
                         x: 0,
                         y: 6)
             
-            VStack(spacing: 7){
                 Image("\(activities[num])")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(
-                        width: UIScreen.main.bounds.width * 0.12,
-                        height: UIScreen.main.bounds.height * 0.07)
-                Text("\(activities[num].capitalized)")
-            }
+                        width: UIScreen.main.bounds.width * 0.27,
+                        height: UIScreen.main.bounds.height * 0.14)
+            
         }
     }
 }
