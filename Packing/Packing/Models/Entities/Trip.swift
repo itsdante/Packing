@@ -19,9 +19,11 @@ struct Trip: Identifiable {
     var arrivalDate: Date
     var createdAt: Date
     var luggages: [Luggage]
+    var restrictions: [Restriction]
 }
 
 #if DEBUG
 let luggageArray = [luggage1, luggage2]
-let trip = Trip(bookingNumber: "71938JC", airline: "Lion Air", flightNumber: "GA4828", origin: "CGK", destination: "HND", departureDate: Date(), arrivalDate: Date(), createdAt: Date(), luggages: luggageArray)
+let restrictionArray = [Restriction(mainTitle: .restrictedArticles), Restriction(mainTitle: .dangerousGoods), Restriction(mainTitle: .liquids), Restriction(mainTitle: .batteries)]
+let trip = Trip(bookingNumber: "71938JC", airline: "Lion Air", flightNumber: "GA4828", origin: "CGK", destination: "HND", departureDate: Date(), arrivalDate: Date(), createdAt: Date(), luggages: luggageArray, restrictions: restrictionArray)
 #endif

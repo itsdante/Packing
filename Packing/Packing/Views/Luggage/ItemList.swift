@@ -32,7 +32,7 @@ struct ItemList: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(luggage.category)
+                Text(luggage.categoryString)
                     .font(ItemList.sectionFont)
                     .foregroundColor(ItemList.sectionFontColor)
                 Spacer()
@@ -66,7 +66,7 @@ struct ItemList: View {
                                 .foregroundColor(ItemList.addItemColor)
                         }
                         .padding(.vertical, 5)
-                        ForEach(luggage.items) { item in
+                        ForEach(luggage.items.sorted { $0.isCompleted && $1.isCompleted }) { item in
                             ItemCell(item: item)
                         }
                     }

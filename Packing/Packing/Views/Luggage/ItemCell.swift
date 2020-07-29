@@ -17,7 +17,7 @@ struct ItemCell: View {
     private static let itemFont: Font = Font.custom("Poppins-Regular", size: 15)
     private static let itemColor: Color = Color(UIColor.init(hex: 0x555B6E))
     
-    var item: Item
+    @State var item: Item
     
     var body: some View {
         HStack {
@@ -26,12 +26,13 @@ struct ItemCell: View {
                 .frame(width: 20, height: 20)
                 .foregroundColor(item.isCompleted ? ItemCell.completedColor : ItemCell.emptyColor)
                 .onTapGesture {
-                    
+                    self.item.isCompleted.toggle()
             }
             Text(item.name)
                 .font(ItemCell.itemFont)
                 .foregroundColor(ItemCell.itemColor)
                 .strikethrough(item.isCompleted)
+            Spacer()
         }
         .padding(.vertical, 5)
     }

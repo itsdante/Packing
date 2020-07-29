@@ -9,47 +9,89 @@
 import UIKit
 
 struct Luggage: Identifiable {
+    enum Category {
+        case esssentials
+        case toiletries
+        case clothing
+        case beach
+        case winter
+        case photography
+        case hike
+        case swimming
+        case business
+        case formal
+        case gym
+        case party
+    }
+    
     var id: String = UUID().uuidString
-    var category: String
+    var category: Category
     var isCheckedIn: Bool
     var items: [Item]
     
+    var categoryString: String {
+        switch category {
+        case .esssentials:
+            return "Essentials"
+        case .toiletries:
+            return "Toiletries"
+        case .clothing:
+            return "Clothing"
+        case .beach:
+            return "Beach"
+        case .winter:
+            return "Winter Sport"
+        case .photography:
+            return "Photography"
+        case .hike:
+            return "Hike"
+        case .swimming:
+            return "Swimming"
+        case .business:
+            return "Business"
+        case .formal:
+            return "Formal Events"
+        case .gym:
+            return "Gym"
+        case .party:
+            return "Party/Festivals"
+        }
+    }
+    
     var categoryColor: UIColor {
         switch category {
-        case "Essentials":
+        case .esssentials:
             return UIColor.init(hex: 0xFFC738)
-        case "Toiletries":
+        case .toiletries:
             return UIColor.init(hex: 0xFF90AB)
-        case "Clothing":
+        case .clothing:
             return UIColor.init(hex: 0x8470FF)
-        case "Beach":
+        case .beach:
             return UIColor.init(hex: 0xFCAF3D)
-        case "Winter Sport":
+        case .winter:
             return UIColor.init(hex: 0x82E9E3)
-        case "Photography":
+        case .photography:
             return UIColor.init(hex: 0x676CFF)
-        case "Hike":
+        case .hike:
             return UIColor.init(hex: 0x77E178)
-        case "Swimming":
+        case .swimming:
             return UIColor.init(hex: 0x8AD5FF)
-        case "Business":
+        case .business:
             return UIColor.init(hex: 0xFC8C3B)
-        case "Formal Events":
+        case .formal:
             return UIColor.init(hex: 0x2F7CF6)
-        case "Gym":
+        case .gym:
             return UIColor.init(hex: 0xBC6EF4)
-        case "Party/Festivals":
+        case .party:
             return UIColor.init(hex: 0xFF6D5F)
-        default:
-            return UIColor.init(hex: 0x8E8E93)
         }
     }
 }
 
 #if DEBUG
 let itemArray1 = [item1, item2, item3]
-let luggage1 = Luggage(category: "Essentials", isCheckedIn: false, items: itemArray1)
+let luggage1 = Luggage(category: .esssentials, isCheckedIn: false, items: itemArray1)
 
 let itemArray2 = [item4, item5, item6, item7]
-let luggage2 = Luggage(category: "Toiletries", isCheckedIn: false, items: itemArray2)
+let luggage2 = Luggage(category: .toiletries, isCheckedIn: false, items: itemArray2)
 #endif
