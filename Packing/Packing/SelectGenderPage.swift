@@ -8,14 +8,18 @@
 
 import SwiftUI
 
-var sendedGender = ""
 
 struct SelectGenderPage: View {
+    @State var isMale : Bool = false
+    @State var sendedGender : String = ""
     var body: some View {
         
-        NavigationView{
-            ZStack{
-                VStack(alignment: .leading){
+        NavigationView
+            {
+            ZStack
+                {
+                VStack(alignment: .leading)
+                {
                     Text("Gender")
                         .font(.custom(
                             "Poppins-SemiBold",
@@ -27,10 +31,40 @@ struct SelectGenderPage: View {
                         .fontWeight(.regular)
                 }.position(x: UIScreen.main.bounds.width * 0.22, y: UIScreen.main.bounds.height * 0.04)
                 
-                GenderCard()
+                HStack {
+                    Button(action: {
+                        self.sendedGender = "Male"
+                        print(self.sendedGender)
+                    }){
+                        Image("Man")
+                            .renderingMode(.original)
+                            .frame(
+                                width: UIScreen.main.bounds.width * 0.4,
+                                height: UIScreen.main.bounds.height * 0.23)
+                    }
+                    
+                    
+                    
+                    Spacer()
+                        .frame(width: UIScreen.main.bounds.width * 0.05)
+                    Button(action: {
+                        self.sendedGender = "Female"
+                        print(self.sendedGender)
+                    }){
+                        Image("Woman")
+                            .renderingMode(.original)
+                            .frame(
+                                width: UIScreen.main.bounds.width * 0.4,
+                                height: UIScreen.main.bounds.height * 0.23)
+                        
+                        
+                    }
+                }
                     .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
                 
-                NavigationLink(destination: ActivityPage(gender: sendedGender)){
+                    NavigationLink(destination: ActivityPage(
+                        gender: sendedGender))
+                {
                     Image("ButtonL")
                         .resizable()
                         .aspectRatio(
@@ -58,36 +92,3 @@ struct SelectGenderPage_Previews: PreviewProvider {
     }
 }
 
-struct GenderCard: View {
-    var body: some View {
-        HStack {
-            Button(action: {
-                sendedGender = "Male"
-                print(sendedGender)
-            }){
-                Image("Man")
-                    .renderingMode(.original)
-                    .frame(
-                        width: UIScreen.main.bounds.width * 0.4,
-                        height: UIScreen.main.bounds.height * 0.23)
-            }
-            
-            
-            
-            Spacer()
-                .frame(width: UIScreen.main.bounds.width * 0.05)
-            Button(action: {
-                sendedGender = "Female"
-                print(sendedGender)
-            }){
-                Image("Woman")
-                    .renderingMode(.original)
-                    .frame(
-                        width: UIScreen.main.bounds.width * 0.4,
-                        height: UIScreen.main.bounds.height * 0.23)
-                
-                
-            }
-        }
-    }
-}

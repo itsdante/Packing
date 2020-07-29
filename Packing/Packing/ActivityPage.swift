@@ -27,7 +27,7 @@ struct ActivityPage: View {
                         
                         Button(action: {
                             print("\(item)")
-                            print("\(sendedGender)")
+                            print("\(self.gender)")
                         }) {
                             ActivityCard(num: item)
                         }.buttonStyle(PlainButtonStyle())
