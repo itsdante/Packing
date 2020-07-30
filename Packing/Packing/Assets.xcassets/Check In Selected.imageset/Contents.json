@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Formal Events.png",
+      "filename" : "Check In Selected.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Formal Events@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Formal Events@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

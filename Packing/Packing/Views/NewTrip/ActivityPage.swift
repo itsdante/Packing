@@ -13,15 +13,17 @@ let activities : [String] = ["beach","hike","formal events","winter sport","swim
 struct ActivityPage: View {
     var gender:String
     var body: some View {
-        VStack{
+        ZStack{
             
             VStack(alignment: .leading, spacing: 3){
                 Text("Activities")
-                    .font(.custom("Poppins", size: 22))
+                    .font(.custom("Poppins-SemiBold", size: 22))
+                .foregroundColor(.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
                 Text("What Activities Will You Do")
+                .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
             }.position(
                 x: UIScreen.main.bounds.width * 0.33,
-                y: -UIScreen.main.bounds.height * 0.01)
+                y: UIScreen.main.bounds.height * 0.04)
             
             VStack(spacing: 41){
                 HStack(spacing: 18){
@@ -64,7 +66,7 @@ struct ActivityPage: View {
                 }
             }.position(
                 x: UIScreen.main.bounds.width / 2,
-                y: UIScreen.main.bounds.height * 0.07)
+                y: UIScreen.main.bounds.height * 0.34)
             
             NavigationLink(destination: SelectLuggagePage(luggage: ""))
             {
@@ -80,7 +82,7 @@ struct ActivityPage: View {
             }.buttonStyle(PlainButtonStyle())
                 .position(
                     x: UIScreen.main.bounds.width / 2,
-                    y: UIScreen.main.bounds.height * 0.01)
+                    y: UIScreen.main.bounds.height * 0.81)
                 
             
         }

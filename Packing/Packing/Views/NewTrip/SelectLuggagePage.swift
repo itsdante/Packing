@@ -16,6 +16,7 @@ struct SelectLuggagePage: View {
             VStack(alignment: .leading, spacing: 6){
                 Text("Luggage")
                     .font(.custom("Poppins-SemiBold", size: 22))
+                .foregroundColor(.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
                 Text("What Kind of Luggage Will You Bring?")
                     .font(.custom("Poppins-SemiBold", size: 14))
                     .fontWeight(.regular)
