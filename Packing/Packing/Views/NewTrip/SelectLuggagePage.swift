@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct SelectLuggagePage: View {
+    @State var luggage : String
     var body: some View {
         ZStack{
             VStack(alignment: .leading, spacing: 6){
@@ -19,11 +20,17 @@ struct SelectLuggagePage: View {
                     .fontWeight(.regular)
             }
             .position(x: UIScreen.main.bounds.width * 0.38, y: UIScreen.main.bounds.height * 0.04)
-            LuggageCard()
+            LuggageCard(isCarryOn: false, isCheckedIn: false, luggage: $luggage)
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
-            
-            NextButton()
-                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
+            NavigationLink(destination: SelectGenderPage())
+            {
+            Image("ButtonL")
+            .renderingMode(.original)
+            .frame(width: UIScreen.main.bounds.width * 0.76, height: UIScreen.main.bounds.height * 0.045)
+                
+                
+            }
+            .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
         }
         
     }
@@ -31,46 +38,73 @@ struct SelectLuggagePage: View {
 
 struct SelectLuggagePage_Previews: PreviewProvider {
     static var previews: some View {
-        SelectLuggagePage()
+        SelectLuggagePage(luggage: "")
     }
 }
 
 struct LuggageCard: View {
+    @State var isCarryOn : Bool
+    @State var isCheckedIn : Bool
+    @Binding var luggage : String
     var body: some View {
-        HStack {
-            Button(action: {
-                print("asdadsdsadasda1")
-            }){
-                Image("CarryOn")
-                    .renderingMode(.original)
-                    .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.23)
-            }
-            
-            
-            
-            Spacer()
-                .frame(width: UIScreen.main.bounds.width * 0.05)
-            Button(action: {
-                print("asdadsdsadasda1")
-            }){
-                Image("CheckIn")
-                    .renderingMode(.original)
-                    .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.23)
-                
-                
-            }
-        }
-    }
-}
-
-struct NextButton: View {
-    var body: some View {
+    HStack {
         Button(action: {
-            print("asdadasdd")
-        }) {
-            Image("ButtonL")
+            self.isCarryOn = true
+            self.isCheckedIn = false
+            self.luggage = "CarryOn"
+            print("asdadsdsadasda1")
+        }){
+            if(isCarryOn == true)
+            {
+                Image("CarryOnSelected")
                 .renderingMode(.original)
-                .frame(width: UIScreen.main.bounds.width * 0.76, height: UIScreen.main.bounds.height * 0.045)
+                .frame(
+                    width: UIScreen.main.bounds.width * 0.4,
+                    height: UIScreen.main.bounds.height * 0.23)
+            }
+            else
+            {
+            Image("CarryOn")
+                .renderingMode(.original)
+                .frame(
+                    width: UIScreen.main.bounds.width * 0.4,
+                    height: UIScreen.main.bounds.height * 0.23)
+            }
+        }
+        
+        
+        
+        Spacer()
+            .frame(width: UIScreen.main.bounds.width * 0.05)
+        Button(action: {
+            self.isCarryOn = false
+            self.isCheckedIn = true
+            self.luggage = "CheckIn"
+            print("asdadsdsadasda1")
+        }){
+            
+            if(isCheckedIn == true)
+            {
+                Image("CheckInSelected")
+                .renderingMode(.original)
+                .frame(
+                    width: UIScreen.main.bounds.width * 0.4,
+                    height: UIScreen.main.bounds.height * 0.23)
+            }
+            else
+            {
+            Image("CheckIn")
+                .renderingMode(.original)
+                .frame(
+                    width: UIScreen.main.bounds.width * 0.4,
+                    height: UIScreen.main.bounds.height * 0.23)
+            
+            }
+            
+        }
         }
     }
-}
+    }
+    
+
+
