@@ -11,6 +11,7 @@ import SwiftUI
 struct SelectLuggagePage: View {
     @State var ctr : Int
     @State var luggage : String
+    var trip: Trip
     var body: some View {
         ZStack{
             VStack(alignment: .leading, spacing: 6){
@@ -50,7 +51,7 @@ struct SelectLuggagePage: View {
 
 struct SelectLuggagePage_Previews: PreviewProvider {
     static var previews: some View {
-        SelectLuggagePage(ctr: 0, luggage: "")
+        SelectLuggagePage(ctr: 0, luggage: "", trip: tripTestData)
     }
 }
 

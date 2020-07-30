@@ -10,7 +10,7 @@ import SwiftUI
 
 struct InputBookingNumberPage: View {
     
-    
+    var trip: Trip
     
     var body: some View {
         NavigationView{
@@ -27,7 +27,7 @@ struct InputBookingNumberPage: View {
                 //                    .renderingMode(.original)
                 //                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.28)
                 //            }
-                NavigationLink(destination: SelectLuggagePage(ctr: 0, luggage: ""))
+                NavigationLink(destination: SelectLuggagePage(ctr: 0, luggage: "", trip: trip))
                     {
                         Image("ButtonL")
                         .renderingMode(.original)
@@ -44,7 +44,7 @@ struct InputBookingNumberPage: View {
 
 struct InputBookingNumberPage_Previews: PreviewProvider {
     static var previews: some View {
-        InputBookingNumberPage()
+        InputBookingNumberPage(trip: tripTestData)
     }
 }
 

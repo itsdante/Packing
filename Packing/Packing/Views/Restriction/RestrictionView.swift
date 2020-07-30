@@ -17,12 +17,14 @@ struct RestrictionView: View {
                 RestrictionCard(restriction: restriction)
                     .fixedSize(horizontal: false, vertical: true)
             }
-        }.navigationBarTitle("Restricted Items", displayMode: .inline)
+        }
+        .padding(.top, 20)
+        .navigationBarTitle("Restricted Items", displayMode: .inline)
     }
 }
 
 struct RestrictionView_Previews: PreviewProvider {
     static var previews: some View {
-        RestrictionView(trip: trip)
+        RestrictionView(trip: tripTestData)
     }
 }

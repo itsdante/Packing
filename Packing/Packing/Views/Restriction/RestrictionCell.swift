@@ -42,7 +42,6 @@ struct RestrictionCell: View {
                 Spacer()
             }
             .padding(.horizontal, 15)
-            //            .padding(.vertical, 10)
         }
         .frame(width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.height * 0.08)
         .padding(.horizontal, 24)

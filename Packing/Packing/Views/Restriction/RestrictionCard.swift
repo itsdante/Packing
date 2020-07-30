@@ -24,7 +24,7 @@ struct RestrictionCard: View {
     
     var restriction: Restriction
     
-    @State private var isExpanded: Bool = true
+    @State private var isExpanded: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {

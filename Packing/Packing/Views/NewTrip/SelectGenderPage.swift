@@ -14,10 +14,8 @@ struct SelectGenderPage: View {
     @State var isMale : Bool = false
     @State var isFemale : Bool = false
     @State var sendedGender : String = ""
+    var trip: Trip
     var body: some View {
-        
-        NavigationView
-            {
             ZStack
                 {
                 VStack(alignment: .leading)
@@ -93,7 +91,7 @@ struct SelectGenderPage: View {
                 }
                     .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
                     if self.isMale == true || self.isFemale == true {
-                        NavigationLink(destination: ActivityPage(gender: sendedGender))
+                        NavigationLink(destination: ActivityPage(gender: sendedGender, trip: trip))
                 {
                     Image("ButtonL")
                         .resizable()
@@ -112,13 +110,13 @@ struct SelectGenderPage: View {
                         y: UIScreen.main.bounds.height * 0.81)
                     }
             }
-        }
+        
     }
 }
 
 
 struct SelectGenderPage_Previews: PreviewProvider {
     static var previews: some View {
-        SelectGenderPage()
+        SelectGenderPage(trip: tripTestData)
     }
 }

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    init(trip: Trip) {
+    init() {
         // this is not the same as manipulating the proxy directly
         let appearance = UINavigationBarAppearance()
         
@@ -18,7 +18,7 @@ struct ContentView: View {
         
         // this only applies to big titles
         appearance.largeTitleTextAttributes = [
-            .font : UIFont.systemFont(ofSize: 20),
+            .font : UIFont(name: "Poppins-SemiBold", size: 28) ?? UIFont.systemFont(ofSize: 28),
             NSAttributedString.Key.foregroundColor : UIColor.init(hex: 0x4E4D4D)
         ]
         // this only applies to small titles
@@ -38,8 +38,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            NavigationLink(destination: LuggageView(trip: trip)) {
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            NavigationLink(destination: SelectGenderPage(trip: tripTestData)) {
+                Text("Tap")
             }
         }
         
@@ -48,6 +48,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(trip: trip)
+        ContentView()
     }
 }

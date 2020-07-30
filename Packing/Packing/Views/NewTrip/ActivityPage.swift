@@ -12,6 +12,7 @@ let activities : [String] = ["beach","hike","formal events","winter sport","swim
 
 struct ActivityPage: View {
     var gender:String
+    var trip: Trip
     var body: some View {
         ZStack{
             
@@ -68,7 +69,7 @@ struct ActivityPage: View {
                 x: UIScreen.main.bounds.width / 2,
                 y: UIScreen.main.bounds.height * 0.34)
            
-                NavigationLink(destination: SelectLuggagePage(ctr : 0 , luggage: ""))
+            NavigationLink(destination: SelectLuggagePage(ctr : 0 , luggage: "", trip: trip))
             {
                 Image("ButtonL")
                     .resizable()
@@ -94,7 +95,7 @@ struct ActivityPage: View {
 struct ActivityPage_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            ActivityPage(gender: "Male")
+            ActivityPage(gender: "Male", trip: tripTestData)
         }
     }
 }

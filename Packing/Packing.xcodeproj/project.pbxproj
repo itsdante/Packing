@@ -51,6 +51,9 @@
 		89A7BF1324C83A5F008734ED /* WeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1224C83A5F008734ED /* WeatherCardView.swift */; };
 		89A7BF1524C83A78008734ED /* WeatherScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1424C83A78008734ED /* WeatherScrollView.swift */; };
 		89A7BF1724C83A8B008734ED /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1624C83A8B008734ED /* WeatherView.swift */; };
+		89E29F1224D2F0A1001BB7FB /* DateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1124D2F0A1001BB7FB /* DateFormater.swift */; };
+		89E29F1524D2F10B001BB7FB /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1424D2F10B001BB7FB /* HomeCard.swift */; };
+		89E29F1724D2F116001BB7FB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1624D2F116001BB7FB /* HomeView.swift */; };
 		89EE4D2224D12E760097AE33 /* RestrictionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE4D2124D12E760097AE33 /* RestrictionCell.swift */; };
 		CB07B442DAF0F4CEEFF62324 /* Pods_Packing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D6FEACBCD90E97265732CE /* Pods_Packing.framework */; };
 		FE32F8A5675B22FDE6780D50 /* Pods_PackingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF64CFEAEF01DBCDDA86BCA /* Pods_PackingTests.framework */; };
@@ -129,6 +132,9 @@
 		89A7BF1224C83A5F008734ED /* WeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCardView.swift; sourceTree = "<group>"; };
 		89A7BF1424C83A78008734ED /* WeatherScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScrollView.swift; sourceTree = "<group>"; };
 		89A7BF1624C83A8B008734ED /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		89E29F1124D2F0A1001BB7FB /* DateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormater.swift; sourceTree = "<group>"; };
+		89E29F1424D2F10B001BB7FB /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
+		89E29F1624D2F116001BB7FB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		89EE4D2124D12E760097AE33 /* RestrictionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionCell.swift; sourceTree = "<group>"; };
 		C0E0E2A3D31FD8B3865D0987 /* Pods-Packing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packing.debug.xcconfig"; path = "Target Support Files/Pods-Packing/Pods-Packing.debug.xcconfig"; sourceTree = "<group>"; };
 		D0D6FEACBCD90E97265732CE /* Pods_Packing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Packing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,8 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				8950950424CFF1AF0034CAA7 /* ContentView.swift */,
+				89E29F1324D2F0E7001BB7FB /* Home */,
 				8938EB0124CF334600D8AFFC /* NewTrip */,
-				8938EB0824CF395300D8AFFC /* Weather */,
 				8938EAF724CF31F600D8AFFC /* Luggage */,
 				89343BCC24D115E1003AF780 /* Restriction */,
 			);
@@ -324,6 +330,24 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		89E29F1024D2F07F001BB7FB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				89E29F1124D2F0A1001BB7FB /* DateFormater.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		89E29F1324D2F0E7001BB7FB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				89E29F1624D2F116001BB7FB /* HomeView.swift */,
+				89E29F1424D2F10B001BB7FB /* HomeCard.swift */,
+				8938EB0824CF395300D8AFFC /* Weather */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		E82E604AC454FD093604A036 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +391,7 @@
 				8938EB0024CF327100D8AFFC /* Persistence */,
 				8938EAFF24CF325700D8AFFC /* Common */,
 				89A7BF0724C839CA008734ED /* Extensions */,
+				89E29F1024D2F07F001BB7FB /* Utilities */,
 				89A7BF0624C839C5008734ED /* Models */,
 				89A7BF0524C839BD008734ED /* Views */,
 				FECAA3AE24B3944C004B85AD /* ViewController.swift */,
@@ -653,6 +678,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E29F1524D2F10B001BB7FB /* HomeCard.swift in Sources */,
 				8938EB0724CF343400D8AFFC /* Trip.swift in Sources */,
 				897AB16624D26E6800B308C9 /* SelectLuggagePage.swift in Sources */,
 				8938EB0324CF341400D8AFFC /* Item.swift in Sources */,
@@ -665,11 +691,13 @@
 				FECAA3AF24B3944C004B85AD /* ViewController.swift in Sources */,
 				89343BD824D11F7B003AF780 /* Restriction.swift in Sources */,
 				895094DB24CFC1B20034CAA7 /* CustomSegmentedPicker.swift in Sources */,
+				89E29F1724D2F116001BB7FB /* HomeView.swift in Sources */,
 				89A7BF0A24C839F5008734ED /* UIColor+Extensions.swift in Sources */,
 				89A7BF1724C83A8B008734ED /* WeatherView.swift in Sources */,
 				89A7BF1524C83A78008734ED /* WeatherScrollView.swift in Sources */,
 				89A7BF1124C83A30008734ED /* NetworkManager.swift in Sources */,
 				89343BD224D118A9003AF780 /* RestrictionView.swift in Sources */,
+				89E29F1224D2F0A1001BB7FB /* DateFormater.swift in Sources */,
 				89343BCE24D11873003AF780 /* RestrictionCard.swift in Sources */,
 				897AB16424D26E5B00B308C9 /* ActivityPage.swift in Sources */,
 				897AB16224D26E4E00B308C9 /* SelectGenderPage.swift in Sources */,
@@ -857,7 +885,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = C3S1MC3.Packing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -876,7 +904,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = C3S1MC3.Packing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
