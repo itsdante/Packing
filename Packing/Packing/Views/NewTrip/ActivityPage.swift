@@ -11,6 +11,7 @@ import SwiftUI
 let activities : [String] = ["beach","hike","formal events","winter sport","swimming","gym","photography","business","party"]
 
 struct ActivityPage: View {
+    @State var isSelected : Bool
     var gender:String
     var body: some View {
         VStack{
@@ -30,8 +31,12 @@ struct ActivityPage: View {
                         Button(action: {
                             print("\(item)")
                             print("\(self.gender)")
+                            
                         }) {
-                            ActivityCard(num: item)
+                            ActivityCard(
+                                num: item,
+                                name: activities[item],
+                                isSelected: self.isSelected)
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }
@@ -40,7 +45,10 @@ struct ActivityPage: View {
                         
                         Button(action: {print("\(item)")}) {
                             
-                            ActivityCard(num: item)
+                            ActivityCard(
+                                num: item,
+                                name: activities[item],
+                                isSelected: self.isSelected)
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }
@@ -48,7 +56,10 @@ struct ActivityPage: View {
                     ForEach(6 ..< 9) { item in
                         Button(action: {print("\(item)")}) {
                             
-                            ActivityCard(num: item)
+                            ActivityCard(
+                                num: item,
+                                name: activities[item],
+                                isSelected: self.isSelected)
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }
@@ -81,7 +92,7 @@ struct ActivityPage: View {
 struct ActivityPage_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            ActivityPage(gender: "Male")
+            ActivityPage(isSelected: false, gender: "Male")
         }
     }
 }
@@ -90,9 +101,12 @@ struct ActivityPage_Previews: PreviewProvider {
 
 struct ActivityCard: View {
     
-    var num = 0
+    var num : Int
+    var name : String
+    @State var isSelected : Bool
     
     var body: some View {
+        
         ZStack{
             Rectangle()
                 .frame(
@@ -105,17 +119,41 @@ struct ActivityCard: View {
                     red: 0.396,
                     green: 0.298,
                     blue: 1,
-                    alpha: 0.08)),
+                    alpha: 0.1)),
                         radius: 21,
                         x: 0,
                         y: 6)
             
-                Image("\(activities[num])")
+            if isSelected == true {
+                Image("\(name) Selected")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(
+                    width: UIScreen.main.bounds.width * 0.27,
+                    height: UIScreen.main.bounds.height * 0.14)
+                
+                
+            }
+            else
+            {
+            
+                Image("\(name)")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(
                         width: UIScreen.main.bounds.width * 0.27,
                         height: UIScreen.main.bounds.height * 0.14)
+            
+            }
+        }.onTapGesture {
+            self.isSelected.toggle()
+            if self.isSelected == true {
+                print("TRUE \(self.name)")
+            }
+            else
+            {
+                print("False \(self.name)")
+            }
             
         }
     }
