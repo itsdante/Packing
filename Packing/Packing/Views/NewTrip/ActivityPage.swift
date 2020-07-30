@@ -13,6 +13,7 @@ let activities : [String] = ["beach","hike","formal events","winter sport","swim
 struct ActivityPage: View {
     var gender:String
     var trip: Trip
+    @State var newLuggageArray : [Luggage]
     var body: some View {
         ZStack{
             
@@ -40,7 +41,9 @@ struct ActivityPage: View {
                             ActivityCard(
                                 num: item,
                                 name: activities[item],
-                                isSelected: false)
+                                isSelected: false,
+                                newLuggage: luggage1,
+                                newLuggageArray: self.$newLuggageArray)
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }
@@ -51,7 +54,9 @@ struct ActivityPage: View {
                             
                             ActivityCard(num: item,
                                 name: activities[item],
-                                isSelected: false)
+                                isSelected: false,
+                                newLuggage: luggage1,
+                                newLuggageArray: self.$newLuggageArray)
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }
@@ -61,7 +66,9 @@ struct ActivityPage: View {
                             
                             ActivityCard(num: item,
                                 name: activities[item],
-                                isSelected: false)
+                                isSelected: false,
+                                newLuggage: luggage1,
+                                newLuggageArray: self.$newLuggageArray)
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }
@@ -86,6 +93,7 @@ struct ActivityPage: View {
                     y: UIScreen.main.bounds.height * 0.81)
                 
             
+
         }
         
     }
@@ -95,7 +103,7 @@ struct ActivityPage: View {
 struct ActivityPage_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            ActivityPage(gender: "Male", trip: tripTestData)
+            ActivityPage(gender: "Male", trip: tripTestData, newLuggageArray: [])
         }
     }
 }
@@ -108,7 +116,8 @@ struct ActivityCard: View {
     var num : Int
     var name : String
     @State var isSelected : Bool
-    
+    @State var newLuggage : Luggage
+    @Binding var newLuggageArray : [Luggage]
     var body: some View {
         
         
@@ -157,12 +166,24 @@ struct ActivityCard: View {
             if self.isSelected == true {
                 print("TRUE \(self.num)")
                 pickedActivity.append(self.num)
+                self.newLuggage = Luggage(
+                    id: activities[self.num],
+                    category: Luggage.Category.beach,
+                    isCheckedIn: false,
+                    items: [item1])
+                self.newLuggageArray.append(self.newLuggage)
             }
             else
             {
                 print("False \(self.name)")
                 let index = pickedActivity.firstIndex(of: self.num)
                 pickedActivity.remove(at: index!)
+                let newLuggageIndex = self.newLuggageArray.firstIndex{
+                    $0.id == activities[self.num]
+                }
+                self.newLuggageArray.remove(at: newLuggageIndex!)
+                print(newLuggageIndex!)
+                
             }
             
         }
