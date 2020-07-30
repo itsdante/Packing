@@ -22,7 +22,7 @@ struct SelectLuggagePage: View {
                     .fontWeight(.regular)
                 .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
             }
-            .position(x: UIScreen.main.bounds.width * 0.38, y: UIScreen.main.bounds.height * 0.04)
+            .position(x: UIScreen.main.bounds.width * 0.38, y: UIScreen.main.bounds.height * 0)
             LuggageCard(isCarryOn: false, isCheckedIn: false, luggage: $luggage)
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
             NavigationLink(destination: LuggageView(trip: trip))

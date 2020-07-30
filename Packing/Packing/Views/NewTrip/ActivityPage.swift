@@ -23,7 +23,7 @@ struct ActivityPage: View {
                 .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
             }.position(
                 x: UIScreen.main.bounds.width * 0.33,
-                y: UIScreen.main.bounds.height * 0.04)
+                y: UIScreen.main.bounds.height * 0)
             
             VStack(spacing: 41){
                 HStack(spacing: 18){
