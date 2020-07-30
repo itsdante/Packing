@@ -28,10 +28,12 @@ struct SelectGenderPage: View {
                             size: 22))
                     Text("Choose Your Gender")
                         .font(.custom(
-                            "SF Pro Display",
-                            size: 14))
+                            "Poppins-SemiBold",
+                            size: 12))
                         .fontWeight(.regular)
-                }.position(x: UIScreen.main.bounds.width * 0.22, y: UIScreen.main.bounds.height * 0.04)
+                        .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
+                }.frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.1)
+                .position(x: UIScreen.main.bounds.width * 0.22, y: UIScreen.main.bounds.height * 0.04)
                 
                 HStack {
                     Button(action: {
@@ -107,7 +109,7 @@ struct SelectGenderPage: View {
                     PlainButtonStyle())
                     .position(
                         x: UIScreen.main.bounds.width / 2,
-                        y: UIScreen.main.bounds.height * 0.7)
+                        y: UIScreen.main.bounds.height * 0.81)
             }
         }
     }

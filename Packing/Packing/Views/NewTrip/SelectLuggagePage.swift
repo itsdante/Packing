@@ -17,31 +17,30 @@ struct SelectLuggagePage: View {
                 Text("Luggage")
                     .font(.custom("Poppins-SemiBold", size: 22))
                 Text("What Kind of Luggage Will You Bring?")
-                    .font(.custom("SF Pro Display", size: 14))
+                    .font(.custom("Poppins-SemiBold", size: 14))
                     .fontWeight(.regular)
+                .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
             }
             .position(x: UIScreen.main.bounds.width * 0.38, y: UIScreen.main.bounds.height * 0.04)
             LuggageCard(isCarryOn: false, isCheckedIn: false, luggage: $luggage)
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
-            NavigationLink(destination: LuggageView(trip: Trip(
-                bookingNumber: "71938JC",
-                airline: "Lion Air",
-                flightNumber: "GA4828",
-                origin: "CGK",
-                destination: "HND",
-                departureDate: Date(),
-                arrivalDate: Date(),
-                createdAt: Date(),
-                luggages: luggageArray,
-                restrictions: restrictionArray)))
+            NavigationLink(destination: LuggageView(trip: trip))
             {
-            Image("ButtonL")
-            .renderingMode(.original)
-            .frame(width: UIScreen.main.bounds.width * 0.76, height: UIScreen.main.bounds.height * 0.045)
-                
-                
-            }
-            .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
+                Image("ButtonL")
+                    .resizable()
+                    .aspectRatio(
+                        contentMode: .fill)
+                    .frame(
+                        width: UIScreen.main.bounds.width * 0.936,
+                        height: UIScreen.main.bounds.height * 0.05)
+                    .position(
+                        x: UIScreen.main.bounds.width / 2,
+                        y: UIScreen.main.bounds.height * 0.27)
+            }.buttonStyle(
+                PlainButtonStyle())
+                .position(
+                    x: UIScreen.main.bounds.width / 2,
+                    y: UIScreen.main.bounds.height * 0.81)
         }
         
     }
@@ -60,8 +59,7 @@ struct LuggageCard: View {
     var body: some View {
     HStack {
         Button(action: {
-            self.isCarryOn = true
-            self.isCheckedIn = false
+            self.isCarryOn.toggle()
             self.luggage = "CarryOn"
             print("asdadsdsadasda1")
         }){
@@ -88,8 +86,7 @@ struct LuggageCard: View {
         Spacer()
             .frame(width: UIScreen.main.bounds.width * 0.05)
         Button(action: {
-            self.isCarryOn = false
-            self.isCheckedIn = true
+            self.isCheckedIn.toggle()
             self.luggage = "CheckIn"
             print("asdadsdsadasda1")
         }){
