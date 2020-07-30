@@ -91,8 +91,7 @@ struct SelectGenderPage: View {
                 }
                     .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
                 
-                    NavigationLink(destination: ActivityPage(
-                        isSelected: false, gender: sendedGender))
+                    NavigationLink(destination: ActivityPage(gender: sendedGender))
                 {
                     Image("ButtonL")
                         .resizable()

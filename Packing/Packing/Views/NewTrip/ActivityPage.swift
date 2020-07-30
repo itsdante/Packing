@@ -11,7 +11,6 @@ import SwiftUI
 let activities : [String] = ["beach","hike","formal events","winter sport","swimming","gym","photography","business","party"]
 
 struct ActivityPage: View {
-    @State var isSelected : Bool
     var gender:String
     var body: some View {
         VStack{
@@ -36,7 +35,7 @@ struct ActivityPage: View {
                             ActivityCard(
                                 num: item,
                                 name: activities[item],
-                                isSelected: self.isSelected)
+                                isSelected: false)
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }
@@ -48,7 +47,7 @@ struct ActivityPage: View {
                             ActivityCard(
                                 num: item,
                                 name: activities[item],
-                                isSelected: self.isSelected)
+                                isSelected: false)
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }
@@ -59,7 +58,7 @@ struct ActivityPage: View {
                             ActivityCard(
                                 num: item,
                                 name: activities[item],
-                                isSelected: self.isSelected)
+                                isSelected: false)
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }
@@ -82,6 +81,7 @@ struct ActivityPage: View {
                 .position(
                     x: UIScreen.main.bounds.width / 2,
                     y: UIScreen.main.bounds.height * 0.01)
+                
             
         }
         
@@ -92,10 +92,12 @@ struct ActivityPage: View {
 struct ActivityPage_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            ActivityPage(isSelected: false, gender: "Male")
+            ActivityPage(gender: "Male")
         }
     }
 }
+
+var pickedActivity :[Int] = []
 
 
 
@@ -107,27 +109,16 @@ struct ActivityCard: View {
     
     var body: some View {
         
+        
         ZStack{
-            Rectangle()
-                .frame(
-                    width: 102,
-                    height: 115)
-                .foregroundColor(.white)
-                .cornerRadius(20)
-                //                .shadow(radius: 10)
-                .shadow(color: .init(UIColor(
-                    red: 0.396,
-                    green: 0.298,
-                    blue: 1,
-                    alpha: 0.1)),
-                        radius: 21,
-                        x: 0,
-                        y: 6)
+            
             
             if isSelected == true {
+                
+                
                 Image("\(name) Selected")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .aspectRatio(contentMode: .fill)
                 .frame(
                     width: UIScreen.main.bounds.width * 0.27,
                     height: UIScreen.main.bounds.height * 0.14)
@@ -136,10 +127,24 @@ struct ActivityCard: View {
             }
             else
             {
-            
+            Rectangle()
+            .frame(
+                width: UIScreen.main.bounds.width * 0.27,
+                height: UIScreen.main.bounds.height * 0.14)
+            .foregroundColor(.white)
+            .cornerRadius(20)
+            //                .shadow(radius: 10)
+            .shadow(color: .init(UIColor(
+                red: 0.396,
+                green: 0.298,
+                blue: 1,
+                alpha: 0.1)),
+                    radius: 21,
+                    x: 0,
+                    y: 6)
                 Image("\(name)")
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
                     .frame(
                         width: UIScreen.main.bounds.width * 0.27,
                         height: UIScreen.main.bounds.height * 0.14)
@@ -148,11 +153,14 @@ struct ActivityCard: View {
         }.onTapGesture {
             self.isSelected.toggle()
             if self.isSelected == true {
-                print("TRUE \(self.name)")
+                print("TRUE \(self.num)")
+                pickedActivity.append(self.num)
             }
             else
             {
                 print("False \(self.name)")
+                let index = pickedActivity.firstIndex(of: self.num)
+                pickedActivity.remove(at: index!)
             }
             
         }

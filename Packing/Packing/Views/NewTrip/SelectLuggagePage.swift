@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct SelectLuggagePage: View {
+    
     @State var luggage : String
     var body: some View {
         ZStack{
@@ -22,7 +23,17 @@ struct SelectLuggagePage: View {
             .position(x: UIScreen.main.bounds.width * 0.38, y: UIScreen.main.bounds.height * 0.04)
             LuggageCard(isCarryOn: false, isCheckedIn: false, luggage: $luggage)
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
-            NavigationLink(destination: SelectGenderPage())
+            NavigationLink(destination: LuggageView(trip: Trip(
+                bookingNumber: "71938JC",
+                airline: "Lion Air",
+                flightNumber: "GA4828",
+                origin: "CGK",
+                destination: "HND",
+                departureDate: Date(),
+                arrivalDate: Date(),
+                createdAt: Date(),
+                luggages: luggageArray,
+                restrictions: restrictionArray)))
             {
             Image("ButtonL")
             .renderingMode(.original)
