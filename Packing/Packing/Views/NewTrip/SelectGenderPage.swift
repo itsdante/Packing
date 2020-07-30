@@ -29,12 +29,11 @@ struct SelectGenderPage: View {
                         .foregroundColor(.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
                     Text("Choose Your Gender")
                         .font(.custom(
-                            "Poppins-SemiBold",
-                            size: 14))
-                        .fontWeight(.regular)
+                            "Poppins-Medium",
+                            size: 16))
                         .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
                 }.frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.1)
-                    .position(x: UIScreen.main.bounds.width * 0.22, y: UIScreen.main.bounds.height * 0)
+                    .position(x: UIScreen.main.bounds.width * 0.27, y: UIScreen.main.bounds.height * 0)
                 
                 HStack {
                     Button(action: {
@@ -93,8 +92,8 @@ struct SelectGenderPage: View {
                     }
                 }
                     .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
-                
-                    NavigationLink(destination: ActivityPage(gender: sendedGender))
+                    if self.isMale == true || self.isFemale == true {
+                        NavigationLink(destination: ActivityPage(gender: sendedGender))
                 {
                     Image("ButtonL")
                         .resizable()
@@ -111,6 +110,7 @@ struct SelectGenderPage: View {
                     .position(
                         x: UIScreen.main.bounds.width / 2,
                         y: UIScreen.main.bounds.height * 0.81)
+                    }
             }
         }
     }

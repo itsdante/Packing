@@ -20,8 +20,10 @@ struct ActivityPage: View {
                     .font(.custom("Poppins-SemiBold", size: 22))
                 .foregroundColor(.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
                 Text("What Activities Will You Do")
+                    .font(.custom("Poppins-Medium", size: 16))
                 .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
-            }.position(
+            }.frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.1)
+            .position(
                 x: UIScreen.main.bounds.width * 0.33,
                 y: UIScreen.main.bounds.height * 0)
             
@@ -46,8 +48,7 @@ struct ActivityPage: View {
                         
                         Button(action: {print("\(item)")}) {
                             
-                            ActivityCard(
-                                num: item,
+                            ActivityCard(num: item,
                                 name: activities[item],
                                 isSelected: false)
                         }.buttonStyle(PlainButtonStyle())
@@ -57,8 +58,7 @@ struct ActivityPage: View {
                     ForEach(6 ..< 9) { item in
                         Button(action: {print("\(item)")}) {
                             
-                            ActivityCard(
-                                num: item,
+                            ActivityCard(num: item,
                                 name: activities[item],
                                 isSelected: false)
                         }.buttonStyle(PlainButtonStyle())
@@ -67,8 +67,8 @@ struct ActivityPage: View {
             }.position(
                 x: UIScreen.main.bounds.width / 2,
                 y: UIScreen.main.bounds.height * 0.34)
-            
-            NavigationLink(destination: SelectLuggagePage(luggage: ""))
+           
+                NavigationLink(destination: SelectLuggagePage(ctr : 0 , luggage: ""))
             {
                 Image("ButtonL")
                     .resizable()
@@ -104,7 +104,6 @@ var pickedActivity :[Int] = []
 
 
 struct ActivityCard: View {
-    
     var num : Int
     var name : String
     @State var isSelected : Bool

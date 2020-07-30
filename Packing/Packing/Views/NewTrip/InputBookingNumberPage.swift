@@ -27,7 +27,7 @@ struct InputBookingNumberPage: View {
                 //                    .renderingMode(.original)
                 //                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.28)
                 //            }
-                NavigationLink(destination: SelectLuggagePage(luggage: ""))
+                NavigationLink(destination: SelectLuggagePage(ctr: 0, luggage: ""))
                     {
                         Image("ButtonL")
                         .renderingMode(.original)
