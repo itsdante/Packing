@@ -120,4 +120,3 @@ struct SelectGenderPage_Previews: PreviewProvider {
         SelectGenderPage()
     }
 }
-

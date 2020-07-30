@@ -14,24 +14,26 @@ struct InputBookingNumberPage: View {
     
     var body: some View {
         NavigationView{
-        VStack(alignment: .center){
-            Text("Add New Trip")
+            VStack(alignment: .center){
+                Text("Add New Trip")
+                    
+                    .font(.system(size: 24, weight: .bold))
+                    
+                    .frame(width: UIScreen.main.bounds.width * 0.81, height: UIScreen.main.bounds.height * 0.03, alignment: .leading)
                 
-                .font(.system(size: 24, weight: .bold))
+                middleRectangle()
+                //            Button(action: {print("asdadas")}) {
+                //                Image("ButtonL")
+                //                    .renderingMode(.original)
+                //                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.28)
+                //            }
+                NextButton()
+                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.28)
                 
-                .frame(width: UIScreen.main.bounds.width * 0.81, height: UIScreen.main.bounds.height * 0.03, alignment: .leading)
-                
-            middleRectangle()
-//            Button(action: {print("asdadas")}) {
-//                Image("ButtonL")
-//                    .renderingMode(.original)
-//                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.28)
-//            }
+            }
+            
             
         }
-        
-        
-    }
     }
 }
 
@@ -86,3 +88,4 @@ struct middleRectangle: View {
         }
     }
 }
+
