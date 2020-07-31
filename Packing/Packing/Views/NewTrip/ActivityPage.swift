@@ -84,13 +84,10 @@ struct ActivityPage: View {
                     .frame(
                         width: UIScreen.main.bounds.width * 0.936,
                         height: UIScreen.main.bounds.height * 0.05)
-                    .position(
-                        x: UIScreen.main.bounds.width / 2,
-                        y: UIScreen.main.bounds.height * 0.27)
             }.buttonStyle(PlainButtonStyle())
                 .position(
                     x: UIScreen.main.bounds.width / 2,
-                    y: UIScreen.main.bounds.height * 0.81)
+                    y: UIScreen.main.bounds.height * 0.7)
                 
             
 
