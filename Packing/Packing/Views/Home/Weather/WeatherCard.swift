@@ -54,8 +54,10 @@ struct WeatherCard: View {
     }
 }
 
+#if DEBUG
 struct WeatherCardView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherCard(weather: WeatherList(dateTime: 1578409200, temperature: 25, conditionId: 804)).previewLayout(.sizeThatFits)
     }
 }
+#endif

@@ -52,9 +52,11 @@ struct RestrictionCell: View {
     }
 }
 
+#if DEBUG
 struct RestrictionCell_Previews: PreviewProvider {
     static var previews: some View {
         let restrictionDetail = RestrictionDetail(subTitle: .spareBatteries)
         return RestrictionCell(restrictionDetail: restrictionDetail).previewLayout(.sizeThatFits)
     }
 }
+#endif

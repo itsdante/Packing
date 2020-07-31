@@ -19,6 +19,7 @@
 		8938EB0324CF341400D8AFFC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EB0224CF341400D8AFFC /* Item.swift */; };
 		8938EB0524CF342800D8AFFC /* Luggage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EB0424CF342800D8AFFC /* Luggage.swift */; };
 		8938EB0724CF343400D8AFFC /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EB0624CF343400D8AFFC /* Trip.swift */; };
+		8943A63324D411DE0011F7D1 /* HomePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8943A63224D411DE0011F7D1 /* HomePopup.swift */; };
 		895094DB24CFC1B20034CAA7 /* CustomSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895094DA24CFC1B20034CAA7 /* CustomSegmentedPicker.swift */; };
 		895094EE24CFC2100034CAA7 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094DC24CFC20F0034CAA7 /* Poppins-Black.ttf */; };
 		895094EF24CFC2100034CAA7 /* Poppins-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094DD24CFC20F0034CAA7 /* Poppins-BlackItalic.ttf */; };
@@ -48,10 +49,9 @@
 		89A7BF0D24C83A18008734ED /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF0C24C83A18008734ED /* WeatherModel.swift */; };
 		89A7BF0F24C83A25008734ED /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF0E24C83A25008734ED /* WeatherData.swift */; };
 		89A7BF1124C83A30008734ED /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1024C83A30008734ED /* NetworkManager.swift */; };
-		89A7BF1324C83A5F008734ED /* WeatherCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1224C83A5F008734ED /* WeatherCardView.swift */; };
+		89A7BF1324C83A5F008734ED /* WeatherCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1224C83A5F008734ED /* WeatherCard.swift */; };
 		89A7BF1524C83A78008734ED /* WeatherScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1424C83A78008734ED /* WeatherScrollView.swift */; };
-		89A7BF1724C83A8B008734ED /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1624C83A8B008734ED /* WeatherView.swift */; };
-		89E29F1224D2F0A1001BB7FB /* DateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1124D2F0A1001BB7FB /* DateFormater.swift */; };
+		89E29F1224D2F0A1001BB7FB /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1124D2F0A1001BB7FB /* DateFormatter.swift */; };
 		89E29F1524D2F10B001BB7FB /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1424D2F10B001BB7FB /* HomeCard.swift */; };
 		89E29F1724D2F116001BB7FB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1624D2F116001BB7FB /* HomeView.swift */; };
 		89EE4D2224D12E760097AE33 /* RestrictionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE4D2124D12E760097AE33 /* RestrictionCell.swift */; };
@@ -100,6 +100,7 @@
 		8938EB0224CF341400D8AFFC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		8938EB0424CF342800D8AFFC /* Luggage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Luggage.swift; sourceTree = "<group>"; };
 		8938EB0624CF343400D8AFFC /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		8943A63224D411DE0011F7D1 /* HomePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePopup.swift; sourceTree = "<group>"; };
 		895094DA24CFC1B20034CAA7 /* CustomSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedPicker.swift; sourceTree = "<group>"; };
 		895094DC24CFC20F0034CAA7 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
 		895094DD24CFC20F0034CAA7 /* Poppins-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -129,10 +130,9 @@
 		89A7BF0C24C83A18008734ED /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		89A7BF0E24C83A25008734ED /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		89A7BF1024C83A30008734ED /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		89A7BF1224C83A5F008734ED /* WeatherCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCardView.swift; sourceTree = "<group>"; };
+		89A7BF1224C83A5F008734ED /* WeatherCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCard.swift; sourceTree = "<group>"; };
 		89A7BF1424C83A78008734ED /* WeatherScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScrollView.swift; sourceTree = "<group>"; };
-		89A7BF1624C83A8B008734ED /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
-		89E29F1124D2F0A1001BB7FB /* DateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormater.swift; sourceTree = "<group>"; };
+		89E29F1124D2F0A1001BB7FB /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		89E29F1424D2F10B001BB7FB /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
 		89E29F1624D2F116001BB7FB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		89EE4D2124D12E760097AE33 /* RestrictionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionCell.swift; sourceTree = "<group>"; };
@@ -260,9 +260,8 @@
 		8938EB0824CF395300D8AFFC /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				89A7BF1624C83A8B008734ED /* WeatherView.swift */,
 				89A7BF1424C83A78008734ED /* WeatherScrollView.swift */,
-				89A7BF1224C83A5F008734ED /* WeatherCardView.swift */,
+				89A7BF1224C83A5F008734ED /* WeatherCard.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -333,7 +332,7 @@
 		89E29F1024D2F07F001BB7FB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				89E29F1124D2F0A1001BB7FB /* DateFormater.swift */,
+				89E29F1124D2F0A1001BB7FB /* DateFormatter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -343,6 +342,7 @@
 			children = (
 				89E29F1624D2F116001BB7FB /* HomeView.swift */,
 				89E29F1424D2F10B001BB7FB /* HomeCard.swift */,
+				8943A63224D411DE0011F7D1 /* HomePopup.swift */,
 				8938EB0824CF395300D8AFFC /* Weather */,
 			);
 			path = Home;
@@ -687,17 +687,17 @@
 				8938EAFB24CF323100D8AFFC /* ItemCell.swift in Sources */,
 				8938EAF924CF321300D8AFFC /* ItemList.swift in Sources */,
 				8938EB0524CF342800D8AFFC /* Luggage.swift in Sources */,
-				89A7BF1324C83A5F008734ED /* WeatherCardView.swift in Sources */,
+				89A7BF1324C83A5F008734ED /* WeatherCard.swift in Sources */,
 				FECAA3AF24B3944C004B85AD /* ViewController.swift in Sources */,
 				89343BD824D11F7B003AF780 /* Restriction.swift in Sources */,
 				895094DB24CFC1B20034CAA7 /* CustomSegmentedPicker.swift in Sources */,
 				89E29F1724D2F116001BB7FB /* HomeView.swift in Sources */,
 				89A7BF0A24C839F5008734ED /* UIColor+Extensions.swift in Sources */,
-				89A7BF1724C83A8B008734ED /* WeatherView.swift in Sources */,
+				8943A63324D411DE0011F7D1 /* HomePopup.swift in Sources */,
 				89A7BF1524C83A78008734ED /* WeatherScrollView.swift in Sources */,
 				89A7BF1124C83A30008734ED /* NetworkManager.swift in Sources */,
 				89343BD224D118A9003AF780 /* RestrictionView.swift in Sources */,
-				89E29F1224D2F0A1001BB7FB /* DateFormater.swift in Sources */,
+				89E29F1224D2F0A1001BB7FB /* DateFormatter.swift in Sources */,
 				89343BCE24D11873003AF780 /* RestrictionCard.swift in Sources */,
 				897AB16424D26E5B00B308C9 /* ActivityPage.swift in Sources */,
 				897AB16224D26E4E00B308C9 /* SelectGenderPage.swift in Sources */,

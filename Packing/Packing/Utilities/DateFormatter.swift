@@ -26,6 +26,24 @@ let monthFormatter: DateFormatter = {
   return formatter
 }()
 
+let yearFormatter: DateFormatter = {
+  let formatter = DateFormatter()
+  formatter.dateFormat = "YYYY"
+  return formatter
+}()
+
+let dayMonthFormatter: DateFormatter = {
+  let formatter = DateFormatter()
+  formatter.dateFormat = "d MMMM"
+  return formatter
+}()
+
+let dayMonthYearFormatter: DateFormatter = {
+  let formatter = DateFormatter()
+  formatter.dateFormat = "d MMMM, YYYY"
+  return formatter
+}()
+
 let dateFormatter: DateFormatter = {
   let formatter = DateFormatter()
   formatter.dateFormat = "MMM d, YYYY"

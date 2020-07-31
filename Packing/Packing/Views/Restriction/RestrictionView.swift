@@ -23,8 +23,18 @@ struct RestrictionView: View {
     }
 }
 
+#if DEBUG
 struct RestrictionView_Previews: PreviewProvider {
     static var previews: some View {
-        RestrictionView(trip: tripTestData)
+        Group {
+            RestrictionView(trip: tripTestData)
+                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+                .previewDisplayName("iPhone 8")
+            
+            RestrictionView(trip: tripTestData)
+                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+                .previewDisplayName("iPhone 11")
+        }
     }
 }
+#endif

@@ -31,7 +31,7 @@ struct WeatherList: Identifiable {
     }
     
     var temperatureString: String {
-        return String(format: "%.0f", temperature)
+        return String(format: "%.0f", temperature) + "°"
     }
     
     var conditionName: String {
@@ -58,9 +58,9 @@ struct WeatherList: Identifiable {
     var conditionColor: Int {
         switch conditionId {
         case 800:
-            return 0xF6B24F
+            return 0xF9B710
         default:
-            return 0x124FA7
+            return 0x594E9F
         }
     }
 }

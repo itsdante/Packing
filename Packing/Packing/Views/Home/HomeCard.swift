@@ -29,8 +29,11 @@ struct HomeCard: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Image("home-background-image")
-                .resizable()
+            Rectangle().overlay(
+                Image("home-background-image")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            )
             ZStack {
                 Rectangle()
                     .foregroundColor(.white)
@@ -40,6 +43,9 @@ struct HomeCard: View {
                         .foregroundColor(HomeCard.darkPurple)
                     ZStack {
                         Image("home-flight-icon")
+                            .resizable()
+                            //                            .aspectRatio(contentMode: .fit)
+                            .frame(width: UIScreen.main.bounds.width * 0.08, height: UIScreen.main.bounds.height * 0.025)
                         HStack(alignment: .center) {
                             InfoStack(country: "Indonesia", city: "Jakarta", time: timeFormater.string(from: trip.departureDate), date: dateFormatter.string(from: trip.departureDate))
                                 .padding(.leading, 30)
@@ -96,10 +102,10 @@ struct HomeCard: View {
     }
 }
 
-
-
+#if DEBUG
 struct HomeCard_Previews: PreviewProvider {
     static var previews: some View {
         HomeCard(trip: tripTestData).previewLayout(.sizeThatFits)
     }
 }
+#endif

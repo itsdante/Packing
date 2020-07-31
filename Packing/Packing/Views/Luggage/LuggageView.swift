@@ -133,7 +133,15 @@ struct EditButtonModifier: ViewModifier {
 #if DEBUG
 struct LuggageView_Previews: PreviewProvider {
     static var previews: some View {
-        LuggageView(trip: tripTestData)
+        Group {
+            LuggageView(trip: tripTestData)
+                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+                .previewDisplayName("iPhone 8")
+            
+            LuggageView(trip: tripTestData)
+                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+                .previewDisplayName("iPhone 11")
+        }
     }
 }
 #endif

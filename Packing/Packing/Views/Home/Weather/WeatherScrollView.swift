@@ -9,29 +9,25 @@
 import SwiftUI
 
 struct WeatherScrollView: View {
-    
-    @ObservedObject var networkManager = NetworkManager()
-    var cityName: String
+    var weathers: [WeatherList]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 15) {
-                ForEach(networkManager.weathers) { weather in
-                    WeatherCardView(weather: weather)
+                ForEach(weathers) { weather in
+                    WeatherCard(weather: weather)
                 }
-            }.frame(height: 130)
-                .padding(.bottom, 15)
-                .padding(.leading, 35)
-                .padding(.trailing, 35)
-        }.onAppear {
-            self.networkManager.fetchData(cityName: self.cityName)
+            }.frame(height: UIScreen.main.bounds.height * 0.16)
+                .padding(.vertical, 5)
+                .padding(.horizontal, 35)
         }
     }
 }
 
-
-struct WeatherScrollView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherScrollView(cityName: "London").previewLayout(.sizeThatFits)
-    }
-}
+#if DEBUG
+//struct WeatherScrollView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WeatherScrollView(weathers: [WeatherList]).previewLayout(.sizeThatFits)
+//    }
+//}
+#endif

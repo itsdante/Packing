@@ -71,10 +71,11 @@ struct RestrictionCard: View {
     }
 }
 
-
+#if DEBUG
 struct RestrictionCard_Previews: PreviewProvider {
     static var previews: some View {
         let restriction = Restriction(mainTitle: .batteries)
         return RestrictionCard(restriction: restriction).previewLayout(.sizeThatFits)
     }
 }
+#endif
