@@ -20,14 +20,14 @@ struct ActivityPage: View {
             VStack(alignment: .leading, spacing: 3){
                 Text("Activities")
                     .font(.custom("Poppins-SemiBold", size: 22))
-                .foregroundColor(.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
+                    .foregroundColor(.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
                 Text("What Activities Will You Do")
                     .font(.custom("Poppins-Medium", size: 16))
-                .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
+                    .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
             }.frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.1)
-            .position(
-                x: UIScreen.main.bounds.width * 0.33,
-                y: UIScreen.main.bounds.height * 0)
+                .position(
+                    x: UIScreen.main.bounds.width * 0.33,
+                    y: UIScreen.main.bounds.height * 0)
             
             VStack(spacing: 41){
                 HStack(spacing: 18){
@@ -53,10 +53,10 @@ struct ActivityPage: View {
                         Button(action: {print("\(item)")}) {
                             
                             ActivityCard(num: item,
-                                name: activities[item],
-                                isSelected: false,
-                                newLuggage: luggage1,
-                                newLuggageArray: self.$newLuggageArray)
+                                         name: activities[item],
+                                         isSelected: false,
+                                         newLuggage: luggage1,
+                                         newLuggageArray: self.$newLuggageArray)
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }
@@ -65,18 +65,18 @@ struct ActivityPage: View {
                         Button(action: {print("\(item)")}) {
                             
                             ActivityCard(num: item,
-                                name: activities[item],
-                                isSelected: false,
-                                newLuggage: luggage1,
-                                newLuggageArray: self.$newLuggageArray)
+                                         name: activities[item],
+                                         isSelected: false,
+                                         newLuggage: luggage1,
+                                         newLuggageArray: self.$newLuggageArray)
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }
             }.position(
                 x: UIScreen.main.bounds.width / 2,
                 y: UIScreen.main.bounds.height * 0.34)
-           
-            NavigationLink(destination: SelectLuggagePage(ctr : 0 , luggage: "", trip: trip))
+            
+            NavigationLink(destination: SelectLuggagePage(ctr: 0, isCarryOn: false, isCheckedIn: false, newLuggageArray: newLuggageArray, trip: trip))
             {
                 Image("ButtonL")
                     .resizable()
@@ -88,9 +88,9 @@ struct ActivityPage: View {
                 .position(
                     x: UIScreen.main.bounds.width / 2,
                     y: UIScreen.main.bounds.height * 0.7)
-                
             
-
+            
+            
         }
         
     }
@@ -125,49 +125,101 @@ struct ActivityCard: View {
                 
                 
                 Image("\(name) Selected")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(
-                    width: UIScreen.main.bounds.width * 0.27,
-                    height: UIScreen.main.bounds.height * 0.14)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(
+                        width: UIScreen.main.bounds.width * 0.27,
+                        height: UIScreen.main.bounds.height * 0.14)
                 
                 
             }
             else
             {
-            Rectangle()
-            .frame(
-                width: UIScreen.main.bounds.width * 0.27,
-                height: UIScreen.main.bounds.height * 0.14)
-            .foregroundColor(.white)
-            .cornerRadius(20)
-            //                .shadow(radius: 10)
-            .shadow(color: .init(UIColor(
-                red: 0.396,
-                green: 0.298,
-                blue: 1,
-                alpha: 0.1)),
-                    radius: 21,
-                    x: 0,
-                    y: 6)
+                Rectangle()
+                    .frame(
+                        width: UIScreen.main.bounds.width * 0.27,
+                        height: UIScreen.main.bounds.height * 0.14)
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
+                    //                .shadow(radius: 10)
+                    .shadow(color: .init(UIColor(
+                        red: 0.396,
+                        green: 0.298,
+                        blue: 1,
+                        alpha: 0.1)),
+                            radius: 21,
+                            x: 0,
+                            y: 6)
                 Image("\(name)")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(
                         width: UIScreen.main.bounds.width * 0.27,
                         height: UIScreen.main.bounds.height * 0.14)
-            
+                
             }
         }.onTapGesture {
             self.isSelected.toggle()
             if self.isSelected == true {
                 print("TRUE \(self.num)")
                 pickedActivity.append(self.num)
-                self.newLuggage = Luggage(
+                switch self.num {
+                case 0:
+                    self.newLuggage = Luggage(
+                        id: activities[self.num],
+                        category: Luggage.Category.beach,
+                        isCheckedIn: false,
+                        items: [item1])
+                case 1:
+                    self.newLuggage = Luggage(
+                        id: activities[self.num],
+                        category: Luggage.Category.hike,
+                        isCheckedIn: false,
+                        items: [item1])
+                case 2:
+                    self.newLuggage = Luggage(
+                        id: activities[self.num],
+                        category: Luggage.Category.formal,
+                        isCheckedIn: false,
+                        items: [item1])
+                case 3:
+                    self.newLuggage = Luggage(
+                        id: activities[self.num],
+                        category: Luggage.Category.winter,
+                        isCheckedIn: false,
+                        items: [item1])
+                case 4:
+                    self.newLuggage = Luggage(
+                        id: activities[self.num],
+                        category: Luggage.Category.swimming,
+                        isCheckedIn: false,
+                        items: [item1])
+                case 5:
+                    self.newLuggage = Luggage(
+                        id: activities[self.num],
+                        category: Luggage.Category.gym,
+                        isCheckedIn: false,
+                        items: [item1])
+                case 6:
+                    self.newLuggage = Luggage(
+                        id: activities[self.num],
+                        category: Luggage.Category.photography,
+                        isCheckedIn: false,
+                        items: [item1])
+                case 7:
+                    self.newLuggage = Luggage(
+                        id: activities[self.num],
+                        category: Luggage.Category.business,
+                        isCheckedIn: false,
+                        items: [item1])
+                default:
+                    self.newLuggage = Luggage(
                     id: activities[self.num],
-                    category: Luggage.Category.beach,
+                    category: Luggage.Category.party,
                     isCheckedIn: false,
                     items: [item1])
+                }
+                
                 self.newLuggageArray.append(self.newLuggage)
             }
             else

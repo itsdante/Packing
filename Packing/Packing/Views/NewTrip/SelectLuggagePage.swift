@@ -10,7 +10,10 @@ import SwiftUI
 
 struct SelectLuggagePage: View {
     @State var ctr : Int
-    @State var luggage : String
+    @State var isCarryOn : Bool
+    @State var isCheckedIn : Bool
+    @State var newLuggageArray : [Luggage]
+    
     var trip: Trip
     var body: some View {
         ZStack{
@@ -23,7 +26,10 @@ struct SelectLuggagePage: View {
                 .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
             }.frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.1)
             .position(x: UIScreen.main.bounds.width * 0.45, y: UIScreen.main.bounds.height * 0)
-            LuggageCard(isCarryOn: false, isCheckedIn: false, luggage: $luggage, ctr: $ctr)
+            LuggageCard(
+                isCarryOn: $isCarryOn,
+                isCheckedIn: $isCheckedIn,
+                ctr: $ctr)
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
             if ctr != 0{
             NavigationLink(destination: LuggageView(trip: trip))
@@ -42,6 +48,13 @@ struct SelectLuggagePage: View {
                     x: UIScreen.main.bounds.width / 2,
                     y: UIScreen.main.bounds.height * 0.7)
         }
+            
+            Button(action: {
+                print(self.newLuggageArray)
+                print("check is carryon \(self.isCarryOn) check is checkin \(self.isCheckedIn)")
+            }) {
+                Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+            }
         }
         
     }
@@ -49,21 +62,23 @@ struct SelectLuggagePage: View {
 
 struct SelectLuggagePage_Previews: PreviewProvider {
     static var previews: some View {
-        SelectLuggagePage(ctr: 0, luggage: "", trip: tripTestData)
+        SelectLuggagePage(
+            ctr: 0,
+            isCarryOn: true,
+            isCheckedIn : true,
+            newLuggageArray: luggageArray,
+            trip: tripTestData)
     }
 }
 
 struct LuggageCard: View {
-    @State var isCarryOn : Bool
-    @State var isCheckedIn : Bool
-    @Binding var luggage : String
+    @Binding var isCarryOn : Bool
+    @Binding var isCheckedIn : Bool
     @Binding var ctr : Int
     var body: some View {
     HStack {
         Button(action: {
             self.isCarryOn.toggle()
-            
-            self.luggage = "CarryOn"
             if self.isCarryOn == true {
             self.ctr -= 1
             }
@@ -97,7 +112,6 @@ struct LuggageCard: View {
             .frame(width: UIScreen.main.bounds.width * 0.05)
         Button(action: {
             self.isCheckedIn.toggle()
-            self.luggage = "CheckIn"
             if self.isCheckedIn == true
             {
                 self.ctr -= 1

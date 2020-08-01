@@ -27,6 +27,7 @@ struct Luggage: Identifiable {
     var id: String = UUID().uuidString
     var category: Category
     var isCheckedIn: Bool
+//    var isCarryOn: Bool
     var items: [Item]
     
     var categoryString: String {

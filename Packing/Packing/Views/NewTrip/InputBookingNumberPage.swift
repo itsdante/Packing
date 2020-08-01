@@ -27,13 +27,13 @@ struct InputBookingNumberPage: View {
                 //                    .renderingMode(.original)
                 //                    .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.28)
                 //            }
-                NavigationLink(destination: SelectLuggagePage(ctr: 0, luggage: "", trip: trip))
-                    {
-                        Image("ButtonL")
-                        .renderingMode(.original)
-                        .frame(width: UIScreen.main.bounds.width * 0.76, height: UIScreen.main.bounds.height * 0.045)
-                }
-                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.28)
+//                NavigationLink(destination: SelectLuggagePage(ctr: 0, luggage: "", newLuggageArray: luggageArray, trip: trip))
+//                    {
+//                        Image("ButtonL")
+//                        .renderingMode(.original)
+//                        .frame(width: UIScreen.main.bounds.width * 0.76, height: UIScreen.main.bounds.height * 0.045)
+//                }
+//                .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.28)
                 
             }
             
