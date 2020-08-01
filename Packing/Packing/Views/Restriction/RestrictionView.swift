@@ -14,7 +14,7 @@ struct RestrictionView: View {
     var body: some View {
         ScrollView {
             ForEach(trip.restrictions) { restriction in
-                RestrictionCard(restriction: restriction)
+                RestrictionListCard(restriction: restriction)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }

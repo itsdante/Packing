@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct RestrictionCard: View {
+struct RestrictionListCard: View {
     private static let titleFont: Font = Font.custom("Poppins-SemiBold", size: 18)
     private static let titleColor: Color = Color.init(UIColor.init(hex: 0x353535))
     
@@ -30,15 +30,15 @@ struct RestrictionCard: View {
         VStack(alignment: .leading) {
             HStack {
                 Text(self.restriction.mainTitleString)
-                    .font(RestrictionCard.titleFont)
-                    .foregroundColor(RestrictionCard.titleColor)
+                    .font(RestrictionListCard.titleFont)
+                    .foregroundColor(RestrictionListCard.titleColor)
                 Spacer()
-                Image(systemName: self.isExpanded ? RestrictionCard.dropDownImageDown : RestrictionCard.dropDownImageUp)
+                Image(systemName: self.isExpanded ? RestrictionListCard.dropDownImageDown : RestrictionListCard.dropDownImageUp)
                     .resizable()
                     .frame(width: 16, height: 11)
                     .padding(.leading, 20)
-                    .font(RestrictionCard.dropDownImageFont)
-                    .foregroundColor(RestrictionCard.dropDownImageColor)
+                    .font(RestrictionListCard.dropDownImageFont)
+                    .foregroundColor(RestrictionListCard.dropDownImageColor)
             }
             .padding(.horizontal, 23)
             
@@ -48,12 +48,12 @@ struct RestrictionCard: View {
             
             if self.isExpanded{
                 Text(self.restriction.mainDetail)
-                    .font(RestrictionCard.subtitleFont)
-                    .foregroundColor(RestrictionCard.subtitleColor)
+                    .font(RestrictionListCard.subtitleFont)
+                    .foregroundColor(RestrictionListCard.subtitleColor)
                     .padding(.horizontal, 23)
                     .padding(.vertical, 5)
                 ForEach(self.restriction.restrictionDetail) { restrictionDetail in
-                    RestrictionCell(restrictionDetail: restrictionDetail)
+                    RestrictionItemCard(restrictionDetail: restrictionDetail)
                 }
             }
         }.padding(.vertical, 22)
@@ -61,7 +61,7 @@ struct RestrictionCard: View {
             RoundedRectangle(cornerRadius: 15)
                 .foregroundColor(.white)
                 .shadow(
-                    color: RestrictionCard.shadowColor,
+                    color: RestrictionListCard.shadowColor,
                     radius: 4,
                     y: 4)
         )
@@ -75,7 +75,7 @@ struct RestrictionCard: View {
 struct RestrictionCard_Previews: PreviewProvider {
     static var previews: some View {
         let restriction = Restriction(mainTitle: .batteries)
-        return RestrictionCard(restriction: restriction).previewLayout(.sizeThatFits)
+        return RestrictionListCard(restriction: restriction).previewLayout(.sizeThatFits)
     }
 }
 #endif

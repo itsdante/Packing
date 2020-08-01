@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct RestrictionCell: View {
+struct RestrictionItemCard: View {
     private static let titleFont: Font = Font.custom("Poppins-SemiBold", size: 16)
     private static let titleColor: Color = Color.init(UIColor.init(hex: 0x4C37C9))
     
@@ -33,11 +33,11 @@ struct RestrictionCell: View {
                 ).padding(.trailing, 10)
                 VStack(alignment: .leading) {
                     Text(restrictionDetail.subTitleString)
-                        .font(RestrictionCell.titleFont)
-                        .foregroundColor(RestrictionCell.titleColor)
+                        .font(RestrictionItemCard.titleFont)
+                        .foregroundColor(RestrictionItemCard.titleColor)
                     Text(restrictionDetail.subDetail)
-                        .font(RestrictionCell.subtitleFont)
-                        .foregroundColor(RestrictionCell.subtitleColor)
+                        .font(RestrictionItemCard.subtitleFont)
+                        .foregroundColor(RestrictionItemCard.subtitleColor)
                 }
                 Spacer()
             }
@@ -46,7 +46,7 @@ struct RestrictionCell: View {
         .frame(width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.height * 0.08)
         .padding(.horizontal, 24)
         .shadow(
-            color: RestrictionCell.shadowColor,
+            color: RestrictionItemCard.shadowColor,
             radius: 4,
             y: 3)
     }
@@ -56,7 +56,7 @@ struct RestrictionCell: View {
 struct RestrictionCell_Previews: PreviewProvider {
     static var previews: some View {
         let restrictionDetail = RestrictionDetail(subTitle: .spareBatteries)
-        return RestrictionCell(restrictionDetail: restrictionDetail).previewLayout(.sizeThatFits)
+        return RestrictionItemCard(restrictionDetail: restrictionDetail).previewLayout(.sizeThatFits)
     }
 }
 #endif

@@ -45,7 +45,7 @@ struct LuggageView: View {
             if selected == 0 {
                 ScrollView {
                     ForEach(trip.luggages) { luggage in
-                        ItemList(luggage: luggage)
+                        LuggageListCard(luggage: luggage)
                     }
                 }
             }

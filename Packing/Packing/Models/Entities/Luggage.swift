@@ -89,9 +89,15 @@ struct Luggage: Identifiable {
 }
 
 #if DEBUG
-let itemArray1 = [item1, item2, item3]
+let itemArray1 = [item1, itemE2, itemE3, itemE4, itemE5, itemE6, itemE7, itemE8]
 let luggage1 = Luggage(category: .esssentials, isCheckedIn: false, items: itemArray1)
 
-let itemArray2 = [item4, item5, item6, item7]
+let itemArray2 = [itemT1, itemT2, itemT3, itemT4]
 let luggage2 = Luggage(category: .toiletries, isCheckedIn: false, items: itemArray2)
+
+let itemArray3 = [itemF1, itemF2, itemF3, itemF4, itemF5, itemF6]
+let luggage3 = Luggage(category: .formal, isCheckedIn: true, items: itemArray3)
+
+let itemArray4 = [itemB1, itemB2, itemB3, itemB4, itemB5, itemB6, itemB7, itemB8]
+let luggage4 = Luggage(category: .beach, isCheckedIn: true, items: itemArray4)
 #endif

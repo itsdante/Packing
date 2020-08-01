@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		215B3E442468A55011281A96 /* Pods_Packing_PackingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D82EA07582BD858F0928357 /* Pods_Packing_PackingUITests.framework */; };
 		6D242D0624D11B2D008A2FA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D242D0524D11B2D008A2FA2 /* Main.storyboard */; };
-		89343BCE24D11873003AF780 /* RestrictionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89343BCD24D11873003AF780 /* RestrictionCard.swift */; };
+		89343BCE24D11873003AF780 /* RestrictionListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89343BCD24D11873003AF780 /* RestrictionListCard.swift */; };
 		89343BD224D118A9003AF780 /* RestrictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89343BD124D118A9003AF780 /* RestrictionView.swift */; };
 		89343BD824D11F7B003AF780 /* Restriction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89343BD724D11F7B003AF780 /* Restriction.swift */; };
 		89343BDA24D12223003AF780 /* RestrictionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89343BD924D12223003AF780 /* RestrictionDetail.swift */; };
-		8938EAF924CF321300D8AFFC /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EAF824CF321300D8AFFC /* ItemList.swift */; };
-		8938EAFB24CF323100D8AFFC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EAFA24CF323100D8AFFC /* ItemCell.swift */; };
+		8938EAF924CF321300D8AFFC /* LuggageListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EAF824CF321300D8AFFC /* LuggageListCard.swift */; };
+		8938EAFB24CF323100D8AFFC /* LuggageItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EAFA24CF323100D8AFFC /* LuggageItemCell.swift */; };
 		8938EAFE24CF324800D8AFFC /* LuggageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EAFD24CF324800D8AFFC /* LuggageView.swift */; };
 		8938EB0324CF341400D8AFFC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EB0224CF341400D8AFFC /* Item.swift */; };
 		8938EB0524CF342800D8AFFC /* Luggage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8938EB0424CF342800D8AFFC /* Luggage.swift */; };
@@ -51,10 +51,11 @@
 		89A7BF1124C83A30008734ED /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1024C83A30008734ED /* NetworkManager.swift */; };
 		89A7BF1324C83A5F008734ED /* WeatherCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1224C83A5F008734ED /* WeatherCard.swift */; };
 		89A7BF1524C83A78008734ED /* WeatherScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1424C83A78008734ED /* WeatherScrollView.swift */; };
+		89C5E8A724D50C29007172EF /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C5E8A624D50C29007172EF /* BlurView.swift */; };
 		89E29F1224D2F0A1001BB7FB /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1124D2F0A1001BB7FB /* DateFormatter.swift */; };
 		89E29F1524D2F10B001BB7FB /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1424D2F10B001BB7FB /* HomeCard.swift */; };
 		89E29F1724D2F116001BB7FB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1624D2F116001BB7FB /* HomeView.swift */; };
-		89EE4D2224D12E760097AE33 /* RestrictionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE4D2124D12E760097AE33 /* RestrictionCell.swift */; };
+		89EE4D2224D12E760097AE33 /* RestrictionItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE4D2124D12E760097AE33 /* RestrictionItemCard.swift */; };
 		CB07B442DAF0F4CEEFF62324 /* Pods_Packing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D6FEACBCD90E97265732CE /* Pods_Packing.framework */; };
 		FE32F8A5675B22FDE6780D50 /* Pods_PackingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF64CFEAEF01DBCDDA86BCA /* Pods_PackingTests.framework */; };
 		FE3FD50124CE73EE000CCA69 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FD50024CE73ED000CCA69 /* ApiManager.swift */; };
@@ -90,12 +91,12 @@
 		51F69F90074F29B92F477282 /* Pods-Packing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packing.release.xcconfig"; path = "Target Support Files/Pods-Packing/Pods-Packing.release.xcconfig"; sourceTree = "<group>"; };
 		6D242D0524D11B2D008A2FA2 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7E3B852D586247CF7D9A4850 /* Pods-Packing-PackingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packing-PackingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Packing-PackingUITests/Pods-Packing-PackingUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		89343BCD24D11873003AF780 /* RestrictionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionCard.swift; sourceTree = "<group>"; };
+		89343BCD24D11873003AF780 /* RestrictionListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionListCard.swift; sourceTree = "<group>"; };
 		89343BD124D118A9003AF780 /* RestrictionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionView.swift; sourceTree = "<group>"; };
 		89343BD724D11F7B003AF780 /* Restriction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restriction.swift; sourceTree = "<group>"; };
 		89343BD924D12223003AF780 /* RestrictionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionDetail.swift; sourceTree = "<group>"; };
-		8938EAF824CF321300D8AFFC /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
-		8938EAFA24CF323100D8AFFC /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		8938EAF824CF321300D8AFFC /* LuggageListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuggageListCard.swift; sourceTree = "<group>"; };
+		8938EAFA24CF323100D8AFFC /* LuggageItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuggageItemCell.swift; sourceTree = "<group>"; };
 		8938EAFD24CF324800D8AFFC /* LuggageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuggageView.swift; sourceTree = "<group>"; };
 		8938EB0224CF341400D8AFFC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		8938EB0424CF342800D8AFFC /* Luggage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Luggage.swift; sourceTree = "<group>"; };
@@ -132,10 +133,11 @@
 		89A7BF1024C83A30008734ED /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		89A7BF1224C83A5F008734ED /* WeatherCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCard.swift; sourceTree = "<group>"; };
 		89A7BF1424C83A78008734ED /* WeatherScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScrollView.swift; sourceTree = "<group>"; };
+		89C5E8A624D50C29007172EF /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		89E29F1124D2F0A1001BB7FB /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		89E29F1424D2F10B001BB7FB /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
 		89E29F1624D2F116001BB7FB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		89EE4D2124D12E760097AE33 /* RestrictionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionCell.swift; sourceTree = "<group>"; };
+		89EE4D2124D12E760097AE33 /* RestrictionItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionItemCard.swift; sourceTree = "<group>"; };
 		C0E0E2A3D31FD8B3865D0987 /* Pods-Packing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packing.debug.xcconfig"; path = "Target Support Files/Pods-Packing/Pods-Packing.debug.xcconfig"; sourceTree = "<group>"; };
 		D0D6FEACBCD90E97265732CE /* Pods_Packing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Packing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAF65B3349A8770CCDB3C25 /* Pods-Packing-PackingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packing-PackingUITests.release.xcconfig"; path = "Target Support Files/Pods-Packing-PackingUITests/Pods-Packing-PackingUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,8 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				89343BD124D118A9003AF780 /* RestrictionView.swift */,
-				89343BCD24D11873003AF780 /* RestrictionCard.swift */,
-				89EE4D2124D12E760097AE33 /* RestrictionCell.swift */,
+				89343BCD24D11873003AF780 /* RestrictionListCard.swift */,
+				89EE4D2124D12E760097AE33 /* RestrictionItemCard.swift */,
 			);
 			path = Restriction;
 			sourceTree = "<group>";
@@ -222,9 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				8938EAFD24CF324800D8AFFC /* LuggageView.swift */,
-				895094DA24CFC1B20034CAA7 /* CustomSegmentedPicker.swift */,
-				8938EAF824CF321300D8AFFC /* ItemList.swift */,
-				8938EAFA24CF323100D8AFFC /* ItemCell.swift */,
+				8938EAF824CF321300D8AFFC /* LuggageListCard.swift */,
+				8938EAFA24CF323100D8AFFC /* LuggageItemCell.swift */,
 			);
 			path = Luggage;
 			sourceTree = "<group>";
@@ -280,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				8950950424CFF1AF0034CAA7 /* ContentView.swift */,
+				89C5E8A524D50C02007172EF /* Utilities */,
 				89E29F1324D2F0E7001BB7FB /* Home */,
 				8938EB0124CF334600D8AFFC /* NewTrip */,
 				8938EAF724CF31F600D8AFFC /* Luggage */,
@@ -327,6 +329,15 @@
 				895094DF24CFC20F0034CAA7 /* Poppins-ThinItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		89C5E8A524D50C02007172EF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				89C5E8A624D50C29007172EF /* BlurView.swift */,
+				895094DA24CFC1B20034CAA7 /* CustomSegmentedPicker.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		89E29F1024D2F07F001BB7FB /* Utilities */ = {
@@ -684,8 +695,8 @@
 				8938EB0324CF341400D8AFFC /* Item.swift in Sources */,
 				8950950524CFF1AF0034CAA7 /* ContentView.swift in Sources */,
 				FE3FD50124CE73EE000CCA69 /* ApiManager.swift in Sources */,
-				8938EAFB24CF323100D8AFFC /* ItemCell.swift in Sources */,
-				8938EAF924CF321300D8AFFC /* ItemList.swift in Sources */,
+				8938EAFB24CF323100D8AFFC /* LuggageItemCell.swift in Sources */,
+				8938EAF924CF321300D8AFFC /* LuggageListCard.swift in Sources */,
 				8938EB0524CF342800D8AFFC /* Luggage.swift in Sources */,
 				89A7BF1324C83A5F008734ED /* WeatherCard.swift in Sources */,
 				FECAA3AF24B3944C004B85AD /* ViewController.swift in Sources */,
@@ -698,13 +709,14 @@
 				89A7BF1124C83A30008734ED /* NetworkManager.swift in Sources */,
 				89343BD224D118A9003AF780 /* RestrictionView.swift in Sources */,
 				89E29F1224D2F0A1001BB7FB /* DateFormatter.swift in Sources */,
-				89343BCE24D11873003AF780 /* RestrictionCard.swift in Sources */,
+				89343BCE24D11873003AF780 /* RestrictionListCard.swift in Sources */,
 				897AB16424D26E5B00B308C9 /* ActivityPage.swift in Sources */,
 				897AB16224D26E4E00B308C9 /* SelectGenderPage.swift in Sources */,
 				89A7BF0D24C83A18008734ED /* WeatherModel.swift in Sources */,
 				897AB16024D26E4000B308C9 /* InputBookingNumberPage.swift in Sources */,
 				89343BDA24D12223003AF780 /* RestrictionDetail.swift in Sources */,
-				89EE4D2224D12E760097AE33 /* RestrictionCell.swift in Sources */,
+				89C5E8A724D50C29007172EF /* BlurView.swift in Sources */,
+				89EE4D2224D12E760097AE33 /* RestrictionItemCard.swift in Sources */,
 				8938EAFE24CF324800D8AFFC /* LuggageView.swift in Sources */,
 				89A7BF0F24C83A25008734ED /* WeatherData.swift in Sources */,
 				897AB15E24D26E1100B308C9 /* Packing.xcdatamodeld in Sources */,

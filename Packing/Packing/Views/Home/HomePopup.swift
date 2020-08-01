@@ -11,7 +11,7 @@ import SwiftUI
 struct HomePopup: View {
     private static let poppinsSemiBold16: Font = Font.custom("Poppins-SemiBold", size: 16)
     private static let poppinsSemiBold12: Font = Font.custom("Poppins-SemiBold", size: 12)
-    private static let poppinsRegular: Font = Font.custom("Poppins-Regular", size: 11)
+    private static let poppinsRegular11: Font = Font.custom("Poppins-Regular", size: 11)
     
     private static let purple: Color = Color.init(UIColor(hex: 0x4C37C9))
     private static let black: Color = Color.init(UIColor(hex: 0x070707))
@@ -27,8 +27,7 @@ struct HomePopup: View {
     
     var body: some View {
         ZStack {
-            VisualEffectView(effect: UIBlurEffect(style: .dark))
-                .edgesIgnoringSafeArea(.all)
+            BlurView(effect: .dark)
                 .onTapGesture {
                     self.isPresented.toggle()
             }
@@ -65,7 +64,7 @@ struct HomePopup: View {
                                     TextField("Input your booking number", text: self.$newbookingNumber, onCommit: {
                                         // Call to API
                                     })
-                                        .font(HomePopup.poppinsRegular)
+                                        .font(HomePopup.poppinsRegular11)
                                         .padding(10)
                             ).frame(width: UIScreen.main.bounds.width * 0.53, height: UIScreen.main.bounds.height * 0.04)
                             NavigationLink(destination: SelectGenderPage(trip: trip)) {
@@ -85,12 +84,6 @@ struct HomePopup: View {
             )
         }
     }
-}
-
-struct VisualEffectView: UIViewRepresentable {
-    var effect: UIVisualEffect?
-    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
-    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
 }
 
 #if DEBUG
