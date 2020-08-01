@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct LuggageView: View {
-    var trip: Trip
-    
     @State private var selected = 0
+    
+    var trip: Trip
     
     private var homeButton: some View {
         Button(action: {
@@ -44,7 +44,13 @@ struct LuggageView: View {
             Spacer()
             if selected == 0 {
                 ScrollView {
-                    ForEach(trip.luggages) { luggage in
+                    ForEach(trip.luggages.filter({ $0.isCheckedIn == false })) { luggage in
+                        LuggageListCard(luggage: luggage)
+                    }
+                }
+            } else {
+                ScrollView {
+                    ForEach(trip.luggages.filter({ $0.isCheckedIn == true })) { luggage in
                         LuggageListCard(luggage: luggage)
                     }
                 }
@@ -53,8 +59,7 @@ struct LuggageView: View {
         }
         .navigationBarTitle("My Luggage", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: homeButton)
-        .navigationBarItems(trailing: editButton)
+        .navigationBarItems(leading: homeButton, trailing: editButton)
     }
 }
 
@@ -131,17 +136,17 @@ struct EditButtonModifier: ViewModifier {
 }
 
 #if DEBUG
-struct LuggageView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            LuggageView(trip: tripTestData)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-                .previewDisplayName("iPhone 8")
-            
-            LuggageView(trip: tripTestData)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-                .previewDisplayName("iPhone 11")
-        }
-    }
-}
+//struct LuggageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            LuggageView(trip: tripTestData, isNavigationBarHidden: <#Binding<Bool>#>)
+//                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+//                .previewDisplayName("iPhone 8")
+//
+//            LuggageView(trip: tripTestData, isNavigationBarHidden: <#Binding<Bool>#>)
+//                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+//                .previewDisplayName("iPhone 11")
+//        }
+//    }
+//}
 #endif

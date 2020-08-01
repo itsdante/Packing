@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		215B3E442468A55011281A96 /* Pods_Packing_PackingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D82EA07582BD858F0928357 /* Pods_Packing_PackingUITests.framework */; };
-		6D242D0624D11B2D008A2FA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D242D0524D11B2D008A2FA2 /* Main.storyboard */; };
 		89343BCE24D11873003AF780 /* RestrictionListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89343BCD24D11873003AF780 /* RestrictionListCard.swift */; };
 		89343BD224D118A9003AF780 /* RestrictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89343BD124D118A9003AF780 /* RestrictionView.swift */; };
 		89343BD824D11F7B003AF780 /* Restriction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89343BD724D11F7B003AF780 /* Restriction.swift */; };
@@ -51,6 +50,7 @@
 		89A7BF1124C83A30008734ED /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1024C83A30008734ED /* NetworkManager.swift */; };
 		89A7BF1324C83A5F008734ED /* WeatherCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1224C83A5F008734ED /* WeatherCard.swift */; };
 		89A7BF1524C83A78008734ED /* WeatherScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1424C83A78008734ED /* WeatherScrollView.swift */; };
+		89B413A324D5619600B5189E /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B413A224D5619600B5189E /* KeyboardResponder.swift */; };
 		89C5E8A724D50C29007172EF /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C5E8A624D50C29007172EF /* BlurView.swift */; };
 		89E29F1224D2F0A1001BB7FB /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1124D2F0A1001BB7FB /* DateFormatter.swift */; };
 		89E29F1524D2F10B001BB7FB /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1424D2F10B001BB7FB /* HomeCard.swift */; };
@@ -61,7 +61,6 @@
 		FE3FD50124CE73EE000CCA69 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FD50024CE73ED000CCA69 /* ApiManager.swift */; };
 		FECAA3AB24B3944C004B85AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECAA3AA24B3944C004B85AD /* AppDelegate.swift */; };
 		FECAA3AD24B3944C004B85AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECAA3AC24B3944C004B85AD /* SceneDelegate.swift */; };
-		FECAA3AF24B3944C004B85AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECAA3AE24B3944C004B85AD /* ViewController.swift */; };
 		FECAA3B724B3944F004B85AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FECAA3B624B3944F004B85AD /* Assets.xcassets */; };
 		FECAA3BA24B3944F004B85AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FECAA3B824B3944F004B85AD /* LaunchScreen.storyboard */; };
 		FECAA3C524B39450004B85AD /* PackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECAA3C424B39450004B85AD /* PackingTests.swift */; };
@@ -89,7 +88,6 @@
 		2874565E1E70706AC1FF1BC8 /* Pods-PackingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackingTests.release.xcconfig"; path = "Target Support Files/Pods-PackingTests/Pods-PackingTests.release.xcconfig"; sourceTree = "<group>"; };
 		3D82EA07582BD858F0928357 /* Pods_Packing_PackingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Packing_PackingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F69F90074F29B92F477282 /* Pods-Packing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packing.release.xcconfig"; path = "Target Support Files/Pods-Packing/Pods-Packing.release.xcconfig"; sourceTree = "<group>"; };
-		6D242D0524D11B2D008A2FA2 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7E3B852D586247CF7D9A4850 /* Pods-Packing-PackingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packing-PackingUITests.debug.xcconfig"; path = "Target Support Files/Pods-Packing-PackingUITests/Pods-Packing-PackingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		89343BCD24D11873003AF780 /* RestrictionListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionListCard.swift; sourceTree = "<group>"; };
 		89343BD124D118A9003AF780 /* RestrictionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionView.swift; sourceTree = "<group>"; };
@@ -133,6 +131,7 @@
 		89A7BF1024C83A30008734ED /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		89A7BF1224C83A5F008734ED /* WeatherCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCard.swift; sourceTree = "<group>"; };
 		89A7BF1424C83A78008734ED /* WeatherScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScrollView.swift; sourceTree = "<group>"; };
+		89B413A224D5619600B5189E /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		89C5E8A624D50C29007172EF /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		89E29F1124D2F0A1001BB7FB /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		89E29F1424D2F10B001BB7FB /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
@@ -147,7 +146,6 @@
 		FECAA3A724B3944C004B85AD /* Packing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Packing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECAA3AA24B3944C004B85AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FECAA3AC24B3944C004B85AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FECAA3AE24B3944C004B85AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FECAA3B624B3944F004B85AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FECAA3B924B3944F004B85AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FECAA3BB24B3944F004B85AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -336,6 +334,7 @@
 			children = (
 				89C5E8A624D50C29007172EF /* BlurView.swift */,
 				895094DA24CFC1B20034CAA7 /* CustomSegmentedPicker.swift */,
+				89B413A224D5619600B5189E /* KeyboardResponder.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -405,11 +404,9 @@
 				89E29F1024D2F07F001BB7FB /* Utilities */,
 				89A7BF0624C839C5008734ED /* Models */,
 				89A7BF0524C839BD008734ED /* Views */,
-				FECAA3AE24B3944C004B85AD /* ViewController.swift */,
 				FECAA3B624B3944F004B85AD /* Assets.xcassets */,
 				FECAA3B824B3944F004B85AD /* LaunchScreen.storyboard */,
 				FECAA3BB24B3944F004B85AD /* Info.plist */,
-				6D242D0524D11B2D008A2FA2 /* Main.storyboard */,
 			);
 			path = Packing;
 			sourceTree = "<group>";
@@ -559,7 +556,6 @@
 				895094F624CFC2100034CAA7 /* Poppins-LightItalic.ttf in Resources */,
 				895094F224CFC2100034CAA7 /* Poppins-ExtraBold.ttf in Resources */,
 				FECAA3B724B3944F004B85AD /* Assets.xcassets in Resources */,
-				6D242D0624D11B2D008A2FA2 /* Main.storyboard in Resources */,
 				895094FC24CFC2100034CAA7 /* Poppins-Medium.ttf in Resources */,
 				895094F124CFC2100034CAA7 /* Poppins-ThinItalic.ttf in Resources */,
 			);
@@ -699,7 +695,6 @@
 				8938EAF924CF321300D8AFFC /* LuggageListCard.swift in Sources */,
 				8938EB0524CF342800D8AFFC /* Luggage.swift in Sources */,
 				89A7BF1324C83A5F008734ED /* WeatherCard.swift in Sources */,
-				FECAA3AF24B3944C004B85AD /* ViewController.swift in Sources */,
 				89343BD824D11F7B003AF780 /* Restriction.swift in Sources */,
 				895094DB24CFC1B20034CAA7 /* CustomSegmentedPicker.swift in Sources */,
 				89E29F1724D2F116001BB7FB /* HomeView.swift in Sources */,
@@ -711,6 +706,7 @@
 				89E29F1224D2F0A1001BB7FB /* DateFormatter.swift in Sources */,
 				89343BCE24D11873003AF780 /* RestrictionListCard.swift in Sources */,
 				897AB16424D26E5B00B308C9 /* ActivityPage.swift in Sources */,
+				89B413A324D5619600B5189E /* KeyboardResponder.swift in Sources */,
 				897AB16224D26E4E00B308C9 /* SelectGenderPage.swift in Sources */,
 				89A7BF0D24C83A18008734ED /* WeatherModel.swift in Sources */,
 				897AB16024D26E4000B308C9 /* InputBookingNumberPage.swift in Sources */,

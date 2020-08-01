@@ -21,8 +21,10 @@ struct HomePopup: View {
     private static let cardShadowColor: Color = Color.init(UIColor(hex: 0x222F55, alpha: 0.048))
     private static let buttonShadowColor: Color = Color.init(UIColor(hex: 0x2704FE, alpha: 0.2))
     
+    @ObservedObject private var keyboard = KeyboardResponder()
     @State private var newbookingNumber = ""
     @Binding var isPresented: Bool
+
     var trip: Trip
     
     var body: some View {
@@ -82,6 +84,8 @@ struct HomePopup: View {
                     }
                     
             )
+            .padding(.bottom, keyboard.currentHeight)
+            .edgesIgnoringSafeArea(.bottom)
         }
     }
 }
