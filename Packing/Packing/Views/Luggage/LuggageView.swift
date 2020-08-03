@@ -10,6 +10,7 @@ import SwiftUI
 
 struct LuggageView: View {
     @State private var selected = 0
+    @State var isWarningPresented: Bool = false
     
     var trip: Trip
     
@@ -38,32 +39,36 @@ struct LuggageView: View {
     }
     
     var body: some View {
-        VStack {
-            CustomSegmentedPickerView(selected: $selected)
-                .padding(.top, 20)
-            Spacer()
-            if selected == 0 {
-                if trip.luggages.filter({ $0.isCheckedIn == false }).count != 0 {
-                    ScrollView {
-                        ForEach(trip.luggages.filter({ $0.isCarryOn == true })) { luggage in
-                            LuggageListCard(luggage: luggage)
+        ZStack {
+            VStack {
+                CustomSegmentedPickerView(selected: $selected)
+                    .padding(.top, 20)
+                Spacer()
+                if selected == 0 {
+                    if trip.luggages.filter({ $0.isCheckedIn == false }).count != 0 {
+                        ScrollView {
+                            ForEach(trip.luggages.filter({ $0.isCarryOn == true })) { luggage in
+                                LuggageListCard(luggage: luggage, isWarningPresented: self.$isWarningPresented)
+                            }
                         }
+                    }  else {
+                        EmptyStateView(isCheckedIn: false)
                     }
-                }  else {
-                    EmptyStateView(isCheckedIn: false)
-                }
-            } else {
-                if trip.luggages.filter({ $0.isCheckedIn == true }).count != 0 {
-                    ScrollView {
-                        ForEach(trip.luggages.filter({ $0.isCheckedIn == true })) { luggage in
-                            LuggageListCard(luggage: luggage)
+                } else {
+                    if trip.luggages.filter({ $0.isCheckedIn == true }).count != 0 {
+                        ScrollView {
+                            ForEach(trip.luggages.filter({ $0.isCheckedIn == true })) { luggage in
+                                LuggageListCard(luggage: luggage, isWarningPresented:  self.$isWarningPresented)
+                            }
                         }
+                    }  else {
+                        EmptyStateView(isCheckedIn: true)
                     }
-                }  else {
-                    EmptyStateView(isCheckedIn: true)
                 }
             }
-            
+            if isWarningPresented {
+                LuggagePopup(trip: trip, isWarningPresented: self.$isWarningPresented)
+            }
         }
         .navigationBarTitle("My Luggage", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
@@ -178,21 +183,6 @@ struct EditButtonModifier: ViewModifier {
 }
 
 #if DEBUG
-//struct LuggageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            LuggageView(trip: tripTestData, isNavigationBarHidden: <#Binding<Bool>#>)
-//                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-//                .previewDisplayName("iPhone 8")
-//
-//            LuggageView(trip: tripTestData, isNavigationBarHidden: <#Binding<Bool>#>)
-//                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-//                .previewDisplayName("iPhone 11")
-//        }
-//    }
-//}
-#endif
-
 struct LuggageView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -206,3 +196,4 @@ struct LuggageView_Previews: PreviewProvider {
         }
     }
 }
+#endif

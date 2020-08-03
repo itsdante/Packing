@@ -26,6 +26,7 @@ struct LuggageListCard: View {
     
     var luggage: Luggage
     
+    @Binding var isWarningPresented: Bool
     @State private var isExpanded: Bool = true
     @State private var newItem = ""
     
@@ -67,7 +68,7 @@ struct LuggageListCard: View {
                         }
                         .padding(.vertical, 5)
                         ForEach(luggage.items.sorted { $0.isCompleted && $1.isCompleted }) { item in
-                            LuggageItemCell(item: item)
+                            LuggageItemCell(isWarningPresented: self.$isWarningPresented, item: item)
                         }
                     }
                     .padding(.leading, 22)
@@ -89,9 +90,9 @@ struct LuggageListCard: View {
 }
 
 #if DEBUG
-struct ItemList_Previews: PreviewProvider {
-    static var previews: some View {
-        return LuggageListCard(luggage: luggage1).previewLayout(.sizeThatFits)
-    }
-}
+//struct ItemList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        return LuggageListCard(luggage: luggage1, isWarningPresented: <#Binding<Bool>#>).previewLayout(.sizeThatFits)
+//    }
+//}
 #endif

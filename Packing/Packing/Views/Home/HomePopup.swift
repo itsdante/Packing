@@ -51,7 +51,6 @@ struct HomePopup: View {
                                         .font(Font.title.weight(.regular))
                                         .foregroundColor(HomePopup.black)
                                         .onTapGesture {
-                                            print("close")
                                             self.isPresented.toggle()
                                     }
                             ).frame(width: proxy.size.width - 43, height:proxy.size.height - 37, alignment: .topTrailing)

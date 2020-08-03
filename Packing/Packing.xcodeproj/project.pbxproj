@@ -39,6 +39,7 @@
 		895094FE24CFC2100034CAA7 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094EC24CFC2100034CAA7 /* Poppins-Bold.ttf */; };
 		895094FF24CFC2100034CAA7 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094ED24CFC2100034CAA7 /* Poppins-BoldItalic.ttf */; };
 		8950950524CFF1AF0034CAA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8950950424CFF1AF0034CAA7 /* ContentView.swift */; };
+		895426FE24D7D8B30092DA68 /* LuggagePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895426FD24D7D8B30092DA68 /* LuggagePopup.swift */; };
 		897AB15E24D26E1100B308C9 /* Packing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 897AB15C24D26E1100B308C9 /* Packing.xcdatamodeld */; };
 		897AB16024D26E4000B308C9 /* InputBookingNumberPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897AB15F24D26E4000B308C9 /* InputBookingNumberPage.swift */; };
 		897AB16224D26E4E00B308C9 /* SelectGenderPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897AB16124D26E4E00B308C9 /* SelectGenderPage.swift */; };
@@ -121,6 +122,7 @@
 		895094EC24CFC2100034CAA7 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		895094ED24CFC2100034CAA7 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
 		8950950424CFF1AF0034CAA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		895426FD24D7D8B30092DA68 /* LuggagePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuggagePopup.swift; sourceTree = "<group>"; };
 		897AB15D24D26E1100B308C9 /* Packing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Packing.xcdatamodel; sourceTree = "<group>"; };
 		897AB15F24D26E4000B308C9 /* InputBookingNumberPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBookingNumberPage.swift; sourceTree = "<group>"; };
 		897AB16124D26E4E00B308C9 /* SelectGenderPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderPage.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				8938EAFD24CF324800D8AFFC /* LuggageView.swift */,
 				8938EAF824CF321300D8AFFC /* LuggageListCard.swift */,
 				8938EAFA24CF323100D8AFFC /* LuggageItemCell.swift */,
+				895426FD24D7D8B30092DA68 /* LuggagePopup.swift */,
 			);
 			path = Luggage;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				897AB16024D26E4000B308C9 /* InputBookingNumberPage.swift in Sources */,
 				89343BDA24D12223003AF780 /* RestrictionDetail.swift in Sources */,
 				89C5E8A724D50C29007172EF /* BlurView.swift in Sources */,
+				895426FE24D7D8B30092DA68 /* LuggagePopup.swift in Sources */,
 				89EE4D2224D12E760097AE33 /* RestrictionItemCard.swift in Sources */,
 				8938EAFE24CF324800D8AFFC /* LuggageView.swift in Sources */,
 				89A7BF0F24C83A25008734ED /* WeatherData.swift in Sources */,

@@ -12,9 +12,11 @@ struct LuggageItemCell: View {
     private static let purple: Color = Color(UIColor.init(hex: 0x654CFF))
     private static let lightGrey: Color = Color(.secondaryLabel)
     private static let darkGrey: Color = Color(UIColor.init(hex: 0x555B6E))
+    private static let black: Color = Color(UIColor.init(hex: 0x262626))
     
     private static let poppinsRegular15: Font = Font.custom("Poppins-Regular", size: 15)
     
+    @Binding var isWarningPresented: Bool
     @State var item: Item
     @State var isEditMode = false
     
@@ -31,8 +33,15 @@ struct LuggageItemCell: View {
                 .font(LuggageItemCell.poppinsRegular15)
                 .foregroundColor(LuggageItemCell.darkGrey)
                 .strikethrough(item.isCompleted)
+            if item.isRestricted {
+                Image(systemName: "exclamationmark.triangle")
+                    .foregroundColor(LuggageItemCell.black)
+                    .padding(.leading, 23)
+                    .onTapGesture {
+                        self.isWarningPresented.toggle()
+                }
+            }
             Spacer()
-            
             if isEditMode {
                 HStack {
                     Image(systemName: "minus.square.fill")
@@ -85,9 +94,9 @@ struct LuggageItemCell: View {
 }
 
 #if DEBUG
-struct ItemCell_Previews: PreviewProvider {
-    static var previews: some View {
-        return LuggageItemCell(item: item1).previewLayout(.sizeThatFits)
-    }
-}
+//struct ItemCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LuggageItemCell(isWarningPresented: <#Binding<Bool>#>, item: item1).previewLayout(.sizeThatFits)
+//    }
+//}
 #endif
