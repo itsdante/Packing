@@ -20,8 +20,7 @@ struct HomeView: View {
     private static let poppinsMedium20: Font = Font.custom("Poppins-Medium", size: 20)
     private static let poppinsMedium12: Font = Font.custom("Poppins-Medium", size: 12)
     private static let poppinsRegular14: Font = Font.custom("Poppins-Regular", size: 14)
-    
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+     
     @ObservedObject var networkManager = NetworkManager()
     @State var isPresented = false
     @State var pageIndex: Int = 0
@@ -51,14 +50,12 @@ struct HomeView: View {
                     }
                 }
                 .padding(.horizontal, 35)
-                
                 Rectangle()
                     .foregroundColor(.clear)
                     .frame(height: UIScreen.main.bounds.height * 0.55)
                     .overlay(
                         HomeScrollView(pageIndex: self.$pageIndex, trips: trips)
                 )
-                
                 Text(trips[pageIndex].departureDate <= Date() ? "Weather for Post Trip" : "Weather for Upcoming Trip")
                     .font(HomeView.poppinsMedium20)
                     .foregroundColor(HomeView.darkGrey)

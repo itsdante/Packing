@@ -63,7 +63,7 @@ struct HomeCard: View {
                         RoundedRectangle(cornerRadius: 18)
                             .shadow(color: HomeCard.buttonShadowColor, radius: 4, y: 5)
                             .overlay(
-                                Text("View Details")
+                                Text("View Packing List")
                                     .font(HomeCard.poppinsSemiBold12)
                                     .foregroundColor(.white)
                         )

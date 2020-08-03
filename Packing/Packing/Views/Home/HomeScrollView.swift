@@ -11,6 +11,7 @@ import SwiftUIPager
 
 struct HomeScrollView: View {
     @Binding var pageIndex: Int
+    
     var trips: [Trip]
     
     var body: some View {

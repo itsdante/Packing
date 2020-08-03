@@ -43,16 +43,24 @@ struct LuggageView: View {
                 .padding(.top, 20)
             Spacer()
             if selected == 0 {
-                ScrollView {
-                    ForEach(trip.luggages.filter({ $0.isCarryOn == true })) { luggage in
-                        LuggageListCard(luggage: luggage)
+                if trip.luggages.filter({ $0.isCheckedIn == false }).count != 0 {
+                    ScrollView {
+                        ForEach(trip.luggages.filter({ $0.isCarryOn == true })) { luggage in
+                            LuggageListCard(luggage: luggage)
+                        }
                     }
+                }  else {
+                    EmptyStateView(isCheckedIn: false)
                 }
             } else {
-                ScrollView {
-                    ForEach(trip.luggages.filter({ $0.isCheckedIn == true })) { luggage in
-                        LuggageListCard(luggage: luggage)
+                if trip.luggages.filter({ $0.isCheckedIn == true }).count != 0 {
+                    ScrollView {
+                        ForEach(trip.luggages.filter({ $0.isCheckedIn == true })) { luggage in
+                            LuggageListCard(luggage: luggage)
+                        }
                     }
+                }  else {
+                    EmptyStateView(isCheckedIn: true)
                 }
             }
             
@@ -60,6 +68,40 @@ struct LuggageView: View {
         .navigationBarTitle("My Luggage", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: homeButton, trailing: editButton)
+    }
+}
+
+struct EmptyStateView: View {
+    private static let poppinsSemiBold16: Font = Font.custom("Poppins-SemiBold", size: 16)
+    private static let poppinsMedium14: Font = Font.custom("Poppins-Medium", size: 14)
+    
+    private static let purple: Color = Color.init(UIColor.init(hex: 0x4C37C9))
+    private static let grey: Color = Color.init(UIColor.init(hex: 0x979797))
+    
+    var isCheckedIn: Bool
+    
+    var body: some View {
+        Rectangle()
+            .foregroundColor(.clear)
+            .edgesIgnoringSafeArea(.bottom)
+            .overlay(
+                VStack(alignment: .center) {
+                    Image("luggage-empty-state-image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.main.bounds.width * 0.61, height: UIScreen.main.bounds.height * 0.24)
+                    Text(isCheckedIn ? "Uh-oh! You’re not bringing a checked in luggage" : "Uh-oh! You’re not bringing a carry on luggage")
+                        .font(EmptyStateView.poppinsSemiBold16)
+                        .foregroundColor(EmptyStateView.purple)
+                        .multilineTextAlignment(.center)
+                        .padding(.bottom, 10)
+                    Text(isCheckedIn ? "Tap the edit button to add a checked in luggage" : "Tap the edit button to add a carry on luggage")
+                        .font(EmptyStateView.poppinsMedium14)
+                        .foregroundColor(EmptyStateView.grey)
+                        .multilineTextAlignment(.center)
+                }
+                .padding(.horizontal, 64)
+        )
     }
 }
 
@@ -153,5 +195,14 @@ struct EditButtonModifier: ViewModifier {
 
 struct LuggageView_Previews: PreviewProvider {
     static var previews: some View {
-LuggageView(trip: tripTestData)    }
+        Group {
+            LuggageView(trip: tripTestData)
+                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+                .previewDisplayName("iPhone 8")
+            
+            LuggageView(trip: tripTestData)
+                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+                .previewDisplayName("iPhone 11")
+        }
+    }
 }
