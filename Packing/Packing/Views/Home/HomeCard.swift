@@ -29,10 +29,16 @@ struct HomeCard: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            Rectangle().overlay(
-                Image("home-background-image")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
+            Rectangle()
+                .foregroundColor(.clear)
+                .overlay(
+                    VStack {
+                        Image("home-background-image")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.3)
+                        Spacer()
+                    }
             )
             ZStack {
                 Rectangle()
@@ -44,7 +50,6 @@ struct HomeCard: View {
                     ZStack {
                         Image("home-flight-icon")
                             .resizable()
-                            //                            .aspectRatio(contentMode: .fit)
                             .frame(width: UIScreen.main.bounds.width * 0.08, height: UIScreen.main.bounds.height * 0.025)
                         HStack(alignment: .center) {
                             InfoStack(country: "Indonesia", city: "Jakarta", time: timeFormater.string(from: trip.departureDate), date: dateFormatter.string(from: trip.departureDate))
@@ -72,8 +77,7 @@ struct HomeCard: View {
         }
         .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.5)
         .cornerRadius(40)
-        .padding(.vertical, 5)
-        .shadow(color: HomeCard.cardShadowColor, radius: 4, y: 4)
+            .shadow(color: HomeCard.cardShadowColor, radius: 4, y: 4)
     }
     
     struct InfoStack: View {
@@ -105,7 +109,15 @@ struct HomeCard: View {
 #if DEBUG
 struct HomeCard_Previews: PreviewProvider {
     static var previews: some View {
-        HomeCard(trip: tripTestData).previewLayout(.sizeThatFits)
+        Group {
+            HomeCard(trip: tripTestData)
+                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            .previewDisplayName("iPhone 8")
+            
+            HomeCard(trip: tripTestData)
+                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+                .previewDisplayName("iPhone 11")
+        }
     }
 }
 #endif

@@ -168,56 +168,47 @@ struct ActivityCard: View {
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.beach,
-                        isCheckedIn: false,
-                        items: [item1])
+                        isCheckedIn: false)
                 case 1:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.hike,
-                        isCheckedIn: false,
-                        items: [item1])
+                        isCheckedIn: false)
                 case 2:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.formal,
-                        isCheckedIn: false,
-                        items: [item1])
+                        isCheckedIn: false)
                 case 3:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.winter,
-                        isCheckedIn: false,
-                        items: [item1])
+                        isCheckedIn: false)
                 case 4:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.swimming,
-                        isCheckedIn: false,
-                        items: [item1])
+                        isCheckedIn: false)
                 case 5:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.gym,
-                        isCheckedIn: false,
-                        items: [item1])
+                        isCheckedIn: false)
                 case 6:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.photography,
-                        isCheckedIn: false,
-                        items: [item1])
+                        isCheckedIn: false)
                 case 7:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.business,
-                        isCheckedIn: false,
-                        items: [item1])
+                        isCheckedIn: false)
                 default:
                     self.newLuggage = Luggage(
                     id: activities[self.num],
                     category: Luggage.Category.party,
-                    isCheckedIn: false,
-                    items: [item1])
+                    isCheckedIn: false)
                 }
                 
                 self.newLuggageArray.append(self.newLuggage)
