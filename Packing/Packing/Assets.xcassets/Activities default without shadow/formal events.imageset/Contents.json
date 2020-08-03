@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Formal Events.png",
+      "filename" : "formal events.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Formal Events@2x.png",
+      "filename" : "formal events@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Formal Events@3x.png",
+      "filename" : "formal events@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

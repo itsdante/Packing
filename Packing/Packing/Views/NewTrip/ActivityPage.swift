@@ -41,6 +41,7 @@ struct ActivityPage: View {
                             ActivityCard(
                                 num: item,
                                 name: activities[item],
+                                gender: self.gender,
                                 isSelected: false,
                                 newLuggage: luggage1,
                                 newLuggageArray: self.$newLuggageArray)
@@ -54,6 +55,7 @@ struct ActivityPage: View {
                             
                             ActivityCard(num: item,
                                          name: activities[item],
+                                         gender: self.gender,
                                          isSelected: false,
                                          newLuggage: luggage1,
                                          newLuggageArray: self.$newLuggageArray)
@@ -66,6 +68,7 @@ struct ActivityPage: View {
                             
                             ActivityCard(num: item,
                                          name: activities[item],
+                                         gender: self.gender,
                                          isSelected: false,
                                          newLuggage: luggage1,
                                          newLuggageArray: self.$newLuggageArray)
@@ -118,6 +121,7 @@ var pickedActivity :[Int] = []
 struct ActivityCard: View {
     var num : Int
     var name : String
+    var gender : String
     @State var isSelected : Bool
     @State var newLuggage : Luggage
     @Binding var newLuggageArray : [Luggage]
@@ -174,47 +178,57 @@ struct ActivityCard: View {
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.beach,
-                        isCheckedIn: false)
+                        isCheckedIn: false,
+                        gender: self.gender
+                        )
                 case 1:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.hike,
-                        isCheckedIn: false)
+                        isCheckedIn: false,
+                        gender: self.gender)
                 case 2:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.formal,
-                        isCheckedIn: false)
+                        isCheckedIn: false,
+                        gender: self.gender)
                 case 3:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.winter,
-                        isCheckedIn: false)
+                        isCheckedIn: false,
+                        gender: self.gender)
                 case 4:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.swimming,
-                        isCheckedIn: false)
+                        isCheckedIn: false,
+                        gender: self.gender)
                 case 5:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.gym,
-                        isCheckedIn: false)
+                        isCheckedIn: false,
+                        gender: self.gender)
                 case 6:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.photography,
-                        isCheckedIn: false)
+                        isCheckedIn: false,
+                        gender: self.gender)
                 case 7:
                     self.newLuggage = Luggage(
                         id: activities[self.num],
                         category: Luggage.Category.business,
-                        isCheckedIn: false)
+                        isCheckedIn: false,
+                        gender: self.gender)
                 default:
                     self.newLuggage = Luggage(
                     id: activities[self.num],
                     category: Luggage.Category.party,
-                    isCheckedIn: false)
+                    isCheckedIn: false,
+                    gender: self.gender)
                 }
                 
                 self.newLuggageArray.append(self.newLuggage)

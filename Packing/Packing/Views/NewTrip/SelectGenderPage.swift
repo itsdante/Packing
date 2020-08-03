@@ -38,7 +38,7 @@ struct SelectGenderPage: View {
                         
                         self.isMale = true
                         self.isFemale = false
-                        self.sendedGender = "Male"
+                        self.sendedGender = "male"
                         print(self.sendedGender)
                     }){
                         if(isMale == true)
@@ -66,7 +66,7 @@ struct SelectGenderPage: View {
                     Button(action: {
                         self.isMale = false
                         self.isFemale = true
-                        self.sendedGender = "Female"
+                        self.sendedGender = "female"
                         print(self.sendedGender)
                     }){
                        
