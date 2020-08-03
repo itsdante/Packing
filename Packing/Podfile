@@ -16,5 +16,6 @@ target 'Packing' do
     # Pods for testing
   end
 
+	pod 'SwiftUIPager'
 end
 5

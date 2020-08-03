@@ -55,6 +55,7 @@
 		89E29F1224D2F0A1001BB7FB /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1124D2F0A1001BB7FB /* DateFormatter.swift */; };
 		89E29F1524D2F10B001BB7FB /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1424D2F10B001BB7FB /* HomeCard.swift */; };
 		89E29F1724D2F116001BB7FB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1624D2F116001BB7FB /* HomeView.swift */; };
+		89EA942A24D7B1D200D26FA3 /* HomeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EA942924D7B1D200D26FA3 /* HomeScrollView.swift */; };
 		89EE4D2224D12E760097AE33 /* RestrictionItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EE4D2124D12E760097AE33 /* RestrictionItemCard.swift */; };
 		CB07B442DAF0F4CEEFF62324 /* Pods_Packing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D6FEACBCD90E97265732CE /* Pods_Packing.framework */; };
 		FE32F8A5675B22FDE6780D50 /* Pods_PackingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF64CFEAEF01DBCDDA86BCA /* Pods_PackingTests.framework */; };
@@ -136,6 +137,7 @@
 		89E29F1124D2F0A1001BB7FB /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		89E29F1424D2F10B001BB7FB /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
 		89E29F1624D2F116001BB7FB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		89EA942924D7B1D200D26FA3 /* HomeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollView.swift; sourceTree = "<group>"; };
 		89EE4D2124D12E760097AE33 /* RestrictionItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrictionItemCard.swift; sourceTree = "<group>"; };
 		C0E0E2A3D31FD8B3865D0987 /* Pods-Packing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packing.debug.xcconfig"; path = "Target Support Files/Pods-Packing/Pods-Packing.debug.xcconfig"; sourceTree = "<group>"; };
 		D0D6FEACBCD90E97265732CE /* Pods_Packing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Packing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -351,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				89E29F1624D2F116001BB7FB /* HomeView.swift */,
+				89EA942924D7B1D200D26FA3 /* HomeScrollView.swift */,
 				89E29F1424D2F10B001BB7FB /* HomeCard.swift */,
 				8943A63224D411DE0011F7D1 /* HomePopup.swift */,
 				8938EB0824CF395300D8AFFC /* Weather */,
@@ -703,6 +706,7 @@
 				89A7BF1524C83A78008734ED /* WeatherScrollView.swift in Sources */,
 				89A7BF1124C83A30008734ED /* NetworkManager.swift in Sources */,
 				89343BD224D118A9003AF780 /* RestrictionView.swift in Sources */,
+				89EA942A24D7B1D200D26FA3 /* HomeScrollView.swift in Sources */,
 				89E29F1224D2F0A1001BB7FB /* DateFormatter.swift in Sources */,
 				89343BCE24D11873003AF780 /* RestrictionListCard.swift in Sources */,
 				897AB16424D26E5B00B308C9 /* ActivityPage.swift in Sources */,

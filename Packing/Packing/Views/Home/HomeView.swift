@@ -24,14 +24,15 @@ struct HomeView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var networkManager = NetworkManager()
     @State var isPresented = false
-    var trip: Trip
+    @State var pageIndex: Int = 0
+    var trips: [Trip]
     var cityName: String
     
     var body: some View {
         ZStack {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 0) {
                 HStack(alignment: .center) {
-                    Text(trip.departureDate <= Date() ? "Trip History" : "Upcoming Trip")
+                    Text(trips[pageIndex].departureDate <= Date() ? "Trip History" : "Upcoming Trip")
                         .font(HomeView.poppinsSemiBold28)
                         .foregroundColor(HomeView.darkGrey)
                     Spacer()
@@ -51,11 +52,14 @@ struct HomeView: View {
                 }
                 .padding(.horizontal, 35)
                 
-                // Scroll View
-                HomeCard(trip: trip)
-                    .padding(.horizontal, 35)
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(height: UIScreen.main.bounds.height * 0.55)
+                    .overlay(
+                        HomeScrollView(pageIndex: self.$pageIndex, trips: trips)
+                )
                 
-                Text(trip.departureDate <= Date() ? "Weather for Post Trip" : "Weather for Upcoming Trip")
+                Text(trips[pageIndex].departureDate <= Date() ? "Weather for Post Trip" : "Weather for Upcoming Trip")
                     .font(HomeView.poppinsMedium20)
                     .foregroundColor(HomeView.darkGrey)
                     .padding(.leading, 35)
@@ -73,7 +77,7 @@ struct HomeView: View {
                     .padding(.leading, 35)
             }
             if isPresented {
-                HomePopup(isPresented: self.$isPresented, trip: trip)
+                HomePopup(isPresented: self.$isPresented, trip: trips[pageIndex])
             }
         }
     }
@@ -83,11 +87,11 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HomeView(trip: tripTestData, cityName: "London")
+            HomeView(trips: [tripTestData, tripTestData2], cityName: "London")
                 .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
                 .previewDisplayName("iPhone 8")
             
-            HomeView(trip: tripTestData, cityName: "London")
+            HomeView(trips: [tripTestData, tripTestData2], cityName: "London")
                 .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
                 .previewDisplayName("iPhone 11")
         }
