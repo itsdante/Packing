@@ -39,7 +39,16 @@ struct SelectLuggagePage: View {
             if ctr != 0{
                 
                 
-            NavigationLink(destination: LuggageView(trip: trip))
+            NavigationLink(destination: LuggageView(trip: Trip(
+                bookingNumber: "71938JC",
+                airline: "Lion Air",
+                flightNumber: "GA4828",
+                origin: "CGK", destination: "HKG",
+                departureDate: Calendar.current.date(byAdding: .day, value: 1, to: Date())!,
+                arrivalDate: Calendar.current.date(byAdding: .day, value: 4, to: Date())!.addingTimeInterval(5000),
+                createdAt: Date(),
+                luggages: luggageArrayCheckedIn,
+                restrictions: restrictionArray)))
             {
                 Image("ButtonL")
                     .resizable()
