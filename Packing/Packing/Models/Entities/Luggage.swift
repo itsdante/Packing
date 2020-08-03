@@ -54,46 +54,27 @@ struct Luggage: Identifiable {
                 Item(name: "Wallet", quantity: 1, isCompleted: false, createdAt: Date()),
                 Item(name: "Emergency Contact", quantity: 1, isCompleted: false, createdAt: Date()),
                 Item(name: "House/Car Keys", quantity: 1, isCompleted: false, createdAt: Date()),
-                Item(name: "Medications", quantity: 1, isCompleted: false, createdAt: Date()),
                 Item(name: "Empty Water Bottle", quantity: 1, isCompleted: false, createdAt: Date())
             ]
         case .toiletries:
-            if isCarryOn == true {
                 return [
+                    Item(name: "Band-Aids", quantity: 1, isCompleted: false, createdAt: Date()),
+                    Item(name: "Conditioner", quantity: 1, isCompleted: false, createdAt: Date()),
+                    Item(name: "Contacts", quantity: 1, isCompleted: false, createdAt: Date()),
+                    Item(name: "Contact Solution", quantity: 1, isCompleted: false, createdAt: Date()),
+                    Item(name: "Deodorant", quantity: 1, isCompleted: false, createdAt: Date()),
+                    Item(name: "Cotton Pads", quantity: 1, isCompleted: false, createdAt: Date()),
+                    Item(name: "Hairbrush", quantity: 1, isCompleted: false, createdAt: Date()),
+                    Item(name: "Perfume", quantity: 1, isCompleted: false, createdAt: Date()),
+                    Item(name: "Electric Shaver", quantity: 1, isCompleted: false, createdAt: Date()),
+                    Item(name: "Shampoo", quantity: 1, isCompleted: false, createdAt: Date()),
                     Item(name: "Toothbrush", quantity: 1, isCompleted: false, createdAt: Date()),
                     Item(name: "Toothpaste", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Dental Floss", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Soap", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Deodorant", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Brush/Comb", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Face Cleanser", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Face Lotion", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Sunscreen", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Moisturizer", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Contact Lenses/Solution", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Female-Hygiene Products", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Hand Sanitizer", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Bandages", quantity: 1, isCompleted: false, createdAt: Date())
+                    Item(name: "Nail Clippers", quantity: 1, isCompleted: false, createdAt: Date())
                 ]
-            }
-            else {
-                return [
-                    Item(name: "Toothbrush", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Toothpaste", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Dental Floss", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Soap", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Deodorant", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Brush/Comb", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Face Cleanser", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Face Lotion", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Sunscreen", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Moisturizer", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Contact Lenses/Solution", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Female-Hygiene Products", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Hand Sanitizer", quantity: 1, isCompleted: false, createdAt: Date()),
-                    Item(name: "Bandages", quantity: 1, isCompleted: false, createdAt: Date())
-                ]
-            }
+            
+                
+            
             
         case .clothing:
             return [
