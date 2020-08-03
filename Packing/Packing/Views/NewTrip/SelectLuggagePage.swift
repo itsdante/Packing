@@ -12,10 +12,12 @@ struct SelectLuggagePage: View {
     @State var ctr : Int
     @State var isCarryOn : Bool
     @State var isCheckedIn : Bool
-    @State var newLuggageArray : [Luggage]
-    
+    @State var luggageArrayCheckedIn : [Luggage]
+//    @State var luggageArrayCarryOn : [Luggage]
     var trip: Trip
+    
     var body: some View {
+        
         ZStack{
             VStack(alignment: .leading, spacing: 6){
                 Text("Luggage")
@@ -31,7 +33,12 @@ struct SelectLuggagePage: View {
                 isCheckedIn: $isCheckedIn,
                 ctr: $ctr)
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
+            
+            
+            
             if ctr != 0{
+                
+                
             NavigationLink(destination: LuggageView(trip: trip))
             {
                 Image("ButtonL")
@@ -50,8 +57,11 @@ struct SelectLuggagePage: View {
         }
             
             Button(action: {
-                print(self.newLuggageArray)
-                print("check is carryon \(self.isCarryOn) check is checkin \(self.isCheckedIn)")
+                print(self.luggageArrayCheckedIn)
+//                print(self.luggageArrayCheckedIn)
+//                print("check is carryon \(self.isCarryOn) check is checkin \(self.isCheckedIn)")
+                
+                
             }) {
                 Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
             }
@@ -66,7 +76,8 @@ struct SelectLuggagePage_Previews: PreviewProvider {
             ctr: 0,
             isCarryOn: true,
             isCheckedIn : true,
-            newLuggageArray: luggageArray,
+            luggageArrayCheckedIn: luggageArray,
+//            luggageArrayCarryOn : luggageArray,
             trip: tripTestData)
     }
 }

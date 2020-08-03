@@ -24,6 +24,15 @@ struct Luggage: Identifiable {
         case party
     }
     
+//    func setCurrentLuggage(_ barang : [Item]){
+//        var barangs = [Item].self
+//        for x in barang {
+//            if x.isCarryOn {
+//                barangs.append(Item(name: x.name, quantity: x.quantity, isCompleted: x.isCompleted, isCheckedIn: x.isCheckedIn, isCarryOn: x.isCarryOn, createdAt: Date()))
+//            }
+//        }
+//    }
+    
     var id: String = UUID().uuidString
     var category: Category
     var isCheckedIn: Bool

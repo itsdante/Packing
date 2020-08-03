@@ -13,6 +13,8 @@ struct Item: Identifiable {
     var name: String
     var quantity: Int32
     var isCompleted: Bool
+    var isCheckedIn : Bool = false
+    var isCarryOn : Bool = false
     var createdAt: Date
 }
 
