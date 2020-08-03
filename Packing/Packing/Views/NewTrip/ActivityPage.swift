@@ -12,8 +12,9 @@ let activities : [String] = ["beach","hike","formal events","winter sport","swim
 
 struct ActivityPage: View {
     var gender:String
-    var trip: Trip
     @State var newLuggageArray : [Luggage]
+    var isCarryOn : Bool
+    var isCheckIn : Bool
     var body: some View {
         ZStack{
             
@@ -42,6 +43,8 @@ struct ActivityPage: View {
                                 num: item,
                                 name: activities[item],
                                 gender: self.gender,
+                                isCarryOn: self.isCarryOn,
+                                isCheckedIn: self.isCheckIn,
                                 isSelected: false,
                                 newLuggage: luggage1,
                                 newLuggageArray: self.$newLuggageArray)
@@ -56,6 +59,8 @@ struct ActivityPage: View {
                             ActivityCard(num: item,
                                          name: activities[item],
                                          gender: self.gender,
+                                         isCarryOn: self.isCarryOn,
+                                         isCheckedIn: self.isCheckIn,
                                          isSelected: false,
                                          newLuggage: luggage1,
                                          newLuggageArray: self.$newLuggageArray)
@@ -69,6 +74,8 @@ struct ActivityPage: View {
                             ActivityCard(num: item,
                                          name: activities[item],
                                          gender: self.gender,
+                                         isCarryOn: self.isCarryOn,
+                                         isCheckedIn: self.isCheckIn,
                                          isSelected: false,
                                          newLuggage: luggage1,
                                          newLuggageArray: self.$newLuggageArray)
@@ -79,13 +86,16 @@ struct ActivityPage: View {
                 x: UIScreen.main.bounds.width / 2,
                 y: UIScreen.main.bounds.height * 0.34)
             
-            NavigationLink(destination: SelectLuggagePage(
-                ctr: 0,
-                isCarryOn: false,
-                isCheckedIn: false,
-                luggageArrayCheckedIn: newLuggageArray,
-//                luggageArrayCarryOn: newLuggageArray,
-                trip: trip))
+            NavigationLink(destination: LuggageView(trip: Trip(
+            bookingNumber: "71938JC",
+            airline: "Lion Air",
+            flightNumber: "GA4828",
+            origin: "CGK", destination: "HKG",
+            departureDate: Calendar.current.date(byAdding: .day, value: 1, to: Date())!,
+            arrivalDate: Calendar.current.date(byAdding: .day, value: 4, to: Date())!.addingTimeInterval(5000),
+            createdAt: Date(),
+            luggages: newLuggageArray,
+            restrictions: restrictionArray)))
             {
                 Image("ButtonL")
                     .resizable()
@@ -109,7 +119,7 @@ struct ActivityPage: View {
 struct ActivityPage_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            ActivityPage(gender: "Male", trip: tripTestData, newLuggageArray: [])
+            ActivityPage(gender: "Male", newLuggageArray: [], isCarryOn: true, isCheckIn: true)
         }
     }
 }
@@ -122,6 +132,8 @@ struct ActivityCard: View {
     var num : Int
     var name : String
     var gender : String
+    var isCarryOn : Bool
+    var isCheckedIn : Bool
     @State var isSelected : Bool
     @State var newLuggage : Luggage
     @Binding var newLuggageArray : [Luggage]

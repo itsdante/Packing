@@ -12,9 +12,7 @@ struct SelectLuggagePage: View {
     @State var ctr : Int
     @State var isCarryOn : Bool
     @State var isCheckedIn : Bool
-    @State var luggageArrayCheckedIn : [Luggage]
-//    @State var luggageArrayCarryOn : [Luggage]
-    var trip: Trip
+    var gender : String
     
     var body: some View {
         
@@ -38,17 +36,7 @@ struct SelectLuggagePage: View {
             
             if ctr != 0{
                 
-                
-            NavigationLink(destination: LuggageView(trip: Trip(
-                bookingNumber: "71938JC",
-                airline: "Lion Air",
-                flightNumber: "GA4828",
-                origin: "CGK", destination: "HKG",
-                departureDate: Calendar.current.date(byAdding: .day, value: 1, to: Date())!,
-                arrivalDate: Calendar.current.date(byAdding: .day, value: 4, to: Date())!.addingTimeInterval(5000),
-                createdAt: Date(),
-                luggages: luggageArrayCheckedIn,
-                restrictions: restrictionArray)))
+                NavigationLink(destination: ActivityPage(gender: gender,newLuggageArray: [], isCarryOn: isCarryOn,isCheckIn: isCheckedIn))
             {
                 Image("ButtonL")
                     .resizable()
@@ -65,15 +53,7 @@ struct SelectLuggagePage: View {
                     y: UIScreen.main.bounds.height * 0.7)
         }
             
-            Button(action: {
-                print(self.luggageArrayCheckedIn)
-//                print(self.luggageArrayCheckedIn)
-//                print("check is carryon \(self.isCarryOn) check is checkin \(self.isCheckedIn)")
-                
-                
-            }) {
-                Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
-            }
+            
         }
         
     }
@@ -85,9 +65,7 @@ struct SelectLuggagePage_Previews: PreviewProvider {
             ctr: 0,
             isCarryOn: true,
             isCheckedIn : true,
-            luggageArrayCheckedIn: luggageArray,
-//            luggageArrayCarryOn : luggageArray,
-            trip: tripTestData)
+            gender: "male")
     }
 }
 

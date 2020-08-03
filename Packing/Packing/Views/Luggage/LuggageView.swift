@@ -44,7 +44,7 @@ struct LuggageView: View {
             Spacer()
             if selected == 0 {
                 ScrollView {
-                    ForEach(trip.luggages.filter({ $0.isCheckedIn == false })) { luggage in
+                    ForEach(trip.luggages.filter({ $0.isCarryOn == true })) { luggage in
                         LuggageListCard(luggage: luggage)
                     }
                 }

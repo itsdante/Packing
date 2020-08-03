@@ -91,8 +91,12 @@ struct SelectGenderPage: View {
                 }
                     .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
                     if self.isMale == true || self.isFemale == true {
-                        NavigationLink(destination: ActivityPage(gender: sendedGender,trip: trip, newLuggageArray: []))
-                {
+                        
+                        NavigationLink(destination: SelectLuggagePage(
+                                        ctr: 0,
+                                        isCarryOn: false,
+                                        isCheckedIn: false,
+                                        gender: sendedGender)){
                     Image("ButtonL")
                         .resizable()
                         .aspectRatio(

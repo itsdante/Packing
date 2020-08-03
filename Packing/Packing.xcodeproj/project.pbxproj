@@ -252,8 +252,8 @@
 			children = (
 				897AB15F24D26E4000B308C9 /* InputBookingNumberPage.swift */,
 				897AB16124D26E4E00B308C9 /* SelectGenderPage.swift */,
-				897AB16324D26E5B00B308C9 /* ActivityPage.swift */,
 				897AB16524D26E6800B308C9 /* SelectLuggagePage.swift */,
+				897AB16324D26E5B00B308C9 /* ActivityPage.swift */,
 			);
 			path = NewTrip;
 			sourceTree = "<group>";
