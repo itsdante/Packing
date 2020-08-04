@@ -66,6 +66,7 @@ struct HomePopup: View {
                                         // Call to API
                                     })
                                         .font(HomePopup.poppinsRegular11)
+                                        .multilineTextAlignment(TextAlignment.center)
                                         .padding(10)
                             ).frame(width: UIScreen.main.bounds.width * 0.53, height: UIScreen.main.bounds.height * 0.04)
                             NavigationLink(destination: SelectGenderPage(trip: trip)) {

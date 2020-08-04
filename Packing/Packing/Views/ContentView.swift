@@ -38,7 +38,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            NavigationLink(destination: SelectGenderPage(trip: tripTestData3)) {
+            NavigationLink(destination: SelectGenderPage(trip: tripAmsterdam)) {
                 Text("Start")
             }
         }

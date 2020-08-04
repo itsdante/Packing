@@ -52,10 +52,10 @@ struct HomeCard: View {
                             .resizable()
                             .frame(width: UIScreen.main.bounds.width * 0.08, height: UIScreen.main.bounds.height * 0.025)
                         HStack(alignment: .center) {
-                            InfoStack(country: "Indonesia", city: "Jakarta", time: timeFormater.string(from: trip.departureDate), date: dateFormatter.string(from: trip.departureDate))
+                            InfoStack(country: trip.originCountry, city: trip.originCity, time: timeFormater.string(from: trip.departureDate), date: dateFormatter.string(from: trip.departureDate))
                                 .padding(.leading, 30)
                             Spacer()
-                            InfoStack(country: "China", city: "Hong Kong", time: timeFormater.string(from: trip.arrivalDate), date: dateFormatter.string(from: trip.arrivalDate))
+                            InfoStack(country: trip.destinationCountry, city: trip.destinationCity, time: timeFormater.string(from: trip.arrivalDate), date: dateFormatter.string(from: trip.arrivalDate))
                                 .padding(.trailing, 30)
                         }
                     }
