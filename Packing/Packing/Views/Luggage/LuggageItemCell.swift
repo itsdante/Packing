@@ -42,6 +42,7 @@ struct LuggageItemCell: View {
                 }
             }
             Spacer()
+                
             if isEditMode {
                 HStack {
                     Image(systemName: "minus.square.fill")
@@ -90,13 +91,18 @@ struct LuggageItemCell: View {
                 }
             }
         }
+        .contentShape(Rectangle())
+            .onTapGesture {
+                self.isEditMode = false
+        }
     }
 }
 
 #if DEBUG
-//struct ItemCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LuggageItemCell(isWarningPresented: <#Binding<Bool>#>, item: item1).previewLayout(.sizeThatFits)
-//    }
-//}
+struct ItemCell_Previews: PreviewProvider {
+    @State static var warn : Bool = true
+    static var previews: some View {
+        LuggageItemCell(isWarningPresented: $warn, item: item1).previewLayout(.sizeThatFits)
+    }
+}
 #endif

@@ -91,8 +91,9 @@ struct LuggageListCard: View {
 
 #if DEBUG
 //struct ItemList_Previews: PreviewProvider {
+//    @State var warn : Bool = true
 //    static var previews: some View {
-//        return LuggageListCard(luggage: luggage1, isWarningPresented: <#Binding<Bool>#>).previewLayout(.sizeThatFits)
+//        return LuggageListCard(luggage: luggage1, isWarningPresented: $warn).previewLayout(.sizeThatFits)
 //    }
 //}
 #endif
