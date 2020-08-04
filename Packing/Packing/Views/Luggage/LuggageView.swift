@@ -45,7 +45,7 @@ struct LuggageView: View {
                     .padding(.top, 20)
                 Spacer()
                 if selected == 0 {
-                    if trip.luggages.filter({ $0.isCheckedIn == false }).count != 0 {
+                    if trip.luggages.filter({ $0.isCarryOn == true }).count != 0 {
                         ScrollView {
                             ForEach(trip.luggages.filter({ $0.isCarryOn == true })) { luggage in
                                 LuggageListCard(luggage: luggage, isWarningPresented: self.$isWarningPresented)
