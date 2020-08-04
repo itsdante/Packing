@@ -9,139 +9,93 @@
 import SwiftUI
 
 struct SelectLuggagePage: View {
-    @State var ctr : Int
-    @State var isCarryOn : Bool
-    @State var isCheckedIn : Bool
-    var gender : String
+    @State var selectedLuggage: [Int] = []
+    
+    var selectedGender: String
+    var trip: Trip
     
     var body: some View {
-        
-        ZStack{
-            VStack(alignment: .leading, spacing: 6){
+        ZStack {
+            VStack(alignment: .leading, spacing: 6) {
                 Text("Luggage")
                     .font(.custom("Poppins-SemiBold", size: 22))
-                .foregroundColor(.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
+                    .foregroundColor(.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
                 Text("What Kind of Luggage Will You Bring?")
                     .font(.custom("Poppins-Medium", size: 16))
-                .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
-            }.frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.1)
+                    .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
+            }
+            .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.1)
             .position(x: UIScreen.main.bounds.width * 0.45, y: UIScreen.main.bounds.height * 0)
-            LuggageCard(
-                isCarryOn: $isCarryOn,
-                isCheckedIn: $isCheckedIn,
-                ctr: $ctr)
+            
+            LuggageCard(selectedLuggage: $selectedLuggage)
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
             
-            
-            
-            if ctr != 0{
-                
-                NavigationLink(destination: ActivityPage(gender: gender,newLuggageArray: [], isCarryOn: isCarryOn,isCheckIn: isCheckedIn))
-            {
-                Image("ButtonL")
-                    .resizable()
-                    .aspectRatio(
-                        contentMode: .fill)
-                    .frame(
-                        width: UIScreen.main.bounds.width * 0.936,
-                        height: UIScreen.main.bounds.height * 0.05)
-                    
-            }.buttonStyle(
-                PlainButtonStyle())
+            if selectedLuggage.count != 0 {
+                NavigationLink(destination: ActivityPage(selectedGender: selectedGender, selectedLuggage: selectedLuggage, trip: trip)) {
+                    Image("ButtonL")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.05)
+                }
+                .buttonStyle(PlainButtonStyle())
                 .position(
                     x: UIScreen.main.bounds.width / 2,
                     y: UIScreen.main.bounds.height * 0.7)
+            }
         }
+    }
+}
+
+struct LuggageCard: View {
+    @Binding var selectedLuggage: [Int]
+    
+    var body: some View {
+        HStack {
+            Button(action: {
+                if self.selectedLuggage.contains(1) {
+                    self.selectedLuggage.removeAll(where: { $0 == 1 })
+                } else {
+                    self.selectedLuggage.append(1)
+                }
+            }) {
+                if(selectedLuggage.contains(1)) {
+                    Image("CarryOnSelected")
+                        .renderingMode(.original)
+                        .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.23)
+                } else {
+                    Image("CarryOn")
+                        .renderingMode(.original)
+                        .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.23)
+                }
+            }
             
+            Spacer()
+                .frame(width: UIScreen.main.bounds.width * 0.05)
             
+            Button(action: {
+                if self.selectedLuggage.contains(2) {
+                    self.selectedLuggage.removeAll(where: { $0 == 2 })
+                } else {
+                    self.selectedLuggage.append(2)
+                }
+            }) {
+                if (self.selectedLuggage.contains(2)) {
+                    Image("CheckInSelected")
+                        .renderingMode(.original)
+                        .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.23)
+                } else {
+                    Image("CheckIn")
+                        .renderingMode(.original)
+                        .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.23)
+                    
+                }
+            }
         }
-        
     }
 }
 
 struct SelectLuggagePage_Previews: PreviewProvider {
     static var previews: some View {
-        SelectLuggagePage(
-            ctr: 0,
-            isCarryOn: true,
-            isCheckedIn : true,
-            gender: "male")
+        SelectLuggagePage(selectedGender: "Male", trip: tripTestData)
     }
 }
-
-struct LuggageCard: View {
-    @Binding var isCarryOn : Bool
-    @Binding var isCheckedIn : Bool
-    @Binding var ctr : Int
-    var body: some View {
-    HStack {
-        Button(action: {
-            self.isCarryOn.toggle()
-            if self.isCarryOn == true {
-            self.ctr -= 1
-            }
-            else
-            {
-                self.ctr += 1
-            }
-        }){
-            if(isCarryOn == true)
-            {
-                Image("CarryOnSelected")
-                .renderingMode(.original)
-                .frame(
-                    width: UIScreen.main.bounds.width * 0.4,
-                    height: UIScreen.main.bounds.height * 0.23)
-                
-            }
-            else
-            {
-            Image("CarryOn")
-                .renderingMode(.original)
-                .frame(
-                    width: UIScreen.main.bounds.width * 0.4,
-                    height: UIScreen.main.bounds.height * 0.23)
-            }
-        }
-        
-        
-        
-        Spacer()
-            .frame(width: UIScreen.main.bounds.width * 0.05)
-        Button(action: {
-            self.isCheckedIn.toggle()
-            if self.isCheckedIn == true
-            {
-                self.ctr -= 1
-            }
-            else
-            {
-                self.ctr += 1
-            }
-        }){
-            
-            if(isCheckedIn == true)
-            {
-                Image("CheckInSelected")
-                .renderingMode(.original)
-                .frame(
-                    width: UIScreen.main.bounds.width * 0.4,
-                    height: UIScreen.main.bounds.height * 0.23)
-            }
-            else
-            {
-            Image("CheckIn")
-                .renderingMode(.original)
-                .frame(
-                    width: UIScreen.main.bounds.width * 0.4,
-                    height: UIScreen.main.bounds.height * 0.23)
-            
-            }
-            
-        }
-        }
-    }
-    }
-    
-
-

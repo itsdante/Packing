@@ -26,13 +26,12 @@ struct Luggage: Identifiable {
     
     var id: String = UUID().uuidString
     var category: Category
-    var isCheckedIn: Bool = false
-    var isCarryOn: Bool = false
-    var gender : String = "male"
+    var isCheckedIn: Bool
+    var gender : String
     
     var items: [Item] {
         switch gender {
-        case "male":
+        case "Male":
             switch category {
             case .esssentials:
                 return [
@@ -194,7 +193,7 @@ struct Luggage: Identifiable {
                     Item(name: "Empty Water Bottle", quantity: 1, isCompleted: false, isRestricted: false, createdAt: Date())
                 ]
             case .toiletries:
-                if isCarryOn == true {
+                if isCheckedIn == false {
                     return [
                         Item(name: "Toothbrush", quantity: 1, isCompleted: false, isRestricted: false, createdAt: Date()),
                         Item(name: "Toothpaste", quantity: 1, isCompleted: false, isRestricted: false, createdAt: Date()),
@@ -407,8 +406,8 @@ struct Luggage: Identifiable {
 }
 
 #if DEBUG
-let luggage1 = Luggage(category: .esssentials, isCheckedIn: false)
-let luggage2 = Luggage(category: .toiletries, isCheckedIn: false)
-let luggage3 = Luggage(category: .formal, isCheckedIn: true)
-let luggage4 = Luggage(category: .beach, isCheckedIn: true)
+let luggage1 = Luggage(category: .esssentials, isCheckedIn: false, gender: "Male")
+let luggage2 = Luggage(category: .toiletries, isCheckedIn: false, gender: "Male")
+let luggage3 = Luggage(category: .formal, isCheckedIn: true, gender: "Male")
+let luggage4 = Luggage(category: .beach, isCheckedIn: true, gender: "Male")
 #endif

@@ -8,262 +8,76 @@
 
 import SwiftUI
 
-let activities : [String] = ["beach","hike","formal events","winter sport","swimming","gym","photography","business","party"]
-
 struct ActivityPage: View {
-    var gender:String
-    @State var newLuggageArray : [Luggage]
-    var isCarryOn : Bool
-    var isCheckIn : Bool
+    @State var selectedActivity: [Luggage] = []
+    
+    let activities : [String] = ["beach", "hike", "formal", "winter", "swimming", "gym", "photography", "business", "party"]
+    
+    var selectedGender: String
+    var selectedLuggage: [Int]
+    @State var trip: Trip
+    
     var body: some View {
-        ZStack{
-            
-            VStack(alignment: .leading, spacing: 3){
+        ZStack {
+            VStack(alignment: .leading, spacing: 3) {
                 Text("Activities")
                     .font(.custom("Poppins-SemiBold", size: 22))
                     .foregroundColor(.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
                 Text("What Activities Will You Do")
                     .font(.custom("Poppins-Medium", size: 16))
                     .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
-            }.frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.1)
-                .position(
-                    x: UIScreen.main.bounds.width * 0.33,
-                    y: UIScreen.main.bounds.height * 0)
+            }
+            .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.1)
+            .position(x: UIScreen.main.bounds.width * 0.33, y: UIScreen.main.bounds.height * 0)
             
-            VStack(spacing: 41){
-                HStack(spacing: 18){
+            VStack(spacing: 41) {
+                HStack(spacing: 18) {
                     ForEach(0 ..< 3) { item in
                         
-                        Button(action: {
-                            print("\(item)")
-                            print("\(self.gender)")
-                            
-                        }) {
-                            ActivityCard(
-                                num: item,
-                                name: activities[item],
-                                gender: self.gender,
-                                isCarryOn: self.isCarryOn,
-                                isCheckedIn: self.isCheckIn,
-                                isSelected: false,
-                                newLuggage: luggage1,
-                                newLuggageArray: self.$newLuggageArray)
-                        }.buttonStyle(PlainButtonStyle())
+                        ActivityCard(selectedActivity: self.$selectedActivity, optionIndex: item, selectedGender: self.selectedGender, selectedLuggage: self.selectedLuggage)
+                        
                     }
                 }
-                HStack(spacing: 18){
+                
+                HStack(spacing: 18) {
                     ForEach(3 ..< 6) { item in
                         
-                        Button(action: {print("\(item)")}) {
-                            
-                            ActivityCard(num: item,
-                                         name: activities[item],
-                                         gender: self.gender,
-                                         isCarryOn: self.isCarryOn,
-                                         isCheckedIn: self.isCheckIn,
-                                         isSelected: false,
-                                         newLuggage: luggage1,
-                                         newLuggageArray: self.$newLuggageArray)
-                        }.buttonStyle(PlainButtonStyle())
+                        ActivityCard(selectedActivity: self.$selectedActivity, optionIndex: item, selectedGender: self.selectedGender, selectedLuggage: self.selectedLuggage)
+                        
                     }
                 }
-                HStack(spacing: 18){
+                
+                HStack(spacing: 18) {
                     ForEach(6 ..< 9) { item in
-                        Button(action: {print("\(item)")}) {
-                            
-                            ActivityCard(num: item,
-                                         name: activities[item],
-                                         gender: self.gender,
-                                         isCarryOn: self.isCarryOn,
-                                         isCheckedIn: self.isCheckIn,
-                                         isSelected: false,
-                                         newLuggage: luggage1,
-                                         newLuggageArray: self.$newLuggageArray)
-                        }.buttonStyle(PlainButtonStyle())
+                        
+                        ActivityCard(selectedActivity: self.$selectedActivity, optionIndex: item, selectedGender: self.selectedGender, selectedLuggage: self.selectedLuggage)
+                        
                     }
                 }
-            }.position(
-                x: UIScreen.main.bounds.width / 2,
-                y: UIScreen.main.bounds.height * 0.34)
+            }.position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.34)
             
-            NavigationLink(destination: LuggageView(trip: Trip(
-                bookingNumber: "71938JC",
-                airline: "Lion Air",
-                flightNumber: "GA4828",
-                origin: "CGK", destination: "HKG",
-                departureDate: Calendar.current.date(byAdding: .day, value: 1, to: Date())!,
-                arrivalDate: Calendar.current.date(byAdding: .day, value: 4, to: Date())!.addingTimeInterval(5000),
-                createdAt: Date(),
-                luggages: newLuggageArray,
-                restrictions: restrictionArray)))
-            {
+            
+            NavigationLink(destination: LuggageView(trip: trip)) {
                 Image("ButtonL")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(
-                        width: UIScreen.main.bounds.width * 0.936,
-                        height: UIScreen.main.bounds.height * 0.05)
-            }.buttonStyle(PlainButtonStyle())
-                .position(
-                    x: UIScreen.main.bounds.width / 2,
-                    y: UIScreen.main.bounds.height * 0.7)
-            
-            
-            
+                    .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.05)
+            }
+            .buttonStyle(PlainButtonStyle())
+            .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
+            .simultaneousGesture(TapGesture().onEnded{
+                self.selectedActivity.append(Luggage(category: .esssentials, isCheckedIn: self.selectedLuggage.contains(1) ? false : true, gender: self.selectedGender))
+                self.selectedActivity.append(Luggage(category: .toiletries, isCheckedIn: self.selectedLuggage.contains(1) ? false : true, gender: self.selectedGender))
+                self.trip.luggages = self.selectedActivity
+            })
         }
-        
     }
 }
-
 
 struct ActivityPage_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            ActivityPage(gender: "Male", newLuggageArray: [], isCarryOn: true, isCheckIn: true)
+            ActivityPage(selectedGender: "Male", selectedLuggage: [1,2], trip: tripTestData)
         }
     }
 }
-
-var pickedActivity :[Int] = []
-
-
-
-struct ActivityCard: View {
-    var num : Int
-    var name : String
-    var gender : String
-    var isCarryOn : Bool
-    var isCheckedIn : Bool
-    @State var isSelected : Bool
-    @State var newLuggage : Luggage
-    @Binding var newLuggageArray : [Luggage]
-    var body: some View {
-        
-        
-        ZStack{
-            
-            
-            if isSelected == true {
-                
-                
-                Image("\(name) Selected")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(
-                        width: UIScreen.main.bounds.width * 0.27,
-                        height: UIScreen.main.bounds.height * 0.14)
-                
-                
-            }
-            else
-            {
-                Rectangle()
-                    .frame(
-                        width: UIScreen.main.bounds.width * 0.27,
-                        height: UIScreen.main.bounds.height * 0.14)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
-                    //                .shadow(radius: 10)
-                    .shadow(color: .init(UIColor(
-                        red: 0.396,
-                        green: 0.298,
-                        blue: 1,
-                        alpha: 0.1)),
-                            radius: 21,
-                            x: 0,
-                            y: 6)
-                Image("\(name)")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(
-                        width: UIScreen.main.bounds.width * 0.27,
-                        height: UIScreen.main.bounds.height * 0.14)
-                
-            }
-        }.onTapGesture {
-            self.isSelected.toggle()
-            if self.isSelected == true {
-                print("TRUE \(self.num)")
-                pickedActivity.append(self.num)
-                switch self.num {
-                case 0:
-                    self.newLuggage = Luggage(
-                        id: activities[self.num],
-                        category: Luggage.Category.beach,
-                        isCheckedIn: self.isCheckedIn,
-                        isCarryOn: self.isCarryOn,
-                        gender: self.gender
-                    )
-                case 1:
-                    self.newLuggage = Luggage(
-                        id: activities[self.num],
-                        category: Luggage.Category.hike,
-                        isCheckedIn: self.isCheckedIn,
-                        isCarryOn: self.isCarryOn,
-                        gender: self.gender)
-                case 2:
-                    self.newLuggage = Luggage(
-                        id: activities[self.num],
-                        category: Luggage.Category.formal,
-                        isCheckedIn: self.isCheckedIn,
-                        isCarryOn: self.isCarryOn,
-                        gender: self.gender)
-                case 3:
-                    self.newLuggage = Luggage(
-                        id: activities[self.num],
-                        category: Luggage.Category.winter,
-                        isCheckedIn: self.isCheckedIn,
-                        isCarryOn: self.isCarryOn,
-                        gender: self.gender)
-                case 4:
-                    self.newLuggage = Luggage(
-                        id: activities[self.num],
-                        category: Luggage.Category.swimming,
-                        isCheckedIn: self.isCheckedIn,
-                        isCarryOn: self.isCarryOn,
-                        gender: self.gender)
-                case 5:
-                    self.newLuggage = Luggage(
-                        id: activities[self.num],
-                        category: Luggage.Category.gym,
-                        isCheckedIn: self.isCheckedIn,
-                        isCarryOn: self.isCarryOn,                        gender: self.gender)
-                case 6:
-                    self.newLuggage = Luggage(
-                        id: activities[self.num],
-                        category: Luggage.Category.photography,
-                        isCheckedIn: self.isCheckedIn,
-                        isCarryOn: self.isCarryOn,                          gender: self.gender)
-                case 7:
-                    self.newLuggage = Luggage(
-                        id: activities[self.num],
-                        category: Luggage.Category.business,
-                        isCheckedIn: self.isCheckedIn,
-                        isCarryOn: self.isCarryOn,                          gender: self.gender)
-                default:
-                    self.newLuggage = Luggage(
-                        id: activities[self.num],
-                        category: Luggage.Category.party,
-                        isCheckedIn: self.isCheckedIn,
-                        isCarryOn: self.isCarryOn,                      gender: self.gender)
-                }
-                
-                self.newLuggageArray.append(self.newLuggage)
-            }
-            else
-            {
-                print("False \(self.name)")
-                let index = pickedActivity.firstIndex(of: self.num)
-                pickedActivity.remove(at: index!)
-                let newLuggageIndex = self.newLuggageArray.firstIndex{
-                    $0.id == activities[self.num]
-                }
-                self.newLuggageArray.remove(at: newLuggageIndex!)
-                print(newLuggageIndex!)
-                
-            }
-            
-        }
-    }
-}
-

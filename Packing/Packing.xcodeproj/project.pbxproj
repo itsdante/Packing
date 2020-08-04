@@ -40,6 +40,9 @@
 		895094FF24CFC2100034CAA7 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895094ED24CFC2100034CAA7 /* Poppins-BoldItalic.ttf */; };
 		8950950524CFF1AF0034CAA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8950950424CFF1AF0034CAA7 /* ContentView.swift */; };
 		895426FE24D7D8B30092DA68 /* LuggagePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895426FD24D7D8B30092DA68 /* LuggagePopup.swift */; };
+		89728FDA24D92B8900527716 /* ActivityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89728FD924D92B8900527716 /* ActivityCard.swift */; };
+		89728FDC24D92BB700527716 /* LuggageEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89728FDB24D92BB700527716 /* LuggageEmptyState.swift */; };
+		89728FDE24D92BC200527716 /* LuggageMenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89728FDD24D92BC200527716 /* LuggageMenuCard.swift */; };
 		897AB15E24D26E1100B308C9 /* Packing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 897AB15C24D26E1100B308C9 /* Packing.xcdatamodeld */; };
 		897AB16024D26E4000B308C9 /* InputBookingNumberPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897AB15F24D26E4000B308C9 /* InputBookingNumberPage.swift */; };
 		897AB16224D26E4E00B308C9 /* SelectGenderPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897AB16124D26E4E00B308C9 /* SelectGenderPage.swift */; };
@@ -123,6 +126,9 @@
 		895094ED24CFC2100034CAA7 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
 		8950950424CFF1AF0034CAA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		895426FD24D7D8B30092DA68 /* LuggagePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuggagePopup.swift; sourceTree = "<group>"; };
+		89728FD924D92B8900527716 /* ActivityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCard.swift; sourceTree = "<group>"; };
+		89728FDB24D92BB700527716 /* LuggageEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuggageEmptyState.swift; sourceTree = "<group>"; };
+		89728FDD24D92BC200527716 /* LuggageMenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuggageMenuCard.swift; sourceTree = "<group>"; };
 		897AB15D24D26E1100B308C9 /* Packing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Packing.xcdatamodel; sourceTree = "<group>"; };
 		897AB15F24D26E4000B308C9 /* InputBookingNumberPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBookingNumberPage.swift; sourceTree = "<group>"; };
 		897AB16124D26E4E00B308C9 /* SelectGenderPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderPage.swift; sourceTree = "<group>"; };
@@ -229,6 +235,8 @@
 				8938EAF824CF321300D8AFFC /* LuggageListCard.swift */,
 				8938EAFA24CF323100D8AFFC /* LuggageItemCell.swift */,
 				895426FD24D7D8B30092DA68 /* LuggagePopup.swift */,
+				89728FDB24D92BB700527716 /* LuggageEmptyState.swift */,
+				89728FDD24D92BC200527716 /* LuggageMenuCard.swift */,
 			);
 			path = Luggage;
 			sourceTree = "<group>";
@@ -257,6 +265,7 @@
 				897AB16124D26E4E00B308C9 /* SelectGenderPage.swift */,
 				897AB16524D26E6800B308C9 /* SelectLuggagePage.swift */,
 				897AB16324D26E5B00B308C9 /* ActivityPage.swift */,
+				89728FD924D92B8900527716 /* ActivityCard.swift */,
 			);
 			path = NewTrip;
 			sourceTree = "<group>";
@@ -693,6 +702,7 @@
 			files = (
 				89E29F1524D2F10B001BB7FB /* HomeCard.swift in Sources */,
 				8938EB0724CF343400D8AFFC /* Trip.swift in Sources */,
+				89728FDC24D92BB700527716 /* LuggageEmptyState.swift in Sources */,
 				897AB16624D26E6800B308C9 /* SelectLuggagePage.swift in Sources */,
 				8938EB0324CF341400D8AFFC /* Item.swift in Sources */,
 				8950950524CFF1AF0034CAA7 /* ContentView.swift in Sources */,
@@ -711,9 +721,11 @@
 				89343BD224D118A9003AF780 /* RestrictionView.swift in Sources */,
 				89EA942A24D7B1D200D26FA3 /* HomeScrollView.swift in Sources */,
 				89E29F1224D2F0A1001BB7FB /* DateFormatter.swift in Sources */,
+				89728FDA24D92B8900527716 /* ActivityCard.swift in Sources */,
 				89343BCE24D11873003AF780 /* RestrictionListCard.swift in Sources */,
 				897AB16424D26E5B00B308C9 /* ActivityPage.swift in Sources */,
 				89B413A324D5619600B5189E /* KeyboardResponder.swift in Sources */,
+				89728FDE24D92BC200527716 /* LuggageMenuCard.swift in Sources */,
 				897AB16224D26E4E00B308C9 /* SelectGenderPage.swift in Sources */,
 				89A7BF0D24C83A18008734ED /* WeatherModel.swift in Sources */,
 				897AB16024D26E4000B308C9 /* InputBookingNumberPage.swift in Sources */,

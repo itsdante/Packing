@@ -38,8 +38,8 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            NavigationLink(destination: SelectGenderPage(trip: tripTestData)) {
-                Text("Tap")
+            NavigationLink(destination: SelectGenderPage(trip: tripTestData3)) {
+                Text("Start")
             }
         }
         
