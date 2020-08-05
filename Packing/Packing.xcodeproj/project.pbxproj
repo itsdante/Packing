@@ -65,6 +65,7 @@
 		CB07B442DAF0F4CEEFF62324 /* Pods_Packing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D6FEACBCD90E97265732CE /* Pods_Packing.framework */; };
 		FE32F8A5675B22FDE6780D50 /* Pods_PackingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF64CFEAEF01DBCDDA86BCA /* Pods_PackingTests.framework */; };
 		FE3FD50124CE73EE000CCA69 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FD50024CE73ED000CCA69 /* ApiManager.swift */; };
+		FE6AA8CB24DB055500426B32 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6AA8CA24DB055500426B32 /* Activity.swift */; };
 		FECAA3AB24B3944C004B85AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECAA3AA24B3944C004B85AD /* AppDelegate.swift */; };
 		FECAA3AD24B3944C004B85AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECAA3AC24B3944C004B85AD /* SceneDelegate.swift */; };
 		FECAA3B724B3944F004B85AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FECAA3B624B3944F004B85AD /* Assets.xcassets */; };
@@ -154,6 +155,7 @@
 		DAAF65B3349A8770CCDB3C25 /* Pods-Packing-PackingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packing-PackingUITests.release.xcconfig"; path = "Target Support Files/Pods-Packing-PackingUITests/Pods-Packing-PackingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		ECF64CFEAEF01DBCDDA86BCA /* Pods_PackingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PackingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3FD50024CE73ED000CCA69 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		FE6AA8CA24DB055500426B32 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		FEAD3DF0A1C4E5B1D7202791 /* Pods-PackingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackingTests.debug.xcconfig"; path = "Target Support Files/Pods-PackingTests/Pods-PackingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FECAA3A724B3944C004B85AD /* Packing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Packing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECAA3AA24B3944C004B85AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				89343BD724D11F7B003AF780 /* Restriction.swift */,
 				89343BD924D12223003AF780 /* RestrictionDetail.swift */,
 				89A7BF0C24C83A18008734ED /* WeatherModel.swift */,
+				FE6AA8CA24DB055500426B32 /* Activity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				89A7BF0D24C83A18008734ED /* WeatherModel.swift in Sources */,
 				897AB16024D26E4000B308C9 /* InputBookingNumberPage.swift in Sources */,
 				89343BDA24D12223003AF780 /* RestrictionDetail.swift in Sources */,
+				FE6AA8CB24DB055500426B32 /* Activity.swift in Sources */,
 				89C5E8A724D50C29007172EF /* BlurView.swift in Sources */,
 				895426FE24D7D8B30092DA68 /* LuggagePopup.swift in Sources */,
 				89EE4D2224D12E760097AE33 /* RestrictionItemCard.swift in Sources */,
