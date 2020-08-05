@@ -9,59 +9,65 @@
 import SwiftUI
 
 struct LuggageMenuCard: View {
-    @State var expand = false
+    private static var shadowColor: Color = Color.init(UIColor.init(hex: 0x636363, alpha: 0.2))
+    
+    @Binding var isMenuPresented: Bool
+    
+    var trip: Trip
     
     var body: some View {
-        VStack(alignment: .trailing, spacing: 18) {
-            HStack {
-                Rectangle()
-                    .foregroundColor(.clear)
-                    .frame(width: 25, height: 21)
-                    .overlay(
-                        Image("edit-button")
-                )
-            }.onTapGesture {
-                self.expand.toggle()
+        ZStack {
+            Rectangle()
+                .edgesIgnoringSafeArea(.all)
+                .foregroundColor(.clear)
+                .onTapGesture {
+                    self.isMenuPresented.toggle()
             }
-            
-            if expand {
-                Button(action: {
-                    
-                }) {
-                    Text("View Restricted Items")
-                        .modifier(EditButtonModifier())
-                }
-                Button(action: {
-                    
-                }) {
-                    Text("Edit Activities")
-                        .modifier(EditButtonModifier())
-                }
-                Button(action: {
-                    
-                }) {
-                    Text("Edit Luggage")
-                        .modifier(EditButtonModifier())
-                }
-                Button(action: {
-                    
-                }) {
-                    Text("Sort List")
-                        .modifier(EditButtonModifier())
-                }
-                Button(action: {
-                    
-                }) {
-                    Text("Uncheck All")
-                        .modifier(EditButtonModifier())
+            if isMenuPresented {
+                GeometryReader { (proxy: GeometryProxy) in
+                    VStack(alignment: .leading) {
+                        NavigationLink(destination: RestrictionView(trip: self.trip)) {
+                            Text("View Restricted Items")
+                                .modifier(EditButtonModifier())
+                        }
+                        Divider().frame(width: UIScreen.main.bounds.width * 0.3)
+                        Button(action: {
+                            
+                        }) {
+                            Text("Edit Activities")
+                                .modifier(EditButtonModifier())
+                        }
+                        Divider().frame(width: UIScreen.main.bounds.width * 0.3)
+                        Button(action: {
+                            
+                        }) {
+                            Text("Edit Luggage")
+                                .modifier(EditButtonModifier())
+                        }
+                        Divider().frame(width: UIScreen.main.bounds.width * 0.3)
+                        Button(action: {
+                            
+                        }) {
+                            Text("Sort List")
+                                .modifier(EditButtonModifier())
+                        }
+                        Divider().frame(width: UIScreen.main.bounds.width * 0.3)
+                        Button(action: {
+                            
+                        }) {
+                            Text("Uncheck All")
+                                .modifier(EditButtonModifier())
+                        }
+                    }
+                    .padding()
+                    .background(Color.init(.white)
+                    .cornerRadius(11)
+                    .shadow(color: LuggageMenuCard.shadowColor, radius: 2, y: 2))
+                    .animation(.spring())
+                    .frame(width: proxy.size.width - 43, height:proxy.size.height, alignment: .topTrailing)
                 }
             }
         }
-        .padding()
-        .background(Color.init(.white)
-        .shadow(color: Color.init(UIColor.init(hex: 0x636363)), radius: 20, y: 2))
-        .cornerRadius(11)
-        .animation(.spring())
     }
 }
 
@@ -76,8 +82,10 @@ struct EditButtonModifier: ViewModifier {
     }
 }
 
-struct LuggageMenuCard_Previews: PreviewProvider {
-    static var previews: some View {
-        LuggageMenuCard()
-    }
-}
+//#if DEBUG
+//struct LuggageMenuCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LuggageMenuCard(isMenuPresented: <#Binding<Bool>#>)
+//    }
+//}
+//#endif

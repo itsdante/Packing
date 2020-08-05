@@ -11,8 +11,9 @@ import SwiftUI
 struct LuggageView: View {
     @State private var selected = 0
     @State var isWarningPresented: Bool = false
+    @State var isMenuPresented: Bool = true
     
-    var trip: Trip
+    @State var trip: Trip
     
     private var homeButton: some View {
         Button(action: {
@@ -28,7 +29,9 @@ struct LuggageView: View {
     }
     
     private var editButton: some View {
-        NavigationLink(destination: RestrictionView(trip: trip)) {
+        Button(action: {
+            self.isMenuPresented.toggle()
+        }) {
             Rectangle()
                 .foregroundColor(.clear)
                 .frame(width: 25, height: 21)
@@ -69,10 +72,16 @@ struct LuggageView: View {
             if isWarningPresented {
                 LuggagePopup(trip: trip, isWarningPresented: self.$isWarningPresented)
             }
+            if isMenuPresented {
+                LuggageMenuCard(isMenuPresented: self.$isMenuPresented, trip: trip)
+            }
         }
         .navigationBarTitle("My Luggage", displayMode: .inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: homeButton, trailing: editButton)
+        .onAppear {
+            self.isMenuPresented.toggle()
+        }
     }
 }
 
@@ -80,13 +89,17 @@ struct LuggageView: View {
 struct LuggageView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            LuggageView(trip: tripTestData)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-                .previewDisplayName("iPhone 8")
+            NavigationView {
+                LuggageView(trip: tripTestData)
+            }
+            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            .previewDisplayName("iPhone 8")
             
-            LuggageView(trip: tripTestData)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-                .previewDisplayName("iPhone 11")
+            NavigationView {
+                LuggageView(trip: tripTestData)
+                    .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+                    .previewDisplayName("iPhone 11")
+            }
         }
     }
 }

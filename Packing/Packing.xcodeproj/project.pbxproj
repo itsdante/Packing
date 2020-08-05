@@ -237,8 +237,8 @@
 				8938EAF824CF321300D8AFFC /* LuggageListCard.swift */,
 				8938EAFA24CF323100D8AFFC /* LuggageItemCell.swift */,
 				895426FD24D7D8B30092DA68 /* LuggagePopup.swift */,
-				89728FDB24D92BB700527716 /* LuggageEmptyState.swift */,
 				89728FDD24D92BC200527716 /* LuggageMenuCard.swift */,
+				89728FDB24D92BB700527716 /* LuggageEmptyState.swift */,
 			);
 			path = Luggage;
 			sourceTree = "<group>";
