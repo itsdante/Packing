@@ -69,11 +69,11 @@ struct LuggageView: View {
                     }
                 }
             }
-            if isWarningPresented {
-                LuggagePopup(trip: trip, isWarningPresented: self.$isWarningPresented)
-            }
             if isMenuPresented {
                 LuggageMenuCard(isMenuPresented: self.$isMenuPresented, trip: trip)
+            }
+            if isWarningPresented {
+                LuggagePopup(trip: trip, isWarningPresented: self.$isWarningPresented)
             }
         }
         .navigationBarTitle("My Luggage", displayMode: .inline)
