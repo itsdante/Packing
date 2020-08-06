@@ -32,13 +32,10 @@ struct HomeCard: View {
             Rectangle()
                 .foregroundColor(.clear)
                 .overlay(
-                    VStack {
-                        Image("home-background-image")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.3)
-                        Spacer()
-                    }
+                    Image("home-background-image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.3)
             )
             ZStack {
                 Rectangle()
@@ -77,7 +74,7 @@ struct HomeCard: View {
         }
         .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.5)
         .cornerRadius(40)
-            .shadow(color: HomeCard.cardShadowColor, radius: 4, y: 4)
+        .shadow(color: HomeCard.cardShadowColor, radius: 4, y: 4)
     }
     
     struct InfoStack: View {
@@ -112,7 +109,7 @@ struct HomeCard_Previews: PreviewProvider {
         Group {
             HomeCard(trip: tripTestData)
                 .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-            .previewDisplayName("iPhone 8")
+                .previewDisplayName("iPhone 8")
             
             HomeCard(trip: tripTestData)
                 .previewDevice(PreviewDevice(rawValue: "iPhone 11"))

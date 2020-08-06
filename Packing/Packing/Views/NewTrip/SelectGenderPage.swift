@@ -25,7 +25,6 @@ struct SelectGenderPage: View {
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.1)
             .position(x: UIScreen.main.bounds.width * 0.27, y: UIScreen.main.bounds.height * 0)
-            
             HStack {
                 Button(action: {
                     self.selectedGender = "Male"
@@ -40,33 +39,8 @@ struct SelectGenderPage: View {
                             .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.23)
                     }
                 }
-                
                 Spacer()
                     .frame(width: UIScreen.main.bounds.width * 0.05)
-                Button(action: {
-                    
-                    APIManager.sharedInstance.getActivities(
-                        gender: "female",
-                        onSuccess: {
-                            json in DispatchQueue.main.async {
-                                for i in 0 ..< json.count {
-                                    let newData = json[i];
-                                    print(json)
-//                                    let url = URL(string: newData[i])
-                                }
-                            }
-                    },
-                        onFailure: {
-                            error in
-                            print(error.localizedDescription)
-                    })
-                    
-                    
-                    
-                }) {
-                    Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
-                }
-                
                 Button(action: {
                     self.selectedGender = "Female"
                 }) {
@@ -82,7 +56,6 @@ struct SelectGenderPage: View {
                 }
             }
             .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
-            
             if selectedGender != "" {
                 NavigationLink(destination: SelectLuggagePage(selectedGender: selectedGender, trip: trip)) {
                     Image("ButtonL")
@@ -97,8 +70,10 @@ struct SelectGenderPage: View {
     }
 }
 
+#if DEBUG
 struct SelectGenderPage_Previews: PreviewProvider {
     static var previews: some View {
         SelectGenderPage(trip: tripTestData)
     }
 }
+#endif

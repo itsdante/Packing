@@ -23,11 +23,10 @@ struct WeatherList: Identifiable {
     var dateTimeString: String {
         let date = Date(timeIntervalSince1970: Double(dateTime))
         let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = DateFormatter.Style.medium
-        dateFormatter.dateStyle = DateFormatter.Style.medium
-        dateFormatter.timeZone = .current
-        let localDate = dateFormatter.string(from: date)
-        return String(localDate.split(separator: ",")[0])
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "d MMM"
+        return dateFormatter.string(from: date)
     }
     
     var temperatureString: String {
