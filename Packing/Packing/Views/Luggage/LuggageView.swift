@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct LuggageView: View {
+    @EnvironmentObject var appState: AppState
     @State private var selected = 0
     @State var isWarningPresented: Bool = false
     @State var isMenuPresented: Bool = true
@@ -77,10 +78,10 @@ struct LuggageView: View {
             }
         }
         .navigationBarTitle("My Luggage", displayMode: .inline)
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: homeButton, trailing: editButton)
+        .navigationBarItems(trailing: editButton)
         .onAppear {
             self.isMenuPresented.toggle()
+            self.appState.isNavigationBarHidden = false
         }
     }
 }
@@ -91,15 +92,17 @@ struct LuggageView_Previews: PreviewProvider {
         Group {
             NavigationView {
                 LuggageView(trip: tripTestData)
+                    .environmentObject(AppState())
             }
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
             .previewDisplayName("iPhone 8")
             
             NavigationView {
                 LuggageView(trip: tripTestData)
-                    .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-                    .previewDisplayName("iPhone 11")
+                    .environmentObject(AppState())
             }
+            .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+            .previewDisplayName("iPhone 11")
         }
     }
 }

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct SelectGenderPage: View {
+    @EnvironmentObject var appState: AppState
     @State var selectedGender = ""
     
     var trip: Trip
@@ -66,6 +67,9 @@ struct SelectGenderPage: View {
                 .buttonStyle(PlainButtonStyle())
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
             }
+        }
+        .onAppear {
+            self.appState.isNavigationBarHidden = false
         }
     }
 }

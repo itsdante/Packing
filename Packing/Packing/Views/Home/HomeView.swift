@@ -48,8 +48,10 @@ struct HomeView: View {
     private static let poppinsMedium12: Font = Font.custom("Poppins-Medium", size: 12)
     private static let poppinsRegular14: Font = Font.custom("Poppins-Regular", size: 14)
     
-    @ObservedObject var networkManager = NetworkManager()
+    @EnvironmentObject var appState: AppState
     @State var isNavigationBarHidden: Bool = true
+    
+    @ObservedObject var networkManager = NetworkManager()
     @State var isPresented = false
     @State var pageIndex: Int = 0
     
@@ -127,8 +129,17 @@ struct HomeView: View {
                 }
             }
             .navigationBarTitle("Home")
-            .navigationBarHidden(true)
+            .navigationBarHidden(isNavigationBarHidden)
             .navigationBarBackButtonHidden(true)
+            .onAppear {
+                self.isPresented = false
+                self.isNavigationBarHidden = true
+            }
+            .onReceive(self.appState.$isNavigationBarHidden) { (isNavBarHidden) in
+                if !isNavBarHidden {
+                    self.isNavigationBarHidden = false
+                }
+            }
         }   
     }
 }
@@ -138,10 +149,12 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             HomeView()
+                .environmentObject(AppState())
                 .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
                 .previewDisplayName("iPhone 8")
             
             HomeView()
+                .environmentObject(AppState())
                 .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
                 .previewDisplayName("iPhone 11")
         }
