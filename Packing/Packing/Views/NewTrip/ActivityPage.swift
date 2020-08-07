@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ActivityPage: View {
+    @EnvironmentObject var appState: AppState
     @State var selectedActivity: [Luggage] = []
     
     let activities : [String] = ["beach", "hike", "formal", "winter", "swimming", "gym", "photography", "business", "party"]
@@ -29,35 +30,30 @@ struct ActivityPage: View {
             }
             .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.1)
             .position(x: UIScreen.main.bounds.width * 0.33, y: UIScreen.main.bounds.height * 0)
-            
             VStack(spacing: 41) {
                 HStack(spacing: 18) {
                     ForEach(0 ..< 3) { item in
-                        
                         ActivityCard(selectedActivity: self.$selectedActivity, optionIndex: item, selectedGender: self.selectedGender, selectedLuggage: self.selectedLuggage)
-                        
                     }
                 }
-                
                 HStack(spacing: 18) {
                     ForEach(3 ..< 6) { item in
-                        
                         ActivityCard(selectedActivity: self.$selectedActivity, optionIndex: item, selectedGender: self.selectedGender, selectedLuggage: self.selectedLuggage)
-                        
                     }
                 }
-                
                 HStack(spacing: 18) {
                     ForEach(6 ..< 9) { item in
-                        
                         ActivityCard(selectedActivity: self.$selectedActivity, optionIndex: item, selectedGender: self.selectedGender, selectedLuggage: self.selectedLuggage)
-                        
                     }
                 }
             }.position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.34)
-            
-            
-            NavigationLink(destination: LuggageView(trip: trip)) {
+            Button(action: {
+                self.selectedActivity.append(Luggage(category: .esssentials, isCheckedIn: self.selectedLuggage.contains(1) ? false : true, gender: self.selectedGender))
+                self.selectedActivity.append(Luggage(category: .toiletries, isCheckedIn: self.selectedLuggage.contains(1) ? false : true, gender: self.selectedGender))
+                self.trip.luggages = self.selectedActivity
+                tripArray.append(self.trip)
+                self.appState.moveToRoot = true
+            }) {
                 Image("ButtonL")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -65,19 +61,24 @@ struct ActivityPage: View {
             }
             .buttonStyle(PlainButtonStyle())
             .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
-            .simultaneousGesture(TapGesture().onEnded{
-                self.selectedActivity.append(Luggage(category: .esssentials, isCheckedIn: self.selectedLuggage.contains(1) ? false : true, gender: self.selectedGender))
-                self.selectedActivity.append(Luggage(category: .toiletries, isCheckedIn: self.selectedLuggage.contains(1) ? false : true, gender: self.selectedGender))
-                self.trip.luggages = self.selectedActivity
-            })
         }
     }
 }
 
 struct ActivityPage_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView{
-            ActivityPage(selectedGender: "Male", selectedLuggage: [1,2], trip: tripTestData)
+        Group {
+            NavigationView{
+                ActivityPage(selectedGender: "Male", selectedLuggage: [1,2], trip: tripTestData)
+            }
+            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            .previewDisplayName("iPhone 8")
+            
+            NavigationView{
+                ActivityPage(selectedGender: "Male", selectedLuggage: [1,2], trip: tripTestData)
+            }
+            .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+            .previewDisplayName("iPhone 11")
         }
     }
 }

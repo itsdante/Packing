@@ -21,10 +21,13 @@ struct HomePopup: View {
     private static let cardShadowColor: Color = Color.init(UIColor(hex: 0x222F55, alpha: 0.048))
     private static let buttonShadowColor: Color = Color.init(UIColor(hex: 0x2704FE, alpha: 0.2))
     
+    @EnvironmentObject var appState: AppState
+    @State var isRootActive: Bool = false
+    
     @ObservedObject private var keyboard = KeyboardResponder()
     @State private var newbookingNumber = ""
     @Binding var isPresented: Bool
-
+    
     var trip: Trip
     
     var body: some View {
@@ -69,7 +72,7 @@ struct HomePopup: View {
                                         .multilineTextAlignment(TextAlignment.center)
                                         .padding(10)
                             ).frame(width: UIScreen.main.bounds.width * 0.53, height: UIScreen.main.bounds.height * 0.04)
-                            NavigationLink(destination: SelectGenderPage(trip: trip)) {
+                            NavigationLink(destination: SelectGenderPage(trip: trip), isActive: $isRootActive) {
                                 RoundedRectangle(cornerRadius: 18)
                                     .shadow(color: HomePopup.buttonShadowColor, radius: 4, y: 5)
                                     .overlay(
@@ -77,23 +80,44 @@ struct HomePopup: View {
                                             .font(HomePopup.poppinsSemiBold12)
                                             .foregroundColor(.white)
                                 )
-                            }.frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.04)
-                                .foregroundColor(HomePopup.buttonColor)
-                                .padding(.top, 20)
+                            }
+                            .isDetailLink(false)
+                            .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.04)
+                            .foregroundColor(HomePopup.buttonColor)
+                            .padding(.top, 20)
                         }
                     }
-                    
             )
-            .padding(.bottom, keyboard.currentHeight)
-            .edgesIgnoringSafeArea(.bottom)
+                .padding(.bottom, keyboard.currentHeight)
+                .edgesIgnoringSafeArea(.bottom)
+        }
+        .onReceive(self.appState.$moveToRoot) { moveToDashboard in
+            if moveToDashboard {
+                self.isRootActive = false
+                self.appState.moveToRoot = false
+            }
         }
     }
 }
 
 #if DEBUG
-//struct NewTripCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NewTripCard(isPresented: <#Binding<Bool>#>, trip: tripTestData).previewLayout(.sizeThatFits)
-//    }
-//}
+struct NewTripCard_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            StatefulPreviewWrapper(false) {
+                HomePopup(isPresented: $0, trip: tripTestData)
+                    .environmentObject(AppState())
+                    .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+                    .previewDisplayName("iPhone 8")
+            }
+            
+            StatefulPreviewWrapper(false) {
+                HomePopup(isPresented: $0, trip: tripTestData)
+                    .environmentObject(AppState())
+                    .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+                    .previewDisplayName("iPhone 11")
+            }
+        }
+    }
+}
 #endif

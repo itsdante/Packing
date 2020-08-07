@@ -9,6 +9,6 @@
 import SwiftUI
 
 class AppState: ObservableObject {
-    @Published var moveToDashboard: Bool = false
+    @Published var moveToRoot: Bool = false
     @Published var isNavigationBarHidden: Bool = true
 }
