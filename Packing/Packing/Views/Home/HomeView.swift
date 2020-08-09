@@ -58,74 +58,78 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                if tripArray.isEmpty {
-                    VStack(alignment: .center) {
-                        HStack(alignment: .center) {
-                            Text("New Trip")
-                                .font(HomeView.poppinsSemiBold28)
-                                .foregroundColor(HomeView.darkGrey)
-                            Spacer()
-                        }
-                        .padding(.horizontal, 35)
-                        HomeInitialCard()
-                    }
-                    .position(x: UIScreen.main.bounds.width * 0.5, y: UIScreen.main.bounds.height * 0.4)
+                if appState.didLaunchBefore == false {
+                    OnboardingView()
                 } else {
-                    VStack(alignment: .leading, spacing: 0) {
-                        HStack(alignment: .center) {
+                    if tripArray.isEmpty {
+                        VStack(alignment: .center) {
+                            HStack(alignment: .center) {
+                                Text("New Trip")
+                                    .font(HomeView.poppinsSemiBold28)
+                                    .foregroundColor(HomeView.darkGrey)
+                                Spacer()
+                            }
+                            .padding(.horizontal, 35)
+                            HomeInitialCard()
+                        }
+                        .position(x: UIScreen.main.bounds.width * 0.5, y: UIScreen.main.bounds.height * 0.4)
+                    } else {
+                        VStack(alignment: .leading, spacing: 0) {
+                            HStack(alignment: .center) {
+                                if tripArray[pageIndex].departureDate <= Date() {
+                                    Text("Trip History")
+                                        .font(HomeView.poppinsSemiBold28)
+                                        .foregroundColor(HomeView.darkGrey)
+                                } else {
+                                    Text("Upcoming Trip")
+                                        .font(HomeView.poppinsSemiBold28)
+                                        .foregroundColor(HomeView.darkGrey)
+                                }
+                                Spacer()
+                                Button(action: {
+                                    self.isPresented.toggle()
+                                }) {
+                                    Circle()
+                                        .frame(width: UIScreen.main.bounds.width * 0.11, height: UIScreen.main.bounds.height * 0.05)
+                                        .foregroundColor(HomeView.yellow)
+                                        .shadow(color: HomeView.buttonShadowColor, radius: 4, y: 7)
+                                        .overlay(Image(systemName: "plus")
+                                            .font(.system(size: 24))
+                                            .font(Font.title.weight(.regular))
+                                            .foregroundColor(.white)
+                                    )
+                                }
+                            }
+                            .padding(.horizontal, 35)
+                            HomeScrollView(pageIndex: self.$pageIndex, trips: tripArray)
                             if tripArray[pageIndex].departureDate <= Date() {
-                                Text("Trip History")
-                                    .font(HomeView.poppinsSemiBold28)
+                                Text("Weather for Post Trip")
+                                    .font(HomeView.poppinsMedium20)
                                     .foregroundColor(HomeView.darkGrey)
+                                    .padding(.leading, 35)
                             } else {
-                                Text("Upcoming Trip")
-                                    .font(HomeView.poppinsSemiBold28)
+                                Text("Weather for Upcoming Trip")
+                                    .font(HomeView.poppinsMedium20)
                                     .foregroundColor(HomeView.darkGrey)
+                                    .padding(.leading, 35)
                             }
-                            Spacer()
-                            Button(action: {
-                                self.isPresented.toggle()
-                            }) {
-                                Circle()
-                                    .frame(width: UIScreen.main.bounds.width * 0.11, height: UIScreen.main.bounds.height * 0.05)
-                                    .foregroundColor(HomeView.yellow)
-                                    .shadow(color: HomeView.buttonShadowColor, radius: 4, y: 7)
-                                    .overlay(Image(systemName: "plus")
-                                        .font(.system(size: 24))
-                                        .font(Font.title.weight(.regular))
-                                        .foregroundColor(.white)
-                                )
-                            }
-                        }
-                        .padding(.horizontal, 35)
-                        HomeScrollView(pageIndex: self.$pageIndex, trips: tripArray)
-                        if tripArray[pageIndex].departureDate <= Date() {
-                            Text("Weather for Post Trip")
-                                .font(HomeView.poppinsMedium20)
-                                .foregroundColor(HomeView.darkGrey)
+                            Text("\(tripArray[pageIndex].destinationCity), \(tripArray[pageIndex].destinationCountry) - \(dayMonthFormatter.string(from: Date())) to \(dayMonthYearFormatter.string(from: Calendar.current.date(byAdding: .day, value: 5, to: Date())!))")
+                                .font(HomeView.poppinsMedium12)
+                                .foregroundColor(HomeView.lightPurple)
                                 .padding(.leading, 35)
-                        } else {
-                            Text("Weather for Upcoming Trip")
-                                .font(HomeView.poppinsMedium20)
-                                .foregroundColor(HomeView.darkGrey)
+                            WeatherScrollView(weathers: networkManager.weathers)
+                                .onAppear {
+                                    self.networkManager.fetchData(cityName: tripArray[self.pageIndex].rawDestinationCity)
+                            }
+                            Text("OpenWeather")
+                                .font(HomeView.poppinsRegular14)
+                                .foregroundColor(HomeView.lightGrey)
                                 .padding(.leading, 35)
                         }
-                        Text("\(tripArray[pageIndex].destinationCity), \(tripArray[pageIndex].destinationCountry) - \(dayMonthFormatter.string(from: Date())) to \(dayMonthYearFormatter.string(from: Calendar.current.date(byAdding: .day, value: 5, to: Date())!))")
-                            .font(HomeView.poppinsMedium12)
-                            .foregroundColor(HomeView.lightPurple)
-                            .padding(.leading, 35)
-                        WeatherScrollView(weathers: networkManager.weathers)
-                            .onAppear {
-                                self.networkManager.fetchData(cityName: tripArray[self.pageIndex].rawDestinationCity)
-                        }
-                        Text("OpenWeather")
-                            .font(HomeView.poppinsRegular14)
-                            .foregroundColor(HomeView.lightGrey)
-                            .padding(.leading, 35)
                     }
-                }
-                if isPresented {
-                    HomePopup(isPresented: self.$isPresented, trip: tripArray[pageIndex])
+                    if isPresented {
+                        HomePopup(isPresented: self.$isPresented, trip: tripArray[pageIndex])
+                    }
                 }
             }
             .navigationBarTitle("Home")
@@ -140,6 +144,7 @@ struct HomeView: View {
                     self.isNavigationBarHidden = false
                 }
             }
+            .animation(.linear)
         }   
     }
 }

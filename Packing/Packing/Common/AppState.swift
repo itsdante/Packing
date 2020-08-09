@@ -9,6 +9,16 @@
 import SwiftUI
 
 class AppState: ObservableObject {
+    init() {
+        if !UserDefaults.standard.bool(forKey: "didLaunchBefore") {
+            UserDefaults.standard.set(true, forKey: "didLaunchBefore")
+            didLaunchBefore = false
+        } else {
+            didLaunchBefore = true
+        }
+    }
+    
     @Published var moveToRoot: Bool = false
     @Published var isNavigationBarHidden: Bool = true
+    @Published var didLaunchBefore: Bool
 }

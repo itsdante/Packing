@@ -56,6 +56,8 @@
 		89A7BF1524C83A78008734ED /* WeatherScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7BF1424C83A78008734ED /* WeatherScrollView.swift */; };
 		89B413A324D5619600B5189E /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B413A224D5619600B5189E /* KeyboardResponder.swift */; };
 		89B9FFC324D980DC00A78145 /* HomeInitialCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9FFC224D980DC00A78145 /* HomeInitialCard.swift */; };
+		89BD4D2B24DE1A4A0043CCCD /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BD4D2A24DE1A4A0043CCCD /* OnboardingView.swift */; };
+		89BD4D2D24DE23CA0043CCCD /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BD4D2C24DE23CA0043CCCD /* PageControl.swift */; };
 		89C5E8A724D50C29007172EF /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C5E8A624D50C29007172EF /* BlurView.swift */; };
 		89E29F1224D2F0A1001BB7FB /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1124D2F0A1001BB7FB /* DateFormatter.swift */; };
 		89E29F1524D2F10B001BB7FB /* HomeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E29F1424D2F10B001BB7FB /* HomeCard.swift */; };
@@ -145,6 +147,8 @@
 		89A7BF1424C83A78008734ED /* WeatherScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherScrollView.swift; sourceTree = "<group>"; };
 		89B413A224D5619600B5189E /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		89B9FFC224D980DC00A78145 /* HomeInitialCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInitialCard.swift; sourceTree = "<group>"; };
+		89BD4D2A24DE1A4A0043CCCD /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		89BD4D2C24DE23CA0043CCCD /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		89C5E8A624D50C29007172EF /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		89E29F1124D2F0A1001BB7FB /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		89E29F1424D2F10B001BB7FB /* HomeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCard.swift; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 			children = (
 				8950950424CFF1AF0034CAA7 /* ContentView.swift */,
 				89C5E8A524D50C02007172EF /* Utilities */,
+				89BD4D2924DE1A370043CCCD /* Onboarding */,
 				89E29F1324D2F0E7001BB7FB /* Home */,
 				8938EB0124CF334600D8AFFC /* NewTrip */,
 				8938EAF724CF31F600D8AFFC /* Luggage */,
@@ -350,6 +355,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		89BD4D2924DE1A370043CCCD /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				89BD4D2A24DE1A4A0043CCCD /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		89C5E8A524D50C02007172EF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +370,7 @@
 				895094DA24CFC1B20034CAA7 /* CustomSegmentedPicker.swift */,
 				89B413A224D5619600B5189E /* KeyboardResponder.swift */,
 				89FDDFB124DC5B40006C69B3 /* StatefulPreviewWrapper.swift */,
+				89BD4D2C24DE23CA0043CCCD /* PageControl.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -733,9 +747,11 @@
 				89E29F1224D2F0A1001BB7FB /* DateFormatter.swift in Sources */,
 				89728FDA24D92B8900527716 /* ActivityCard.swift in Sources */,
 				89343BCE24D11873003AF780 /* RestrictionListCard.swift in Sources */,
+				89BD4D2D24DE23CA0043CCCD /* PageControl.swift in Sources */,
 				897AB16424D26E5B00B308C9 /* ActivityPage.swift in Sources */,
 				89B413A324D5619600B5189E /* KeyboardResponder.swift in Sources */,
 				89728FDE24D92BC200527716 /* LuggageMenuCard.swift in Sources */,
+				89BD4D2B24DE1A4A0043CCCD /* OnboardingView.swift in Sources */,
 				897AB16224D26E4E00B308C9 /* SelectGenderPage.swift in Sources */,
 				89A7BF0D24C83A18008734ED /* WeatherModel.swift in Sources */,
 				897AB16024D26E4000B308C9 /* InputBookingNumberPage.swift in Sources */,
