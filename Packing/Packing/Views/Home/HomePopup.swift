@@ -72,7 +72,7 @@ struct HomePopup: View {
                                         .multilineTextAlignment(TextAlignment.center)
                                         .padding(10)
                             ).frame(width: UIScreen.main.bounds.width * 0.53, height: UIScreen.main.bounds.height * 0.04)
-                            NavigationLink(destination: SelectGenderPage(trip: trip), isActive: $isRootActive) {
+                            NavigationLink(destination: FlightInfoPage(trip: trip), isActive: $isRootActive) {
                                 RoundedRectangle(cornerRadius: 18)
                                     .shadow(color: HomePopup.buttonShadowColor, radius: 4, y: 5)
                                     .overlay(

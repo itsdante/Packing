@@ -132,7 +132,7 @@ struct HomeView: View {
                     }
                 }
             }
-            .navigationBarTitle("Home")
+            .navigationBarTitle("")
             .navigationBarHidden(isNavigationBarHidden)
             .navigationBarBackButtonHidden(true)
             .onAppear {

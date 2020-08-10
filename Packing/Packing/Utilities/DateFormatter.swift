@@ -50,6 +50,12 @@ let dateFormatter: DateFormatter = {
   return formatter
 }()
 
+let basicDateFormatter: DateFormatter = {
+  let formatter = DateFormatter()
+  formatter.dateFormat = "dd MMM YYYY"
+  return formatter
+}()
+
 func remainingDays(departureDate: Date, arrivalDate: Date) -> Int {
     let calendar = Calendar.current
 
@@ -59,4 +65,11 @@ func remainingDays(departureDate: Date, arrivalDate: Date) -> Int {
 
     let components = calendar.dateComponents([.day], from: date1, to: date2)
     return components.day ?? 0
+}
+
+func remainingTime(departureDate: Date, arrivalDate: Date) -> Int {
+    let calendar = Calendar.current
+
+    let components = calendar.dateComponents([.hour], from: departureDate, to: arrivalDate)
+    return components.hour ?? 0
 }

@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct SelectGenderPage: View {
-    @EnvironmentObject var appState: AppState
     @State var selectedGender = ""
     
     var trip: Trip
@@ -59,17 +58,18 @@ struct SelectGenderPage: View {
             .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
             if selectedGender != "" {
                 NavigationLink(destination: SelectLuggagePage(selectedGender: selectedGender, trip: trip)) {
-                    Image("ButtonL")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.05)
+                    RoundedRectangle(cornerRadius: 12)
+                        .foregroundColor(Color(UIColor.init(hex: 0x654CFF)))
+                        .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.058)
+                        .shadow(color: Color(UIColor.init(hex: 0x2704FE, alpha: 0.4)), radius: 5, y: 2)
+                        .overlay(
+                            Text("Next")
+                                .foregroundColor(.white)
+                                .font(Font.custom("Poppins-SemiBold", size: 14))
+                    )
                 }
-                .buttonStyle(PlainButtonStyle())
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
             }
-        }
-        .onAppear {
-            self.appState.isNavigationBarHidden = false
         }
     }
 }
@@ -77,7 +77,9 @@ struct SelectGenderPage: View {
 #if DEBUG
 struct SelectGenderPage_Previews: PreviewProvider {
     static var previews: some View {
-        SelectGenderPage(trip: tripTestData)
+        NavigationView {
+            SelectGenderPage(trip: tripTestData).environmentObject(AppState())
+        }
     }
 }
 #endif

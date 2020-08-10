@@ -32,12 +32,16 @@ struct SelectLuggagePage: View {
             
             if selectedLuggage.count != 0 {
                 NavigationLink(destination: ActivityPage(selectedGender: selectedGender, selectedLuggage: selectedLuggage, trip: trip)) {
-                    Image("ButtonL")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.05)
+                    RoundedRectangle(cornerRadius: 12)
+                        .foregroundColor(Color(UIColor.init(hex: 0x654CFF)))
+                        .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.058)
+                        .shadow(color: Color(UIColor.init(hex: 0x2704FE, alpha: 0.4)), radius: 5, y: 2)
+                        .overlay(
+                            Text("Next")
+                                .foregroundColor(.white)
+                                .font(Font.custom("Poppins-SemiBold", size: 14))
+                    )
                 }
-                .buttonStyle(PlainButtonStyle())
                 .position(
                     x: UIScreen.main.bounds.width / 2,
                     y: UIScreen.main.bounds.height * 0.7)
@@ -96,6 +100,8 @@ struct LuggageCard: View {
 
 struct SelectLuggagePage_Previews: PreviewProvider {
     static var previews: some View {
-        SelectLuggagePage(selectedGender: "Male", trip: tripTestData)
+        NavigationView {
+            SelectLuggagePage(selectedGender: "Male", trip: tripTestData)
+        }
     }
 }

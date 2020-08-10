@@ -27,7 +27,7 @@ struct HomeInitialCard: View {
     @ObservedObject private var keyboard = KeyboardResponder()
     @State private var newbookingNumber = ""
     
-    @State private var trip = Trip(bookingNumber: "71938JC", airline: "Lion Air", flightNumber: "GA4828", originAirport: "CGK", originCity: "Jakarta", originCountry: "Indonesia", destinationAirport: "HKG", destinationCity: "Hong Kong", destinationCountry: "China", departureDate: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, arrivalDate: Calendar.current.date(byAdding: .day, value: 4, to: Date())!.addingTimeInterval(5000), createdAt: Date(), luggages: [], restrictions: restrictionArray)
+    @State private var trip = Trip(bookingNumber: "71938JC", airline: "Lion Air", flightNumber: "GA4828", originAirportCode: "CGK", originAirport: "Soekarno-Hatta Int. Airport", originCity: "Jakarta", originCountry: "Indonesia", destinationAirportCode: "HKG", destinationAirport: "Hong Kong Int. Airport", destinationCity: "Hong Kong", destinationCountry: "China", departureDate: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, arrivalDate: Calendar.current.date(byAdding: .day, value: 4, to: Date())!.addingTimeInterval(5000), createdAt: Date(), luggages: [], restrictions: restrictionArray)
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -60,7 +60,7 @@ struct HomeInitialCard: View {
                                 .multilineTextAlignment(TextAlignment.center)
                                 .padding(10)
                     ).frame(width: UIScreen.main.bounds.width * 0.53, height: UIScreen.main.bounds.height * 0.04)
-                    NavigationLink(destination: SelectGenderPage(trip: trip), isActive: $isRootActive) {
+                    NavigationLink(destination: FlightInfoPage(trip: trip), isActive: $isRootActive) {
                         RoundedRectangle(cornerRadius: 18)
                             .shadow(color: HomeInitialCard.buttonShadowColor, radius: 4, y: 5)
                             .overlay(

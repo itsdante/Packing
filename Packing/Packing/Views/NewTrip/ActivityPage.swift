@@ -54,12 +54,16 @@ struct ActivityPage: View {
                 tripArray.append(self.trip)
                 self.appState.moveToRoot = true
             }) {
-                Image("ButtonL")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.05)
+                RoundedRectangle(cornerRadius: 12)
+                    .foregroundColor(Color(UIColor.init(hex: 0x654CFF)))
+                    .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.058)
+                    .shadow(color: Color(UIColor.init(hex: 0x2704FE, alpha: 0.4)), radius: 5, y: 2)
+                    .overlay(
+                        Text("Next")
+                            .foregroundColor(.white)
+                            .font(Font.custom("Poppins-SemiBold", size: 14))
+                )
             }
-            .buttonStyle(PlainButtonStyle())
             .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
         }
     }
@@ -67,18 +71,10 @@ struct ActivityPage: View {
 
 struct ActivityPage_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            NavigationView{
-                ActivityPage(selectedGender: "Male", selectedLuggage: [1,2], trip: tripTestData)
-            }
-            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-            .previewDisplayName("iPhone 8")
-            
-            NavigationView{
-                ActivityPage(selectedGender: "Male", selectedLuggage: [1,2], trip: tripTestData)
-            }
-            .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-            .previewDisplayName("iPhone 11")
+        NavigationView{
+            ActivityPage(selectedGender: "Male", selectedLuggage: [1,2], trip: tripTestData)
         }
+        .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+        .previewDisplayName("iPhone 11")
     }
 }
