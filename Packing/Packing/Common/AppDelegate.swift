@@ -80,3 +80,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+class PreviewManagedObjectContext {
+    static let shared = try! PreviewManagedObjectContext()
+    let viewContext: NSManagedObjectContext
+    
+    init() throws {
+        viewContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    }
+}

@@ -1,4 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="ItemModel" representedClassName="ItemModel" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isRestricted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="luggageModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LuggageModel" inverseName="itemModel" inverseEntity="LuggageModel"/>
+    </entity>
+    <entity name="LuggageModel" representedClassName="LuggageModel" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isCheckedIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="itemModel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemModel" inverseName="luggageModel" inverseEntity="ItemModel"/>
+        <relationship name="tripModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TripModel" inverseName="luggageModel" inverseEntity="TripModel"/>
+    </entity>
+    <entity name="RestrictionDetailModel" representedClassName="RestrictionDetailModel" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="subDetail" optional="YES" attributeType="String"/>
+        <attribute name="subTitle" optional="YES" attributeType="String"/>
+        <relationship name="restrictionModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RestrictionModel" inverseName="restrictionDetailModel" inverseEntity="RestrictionModel"/>
+    </entity>
+    <entity name="RestrictionModel" representedClassName="RestrictionModel" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="mainDetail" optional="YES" attributeType="String"/>
+        <attribute name="mainTitle" optional="YES" attributeType="String"/>
+        <relationship name="restrictionDetailModel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RestrictionDetailModel" inverseName="restrictionModel" inverseEntity="RestrictionDetailModel"/>
+        <relationship name="tripModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TripModel" inverseName="restrictionModel" inverseEntity="TripModel"/>
+    </entity>
+    <entity name="TripModel" representedClassName="TripModel" syncable="YES">
+        <attribute name="airline" optional="YES" attributeType="String"/>
+        <attribute name="arrivalDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="bookingNumber" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="departureDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="destinationAirport" optional="YES" attributeType="String"/>
+        <attribute name="destinationAirportCode" optional="YES" attributeType="String"/>
+        <attribute name="destinationCity" optional="YES" attributeType="String"/>
+        <attribute name="destinationCountry" optional="YES" attributeType="String"/>
+        <attribute name="flightNumber" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="originAirport" optional="YES" attributeType="String"/>
+        <attribute name="originAirportCode" optional="YES" attributeType="String"/>
+        <attribute name="originCity" optional="YES" attributeType="String"/>
+        <attribute name="originCountry" optional="YES" attributeType="String"/>
+        <relationship name="luggageModel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LuggageModel" inverseName="tripModel" inverseEntity="LuggageModel"/>
+        <relationship name="restrictionModel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RestrictionModel" inverseName="tripModel" inverseEntity="RestrictionModel"/>
+    </entity>
+    <elements>
+        <element name="TripModel" positionX="-63" positionY="-18" width="128" height="298"/>
+        <element name="ItemModel" positionX="-54" positionY="-9" width="128" height="148"/>
+        <element name="LuggageModel" positionX="-36" positionY="9" width="128" height="133"/>
+        <element name="RestrictionModel" positionX="-18" positionY="27" width="128" height="118"/>
+        <element name="RestrictionDetailModel" positionX="0" positionY="45" width="128" height="118"/>
+    </elements>
 </model>
