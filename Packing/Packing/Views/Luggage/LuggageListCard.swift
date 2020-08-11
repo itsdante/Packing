@@ -30,7 +30,19 @@ struct LuggageListCard: View {
     @Binding var isWarningPresented: Bool
     @State var isExpanded: Bool = false
     @State var newItem = ""
-    
+    func addNewItem(x:String){
+        if x != "" {
+            let newItem = ItemModel(context: self.moc)
+            newItem.id = UUID()
+            newItem.name = x
+            newItem.quantity = 1
+            newItem.isRestricted = false
+            newItem.isCompleted = false
+            newItem.createdAt = Date()
+            self.luggage.addToItemModel(newItem)
+            try? self.moc.save()
+        }
+    }
 //    @FetchRequest var items: FetchedResults<ItemModel>
 //    init(luggage: LuggageModel, isWarningPresented: Binding<Bool>) {
 //        self.luggage = luggage
@@ -78,16 +90,12 @@ struct LuggageListCard: View {
                                 .resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(LuggageListCard.addItemColor)
+                                .onTapGesture {
+                                    self.addNewItem(x: self.newItem)
+                                    self.newItem = ""
+                            }
                             TextField("Add New Item", text: self.$newItem, onCommit: {
-                                let newItem = ItemModel(context: self.moc)
-                                newItem.id = UUID()
-                                newItem.name = self.newItem
-                                newItem.quantity = 1
-                                newItem.isRestricted = false
-                                newItem.isCompleted = false
-                                newItem.createdAt = Date()
-                                self.luggage.addToItemModel(newItem)
-                                try? self.moc.save()
+                                self.addNewItem(x: self.newItem)
                                 self.newItem = ""
                             })
                                 .font(LuggageListCard.addItemFont)
