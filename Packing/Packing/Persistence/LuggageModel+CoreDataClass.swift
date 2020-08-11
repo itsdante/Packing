@@ -20,29 +20,29 @@ public class LuggageModel: NSManagedObject {
     
     var categoryColor: UIColor {
         switch category {
-        case "essentials":
+        case "Essentials":
             return UIColor.init(hex: 0xFFC738)
-        case "toiletries":
+        case "Toiletries":
             return UIColor.init(hex: 0xFF90AB)
-        case "clothing":
+        case "Clothing":
             return UIColor.init(hex: 0x8470FF)
-        case "beach":
+        case "Beach":
             return UIColor.init(hex: 0xFCAF3D)
-        case "winter":
+        case "Winter":
             return UIColor.init(hex: 0x82E9E3)
-        case "photography":
+        case "Photography":
             return UIColor.init(hex: 0x676CFF)
-        case "hike":
+        case "Hike":
             return UIColor.init(hex: 0x77E178)
-        case "swimming":
+        case "Swimming":
             return UIColor.init(hex: 0x8AD5FF)
-        case "business":
+        case "Business":
             return UIColor.init(hex: 0xFC8C3B)
-        case "formal":
+        case "Formal":
             return UIColor.init(hex: 0x2F7CF6)
-        case "gym":
+        case "Gym":
             return UIColor.init(hex: 0xBC6EF4)
-        case "party":
+        case "Party":
             return UIColor.init(hex: 0xFF6D5F)
         default:
             return UIColor.init(hex: 0x000000)

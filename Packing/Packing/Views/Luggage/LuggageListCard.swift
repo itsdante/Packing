@@ -31,6 +31,19 @@ struct LuggageListCard: View {
     @State var isExpanded: Bool = false
     @State var newItem = ""
     
+//    @FetchRequest var items: FetchedResults<ItemModel>
+//    init(luggage: LuggageModel, isWarningPresented: Binding<Bool>) {
+//        self.luggage = luggage
+//        self._isWarningPresented = isWarningPresented
+//        var predicate: NSPredicate?
+//        predicate = NSPredicate(format: "luggageModel = %@", luggage)
+//        self._items = FetchRequest(
+//            entity: ItemModel.entity(),
+//            sortDescriptors: [],
+//            predicate: predicate
+//        )
+//    }
+    
     var body: some View {
         
         VStack(alignment: .leading) {

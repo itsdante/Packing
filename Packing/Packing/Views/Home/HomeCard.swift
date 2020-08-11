@@ -30,11 +30,11 @@ struct HomeCard: View {
         if x < 24
         {
             
-            return "\(remainingTime(departureDate: Date(), arrivalDate: trip.departureDate)) hours"
+            return "Your flight is in \(remainingTime(departureDate: Date(), arrivalDate: trip.departureDate)) hours"
         }
         else
         {
-            return "\(remainingDays(departureDate: Date(), arrivalDate: trip.departureDate)) days"
+            return "Your flight is in \(remainingDays(departureDate: Date(), arrivalDate: trip.departureDate)) days"
         }
     }
     var body: some View {
