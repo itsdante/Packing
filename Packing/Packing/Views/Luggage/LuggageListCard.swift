@@ -43,6 +43,17 @@ struct LuggageListCard: View {
             try? self.moc.save()
         }
     }
+    
+    func removeItem(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let deletedItem = luggage.itemModelArray.sorted{ $0.isCompleted && $1.isCompleted }[index]
+            print(deletedItem)
+            moc.delete(deletedItem)
+        }
+        try? moc.save()
+        
+        
+    }
 //    @FetchRequest var items: FetchedResults<ItemModel>
 //    init(luggage: LuggageModel, isWarningPresented: Binding<Bool>) {
 //        self.luggage = luggage
@@ -102,9 +113,10 @@ struct LuggageListCard: View {
                                 .foregroundColor(LuggageListCard.addItemColor)
                         }
                         .padding(.vertical, 5)
-                        ForEach(luggage.itemModelArray.sorted { $0.isCompleted && $1.isCompleted }) { item in
+                        ForEach(luggage.itemModelArray.sorted { $0.isCompleted && $1.isCompleted },id: \.self) { item in
                             LuggageItemCell(completedItem: self.$completedItem, isWarningPresented: self.$isWarningPresented, item: item).environment(\.managedObjectContext, self.moc)
                         }
+                    .onDelete(perform: removeItem)
 //                        .onDelete { indexSet in
 //                            let deleteOne = self.luggage.itemModel[indexSet.first!]
 //                            self.moc.delete(deleteOne)
