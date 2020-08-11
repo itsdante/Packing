@@ -26,7 +26,17 @@ struct HomeCard: View {
     private static var buttonShadowColor: Color = Color.init(UIColor.init(hex: 0x2704FE, alpha: 0.2))
     
     var trip: TripModel
-    
+    func checkDepartureTime(x:Int) -> String {
+        if x < 24
+        {
+            
+            return "\(remainingTime(departureDate: Date(), arrivalDate: trip.departureDate)) hours"
+        }
+        else
+        {
+            return "\(remainingDays(departureDate: Date(), arrivalDate: trip.departureDate)) days"
+        }
+    }
     var body: some View {
         ZStack(alignment: .bottom) {
             Rectangle()
@@ -41,7 +51,7 @@ struct HomeCard: View {
                 Rectangle()
                     .foregroundColor(.white)
                 VStack(alignment: .center) {
-                    Text(trip.departureDate <= Date() ? "Past Trip" : "Your flight is in \(remainingDays(departureDate: Date(), arrivalDate: trip.departureDate)) days")
+                    Text(trip.departureDate <= Date() ? "Past Trip" : checkDepartureTime(x: remainingTime(departureDate: Date(), arrivalDate: trip.departureDate)))
                         .font(HomeCard.poppinsSemiBold18)
                         .foregroundColor(HomeCard.darkPurple)
                     ZStack {

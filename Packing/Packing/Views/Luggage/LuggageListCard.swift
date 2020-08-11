@@ -26,7 +26,7 @@ struct LuggageListCard: View {
     
     @Environment(\.managedObjectContext) var moc
     @ObservedObject var luggage: LuggageModel
-    
+    @State var completedItem: Int = 0
     @Binding var isWarningPresented: Bool
     @State var isExpanded: Bool = false
     @State var newItem = ""
@@ -39,7 +39,7 @@ struct LuggageListCard: View {
                     .font(LuggageListCard.sectionFont)
                     .foregroundColor(LuggageListCard.sectionFontColor)
                 Spacer()
-                Text("\(luggage.itemModelArray.filter({ $0.isCompleted == true }).count )/\(luggage.itemModelArray.count) items")
+                Text("\(completedItem)/\(luggage.itemModelArray.count) items")
                     .font(LuggageListCard.sectionCountFont)
                     .foregroundColor(LuggageListCard.sectionCountColor)
                 Image(systemName: self.isExpanded ? LuggageListCard.dropDownImageDown : LuggageListCard.dropDownImageUp)
@@ -47,6 +47,9 @@ struct LuggageListCard: View {
                     .frame(width: 14, height: 9)
                     .font(LuggageListCard.dropDownImageFont)
                     .foregroundColor(LuggageListCard.dropDownImageColor)
+            }
+            .onAppear{
+                self.completedItem = self.luggage.itemModelArray.filter({ $0.isCompleted == true }).count
             }
             .padding(.horizontal, 30)
             .onTapGesture {
@@ -70,7 +73,7 @@ struct LuggageListCard: View {
                         }
                         .padding(.vertical, 5)
                         ForEach(luggage.itemModelArray.sorted { $0.isCompleted && $1.isCompleted }) { item in
-                            LuggageItemCell(isWarningPresented: self.$isWarningPresented, item: item).environment(\.managedObjectContext, self.moc)
+                            LuggageItemCell(completedItem: self.$completedItem, isWarningPresented: self.$isWarningPresented, item: item).environment(\.managedObjectContext, self.moc)
                         }
 //                        .onDelete { indexSet in
 //                            let deleteOne = self.luggage.itemModel[indexSet.first!]

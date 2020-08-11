@@ -17,6 +17,7 @@ struct LuggageItemCell: View {
     private static let poppinsRegular15: Font = Font.custom("Poppins-Regular", size: 15)
     
     @Environment(\.managedObjectContext) var moc
+    @Binding var completedItem:Int
     @Binding var isWarningPresented: Bool
     @ObservedObject var item: ItemModel
     @State var isEditMode = false
@@ -29,7 +30,16 @@ struct LuggageItemCell: View {
                 .foregroundColor(item.isCompleted ? LuggageItemCell.purple : LuggageItemCell.lightGrey)
                 .onTapGesture {
                     self.moc.performAndWait {
+                        
                         self.item.isCompleted.toggle()
+                        if self.item.isCompleted == false
+                        {
+                            self.completedItem -= 1
+                        }
+                        else
+                        {
+                            self.completedItem += 1
+                        }
                         try? self.moc.save()
                     }
             }
