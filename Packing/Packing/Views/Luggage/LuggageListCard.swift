@@ -27,8 +27,6 @@ struct LuggageListCard: View {
     private static let listShadowColor: Color = Color.init(UIColor.init(hex: 0x0068FD, alpha: 0.07))
     
     @State var luggage: Luggage
-    @State var itemArray: [Item] = []
-    
     @Binding var isWarningPresented: Bool
     @State private var isExpanded: Bool = true
     @State private var newItem = ""
@@ -41,7 +39,7 @@ struct LuggageListCard: View {
                     .font(LuggageListCard.sectionFont)
                     .foregroundColor(LuggageListCard.sectionFontColor)
                 Spacer()
-                Text("\(self.itemArray.filter({ $0.isCompleted == true }).count )/\(self.itemArray.count) items")
+                Text("\(self.luggage.items.filter({ $0.isCompleted == true }).count )/\(self.luggage.items.count) items")
                     .font(LuggageListCard.sectionCountFont)
                     .foregroundColor(LuggageListCard.sectionCountColor)
                 Image(systemName: self.isExpanded ? LuggageListCard.dropDownImageDown : LuggageListCard.dropDownImageUp)
@@ -65,9 +63,9 @@ struct LuggageListCard: View {
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(LuggageListCard.addItemColor)
                             .onTapGesture {
-                                print(self.itemArray)
+                                print(self.luggage.items)
                                 let newItemss = Item(name: self.newItem, quantity: 1, isCompleted: false, isRestricted: false, createdAt: Date())
-                                self.itemArray.append(newItemss)
+                                self.luggage.items.append(newItemss)
                                 self.newItem = ""
                             }
                             TextField("Add New Item", text: self.$newItem, onCommit: {
@@ -78,7 +76,7 @@ struct LuggageListCard: View {
                         }
                         .padding(.vertical, 5)
                         
-                        ForEach(self.itemArray.sorted { $0.isCompleted && $1.isCompleted }) { item in
+                        ForEach(self.luggage.items.sorted { $0.isCompleted && $1.isCompleted }) { item in
                             LuggageItemCell(isWarningPresented: self.$isWarningPresented, item: item)
                         }
                     }
@@ -87,7 +85,7 @@ struct LuggageListCard: View {
                         UITableView.appearance().separatorStyle = .none
                     }
                 }
-                .frame(height: CGFloat(self.itemArray.count + 1) * CGFloat(45))
+                .frame(height: CGFloat(self.luggage.items.count + 1) * CGFloat(45))
                 .cornerRadius(14)
                 .padding(.horizontal, 7)
                 .shadow(
@@ -99,7 +97,6 @@ struct LuggageListCard: View {
         .padding(.top, 14)
     .onAppear()
         {
-            self.itemArray = self.luggage.items
         }
     }
 }
@@ -116,6 +113,6 @@ struct LuggageListCard: View {
 struct LuggageListCard_Previews: PreviewProvider {
     @State static var warn : Bool = true
     static var previews: some View {
-        LuggageListCard(luggage: luggage1, itemArray: [item1], isWarningPresented: $warn)
+        LuggageListCard(luggage: luggage1,isWarningPresented: $warn)
     }
 }

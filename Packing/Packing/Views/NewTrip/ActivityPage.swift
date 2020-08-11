@@ -48,8 +48,9 @@ struct ActivityPage: View {
                 }
             }.position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.34)
             Button(action: {
-                self.selectedActivity.append(Luggage(category: .esssentials, isCheckedIn: self.selectedLuggage.contains(1) ? false : true, gender: self.selectedGender))
-                self.selectedActivity.append(Luggage(category: .toiletries, isCheckedIn: self.selectedLuggage.contains(1) ? false : true, gender: self.selectedGender))
+                self.selectedActivity.append(Luggage(category: .esssentials, isCheckedIn: self.selectedLuggage.contains(1) ? false : true, gender: self.selectedGender, items: returnItem(gender: self.selectedGender, category: .esssentials, isCheckedIn: self.selectedLuggage.contains(1) ? false : true)))
+                self.selectedActivity.append(Luggage(category: .toiletries, isCheckedIn: self.selectedLuggage.contains(1) ? false : true, gender: self.selectedGender, items: returnItem(gender: self.selectedGender, category: .toiletries, isCheckedIn: self.selectedLuggage.contains(1) ? false : true)))
+                self.selectedActivity.append(Luggage(category: .clothing, isCheckedIn: self.selectedLuggage.contains(1) ? false : true, gender: self.selectedGender, items: returnItem(gender: self.selectedGender, category: .clothing, isCheckedIn: self.selectedLuggage.contains(1) ? false : true)))
                 self.trip.luggages = self.selectedActivity
                 tripArray.append(self.trip)
                 self.appState.moveToRoot = true

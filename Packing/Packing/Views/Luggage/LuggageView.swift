@@ -16,6 +16,11 @@ struct LuggageView: View {
     
     @State var trip: Trip
     
+    func debugFunc(luggage:Luggage) -> LuggageListCard{
+        print(luggage,"luggage")
+        return LuggageListCard(luggage: luggage, isWarningPresented: self.$isWarningPresented)
+    }
+    
     private var homeButton: some View {
         Button(action: {
             
@@ -52,7 +57,8 @@ struct LuggageView: View {
                     if trip.luggages.filter({ $0.isCheckedIn == false }).count != 0 {
                         ScrollView {
                             ForEach(trip.luggages.filter({ $0.isCheckedIn == false })) { luggage in
-                                LuggageListCard(luggage: luggage, isWarningPresented: self.$isWarningPresented)
+                                self.debugFunc(luggage: luggage)
+//                                LuggageListCard(luggage: luggage, isWarningPresented: self.$isWarningPresented)
                             }
                         }
                     }  else {
@@ -82,6 +88,7 @@ struct LuggageView: View {
         .onAppear {
             self.isMenuPresented.toggle()
             self.appState.isNavigationBarHidden = false
+            
         }
     }
 }

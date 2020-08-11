@@ -41,7 +41,7 @@ struct ActivityCard: View {
             if self.selectedActivity.contains(where: { $0.category == self.categoryOption[self.optionIndex] }) {
                 self.selectedActivity.removeAll(where: { $0.category == self.categoryOption[self.optionIndex] })
             } else {
-                self.selectedActivity.append(Luggage(category: self.categoryOption[self.optionIndex], isCheckedIn: self.selectedLuggage.contains(2) ? true : false, gender: self.selectedGender))
+                self.selectedActivity.append(Luggage(category: self.categoryOption[self.optionIndex], isCheckedIn: self.selectedLuggage.contains(2) ? true : false, gender: self.selectedGender, items: returnItem(gender: self.selectedGender, category: self.categoryOption[self.optionIndex], isCheckedIn: self.selectedLuggage.contains(2) ? true : false)))
             }
         }
     }

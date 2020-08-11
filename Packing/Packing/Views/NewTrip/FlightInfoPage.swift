@@ -64,7 +64,7 @@ struct FlightInfoPage: View {
                                 Text(trip.flightNumber)
                                     .font(.system(size: 18, weight: .regular))
                                 Image("flight-overview-icon")
-                                Text("Duration: \(remainingTime(departureDate: trip.departureDate, arrivalDate: trip.arrivalDate))h")
+                                Text("Duration: \(remainingTime(departureDate: trip.departureDate, arrivalDate: trip.arrivalDate)) h")
                                     .font(FlightInfoPage.poppinsRegular)
                             }
                             Spacer()
