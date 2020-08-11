@@ -9,18 +9,15 @@
 import SwiftUI
 
 struct ActivityCard: View {
-    @Binding var selectedActivity: [Luggage]
+    @Binding var selectedActivity: [String]
     
     let option: [String] = ["beach", "hike", "formal", "winter", "swimming", "gym", "photography", "business", "party"]
-    let categoryOption: [Luggage.Category] = [Luggage.Category.beach, Luggage.Category.hike, Luggage.Category.formal, Luggage.Category.winter, Luggage.Category.swimming, Luggage.Category.gym, Luggage.Category.photography, Luggage.Category.business, Luggage.Category.party]
-    
     var optionIndex: Int
     var selectedGender: String
-    var selectedLuggage: [Int]
     
     var body: some View {
         ZStack {
-            if selectedActivity.contains(where: { $0.category == self.categoryOption[self.optionIndex] }) {
+            if selectedActivity.contains(where: { $0 == self.option[self.optionIndex] }) {
                 Image("\(option[optionIndex])-selected")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -38,10 +35,10 @@ struct ActivityCard: View {
             }
         }
         .onTapGesture {
-            if self.selectedActivity.contains(where: { $0.category == self.categoryOption[self.optionIndex] }) {
-                self.selectedActivity.removeAll(where: { $0.category == self.categoryOption[self.optionIndex] })
+            if self.selectedActivity.contains(where: { $0 == self.option[self.optionIndex] }) {
+                self.selectedActivity.removeAll(where: { $0 == self.option[self.optionIndex] })
             } else {
-                self.selectedActivity.append(Luggage(category: self.categoryOption[self.optionIndex], isCheckedIn: self.selectedLuggage.contains(2) ? true : false, gender: self.selectedGender))
+                self.selectedActivity.append(self.option[self.optionIndex])
             }
         }
     }

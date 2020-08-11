@@ -14,3 +14,9 @@ import CoreData
 public class RestrictionDetailModel: NSManagedObject {
 
 }
+
+extension RestrictionDetailModel: Comparable {
+    public static func < (lhs: RestrictionDetailModel, rhs: RestrictionDetailModel) -> Bool {
+        lhs.subTitle < rhs.subTitle
+    }
+}

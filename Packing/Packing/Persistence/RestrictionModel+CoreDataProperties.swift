@@ -11,17 +11,17 @@ import Foundation
 import CoreData
 
 
-extension RestrictionModel {
+extension RestrictionModel: Identifiable {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<RestrictionModel> {
         return NSFetchRequest<RestrictionModel>(entityName: "RestrictionModel")
     }
 
-    @NSManaged public var id: UUID?
-    @NSManaged public var mainTitle: String?
-    @NSManaged public var mainDetail: String?
+    @NSManaged public var id: UUID
+    @NSManaged public var mainTitle: String
+    @NSManaged public var mainDetail: String
     @NSManaged public var restrictionDetailModel: NSSet?
-    @NSManaged public var tripModel: TripModel?
+    @NSManaged public var tripModel: TripModel
 
 }
 

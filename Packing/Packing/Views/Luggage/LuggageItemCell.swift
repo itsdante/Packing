@@ -16,8 +16,9 @@ struct LuggageItemCell: View {
     
     private static let poppinsRegular15: Font = Font.custom("Poppins-Regular", size: 15)
     
+    @Environment(\.managedObjectContext) var moc
     @Binding var isWarningPresented: Bool
-    @State var item: Item
+    @ObservedObject var item: ItemModel
     @State var isEditMode = false
     
     var body: some View {
@@ -27,7 +28,10 @@ struct LuggageItemCell: View {
                 .frame(width: UIScreen.main.bounds.width * 0.05, height: UIScreen.main.bounds.width * 0.05)
                 .foregroundColor(item.isCompleted ? LuggageItemCell.purple : LuggageItemCell.lightGrey)
                 .onTapGesture {
-                    self.item.isCompleted.toggle()
+                    self.moc.performAndWait {
+                        self.item.isCompleted.toggle()
+                        try? self.moc.save()
+                    }
             }
             Text(item.name)
                 .font(LuggageItemCell.poppinsRegular15)
@@ -42,7 +46,6 @@ struct LuggageItemCell: View {
                 }
             }
             Spacer()
-                
             if isEditMode {
                 HStack {
                     Image(systemName: "minus.square.fill")
@@ -51,7 +54,10 @@ struct LuggageItemCell: View {
                         .foregroundColor(LuggageItemCell.darkGrey)
                         .onTapGesture {
                             if self.item.quantity != 1 {
-                                self.item.quantity -= 1
+                                self.moc.performAndWait {
+                                    self.item.quantity -= 1
+                                    try? self.moc.save()
+                                }
                             }
                     }
                     Text("\(item.quantity)")
@@ -60,7 +66,10 @@ struct LuggageItemCell: View {
                         .frame(width: UIScreen.main.bounds.width * 0.067, height: UIScreen.main.bounds.width * 0.067)
                         .foregroundColor(LuggageItemCell.darkGrey)
                         .onTapGesture {
-                            self.item.quantity += 1
+                            self.moc.performAndWait {
+                                self.item.quantity += 1
+                                try? self.moc.save()
+                            }
                     }
                 }
             } else {
@@ -92,17 +101,17 @@ struct LuggageItemCell: View {
             }
         }
         .contentShape(Rectangle())
-            .onTapGesture {
-                self.isEditMode = false
+        .onTapGesture {
+            self.isEditMode = false
         }
     }
 }
 
 #if DEBUG
-struct ItemCell_Previews: PreviewProvider {
-    @State static var warn : Bool = true
-    static var previews: some View {
-        LuggageItemCell(isWarningPresented: $warn, item: item1).previewLayout(.sizeThatFits)
-    }
-}
+//struct ItemCell_Previews: PreviewProvider {
+//    @State static var warn : Bool = true
+//    static var previews: some View {
+//        LuggageItemCell(isWarningPresented: $warn, item: item1).previewLayout(.sizeThatFits)
+//    }
+//}
 #endif

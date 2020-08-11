@@ -28,7 +28,7 @@ struct HomePopup: View {
     @State private var newbookingNumber = ""
     @Binding var isPresented: Bool
     
-    var trip: Trip
+    var trip: Trip = Trip(bookingNumber: "71938JC", airline: "Lion Air", flightNumber: "GA4828", originAirportCode: "CGK", originAirport: "Soekarno-Hatta Int. Airport", originCity: "Jakarta", originCountry: "Indonesia", destinationAirportCode: "HKG", destinationAirport: "Hong Kong Int. Airport", destinationCity: "Hong Kong", destinationCountry: "China", departureDate: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, arrivalDate: Calendar.current.date(byAdding: .day, value: 4, to: Date())!.addingTimeInterval(5000), createdAt: Date(), luggages: [], restrictions: restrictionArray)
     
     var body: some View {
         ZStack {
@@ -101,23 +101,23 @@ struct HomePopup: View {
 }
 
 #if DEBUG
-struct NewTripCard_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            StatefulPreviewWrapper(false) {
-                HomePopup(isPresented: $0, trip: tripTestData)
-                    .environmentObject(AppState())
-                    .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-                    .previewDisplayName("iPhone 8")
-            }
-            
-            StatefulPreviewWrapper(false) {
-                HomePopup(isPresented: $0, trip: tripTestData)
-                    .environmentObject(AppState())
-                    .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-                    .previewDisplayName("iPhone 11")
-            }
-        }
-    }
-}
+//struct NewTripCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            StatefulPreviewWrapper(false) {
+//                HomePopup(isPresented: $0)
+//                    .environmentObject(AppState())
+//                    .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+//                    .previewDisplayName("iPhone 8")
+//            }
+//
+//            StatefulPreviewWrapper(false) {
+//                HomePopup(isPresented: $0)
+//                    .environmentObject(AppState())
+//                    .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+//                    .previewDisplayName("iPhone 11")
+//            }
+//        }
+//    }
+//}
 #endif

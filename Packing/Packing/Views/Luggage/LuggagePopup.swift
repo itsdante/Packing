@@ -16,7 +16,6 @@ struct LuggagePopup: View {
     private static let grey: Color = Color.init(UIColor(hex: 0x666666))
     private static let purple: Color = Color.init(UIColor(hex: 0x654CFF))
     
-    var trip: Trip
     @Binding var isWarningPresented: Bool
     
     var body: some View {
@@ -63,7 +62,7 @@ struct LuggagePopup: View {
                                 .multilineTextAlignment(.center)
                             Spacer()
                             Divider()
-                            NavigationLink(destination: RestrictionView(trip: trip)) {
+                            NavigationLink(destination: RestrictionView()) {
                                 Text("View Restricted Items")
                                     .foregroundColor(LuggagePopup.purple)
                                     .font(LuggagePopup.poppinsSemiBold16)

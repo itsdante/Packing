@@ -9,12 +9,18 @@
 import SwiftUI
 
 struct LuggageView: View {
+    init(uuid: UUID) {
+        self._luggageCarryOnResults = FetchRequest(entity: LuggageModel.entity(), sortDescriptors: [], predicate: NSPredicate(format: "tripModel.id == %@ && isCheckedIn == false", uuid as CVarArg))
+        self._luggageCheckInResults = FetchRequest(entity: LuggageModel.entity(), sortDescriptors: [], predicate: NSPredicate(format: "tripModel.id == %@ && isCheckedIn == true", uuid as CVarArg))
+    }
+    
     @EnvironmentObject var appState: AppState
     @State private var selected = 0
     @State var isWarningPresented: Bool = false
     @State var isMenuPresented: Bool = true
     
-    @State var trip: Trip
+    @FetchRequest var luggageCarryOnResults: FetchedResults<LuggageModel>
+    @FetchRequest var luggageCheckInResults: FetchedResults<LuggageModel>
     
     private var homeButton: some View {
         Button(action: {
@@ -49,9 +55,9 @@ struct LuggageView: View {
                     .padding(.top, 20)
                 Spacer()
                 if selected == 0 {
-                    if trip.luggages.filter({ $0.isCheckedIn == false }).count != 0 {
+                    if luggageCarryOnResults.count != 0 {
                         ScrollView {
-                            ForEach(trip.luggages.filter({ $0.isCheckedIn == false })) { luggage in
+                            ForEach(luggageCarryOnResults, id: \.self) { (luggage: LuggageModel) in
                                 LuggageListCard(luggage: luggage, isWarningPresented: self.$isWarningPresented)
                             }
                         }
@@ -59,9 +65,9 @@ struct LuggageView: View {
                         LuggageEmptyState(isCheckedIn: false)
                     }
                 } else {
-                    if trip.luggages.filter({ $0.isCheckedIn == true }).count != 0 {
+                    if luggageCheckInResults.count != 0 {
                         ScrollView {
-                            ForEach(trip.luggages.filter({ $0.isCheckedIn == true })) { luggage in
+                            ForEach(luggageCheckInResults, id: \.self) { (luggage: LuggageModel) in
                                 LuggageListCard(luggage: luggage, isWarningPresented:  self.$isWarningPresented)
                             }
                         }
@@ -71,10 +77,10 @@ struct LuggageView: View {
                 }
             }
             if isMenuPresented {
-                LuggageMenuCard(isMenuPresented: self.$isMenuPresented, trip: trip)
+                LuggageMenuCard(isMenuPresented: self.$isMenuPresented)
             }
             if isWarningPresented {
-                LuggagePopup(trip: trip, isWarningPresented: self.$isWarningPresented)
+                LuggagePopup(isWarningPresented: self.$isWarningPresented)
             }
         }
         .navigationBarTitle("My Luggage", displayMode: .inline)
@@ -87,23 +93,23 @@ struct LuggageView: View {
 }
 
 #if DEBUG
-struct LuggageView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            NavigationView {
-                LuggageView(trip: tripTestData)
-                    .environmentObject(AppState())
-            }
-            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-            .previewDisplayName("iPhone 8")
-            
-            NavigationView {
-                LuggageView(trip: tripTestData)
-                    .environmentObject(AppState())
-            }
-            .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-            .previewDisplayName("iPhone 11")
-        }
-    }
-}
+//struct LuggageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            NavigationView {
+//                LuggageView(trip: tripTestData)
+//                    .environmentObject(AppState())
+//            }
+//            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+//            .previewDisplayName("iPhone 8")
+//            
+//            NavigationView {
+//                LuggageView(trip: tripTestData)
+//                    .environmentObject(AppState())
+//            }
+//            .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+//            .previewDisplayName("iPhone 11")
+//        }
+//    }
+//}
 #endif

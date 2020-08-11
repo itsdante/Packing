@@ -14,3 +14,9 @@ import CoreData
 public class ItemModel: NSManagedObject {
 
 }
+
+extension ItemModel: Comparable {
+    public static func < (lhs: ItemModel, rhs: ItemModel) -> Bool {
+        lhs.createdAt < rhs.createdAt
+    }
+}

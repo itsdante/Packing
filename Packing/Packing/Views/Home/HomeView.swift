@@ -48,6 +48,7 @@ struct HomeView: View {
     private static let poppinsMedium12: Font = Font.custom("Poppins-Medium", size: 12)
     private static let poppinsRegular14: Font = Font.custom("Poppins-Regular", size: 14)
     
+    @FetchRequest(entity: TripModel.entity(), sortDescriptors: []) var trips: FetchedResults<TripModel>
     @EnvironmentObject var appState: AppState
     @State var isNavigationBarHidden: Bool = true
     
@@ -61,7 +62,7 @@ struct HomeView: View {
                 if appState.didLaunchBefore == false {
                     OnboardingView()
                 } else {
-                    if tripArray.isEmpty {
+                    if trips.count == 0 {
                         VStack(alignment: .center) {
                             HStack(alignment: .center) {
                                 Text("New Trip")
@@ -76,7 +77,7 @@ struct HomeView: View {
                     } else {
                         VStack(alignment: .leading, spacing: 0) {
                             HStack(alignment: .center) {
-                                if tripArray[pageIndex].departureDate <= Date() {
+                                if trips[pageIndex].departureDate <= Date() {
                                     Text("Trip History")
                                         .font(HomeView.poppinsSemiBold28)
                                         .foregroundColor(HomeView.darkGrey)
@@ -101,8 +102,8 @@ struct HomeView: View {
                                 }
                             }
                             .padding(.horizontal, 35)
-                            HomeScrollView(pageIndex: self.$pageIndex, trips: tripArray)
-                            if tripArray[pageIndex].departureDate <= Date() {
+                            HomeScrollView(pageIndex: self.$pageIndex, trips: trips.compactMap { $0 })
+                            if trips[pageIndex].departureDate <= Date() {
                                 Text("Weather for Post Trip")
                                     .font(HomeView.poppinsMedium20)
                                     .foregroundColor(HomeView.darkGrey)
@@ -113,13 +114,13 @@ struct HomeView: View {
                                     .foregroundColor(HomeView.darkGrey)
                                     .padding(.leading, 35)
                             }
-                            Text("\(tripArray[pageIndex].destinationCity), \(tripArray[pageIndex].destinationCountry) - \(dayMonthFormatter.string(from: Date())) to \(dayMonthYearFormatter.string(from: Calendar.current.date(byAdding: .day, value: 5, to: Date())!))")
+                            Text("\(trips[pageIndex].destinationCity), \(trips[pageIndex].destinationCountry) - \(dayMonthFormatter.string(from: Date())) to \(dayMonthYearFormatter.string(from: Calendar.current.date(byAdding: .day, value: 5, to: Date())!))")
                                 .font(HomeView.poppinsMedium12)
                                 .foregroundColor(HomeView.lightPurple)
                                 .padding(.leading, 35)
                             WeatherScrollView(weathers: networkManager.weathers)
                                 .onAppear {
-                                    self.networkManager.fetchData(cityName: tripArray[self.pageIndex].rawDestinationCity)
+                                    self.networkManager.fetchData(cityName: self.trips[self.pageIndex].rawDestinationCity)
                             }
                             Text("OpenWeather")
                                 .font(HomeView.poppinsRegular14)
@@ -128,7 +129,7 @@ struct HomeView: View {
                         }
                     }
                     if isPresented {
-                        HomePopup(isPresented: self.$isPresented, trip: tripArray[pageIndex])
+                        HomePopup(isPresented: self.$isPresented)
                     }
                 }
             }

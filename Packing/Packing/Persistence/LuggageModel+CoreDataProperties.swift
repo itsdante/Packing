@@ -11,18 +11,18 @@ import Foundation
 import CoreData
 
 
-extension LuggageModel {
+extension LuggageModel: Identifiable {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<LuggageModel> {
         return NSFetchRequest<LuggageModel>(entityName: "LuggageModel")
     }
 
-    @NSManaged public var id: UUID?
-    @NSManaged public var category: String?
+    @NSManaged public var id: UUID
+    @NSManaged public var category: String
     @NSManaged public var isCheckedIn: Bool
-    @NSManaged public var gender: String?
+    @NSManaged public var gender: String
     @NSManaged public var itemModel: NSSet?
-    @NSManaged public var tripModel: TripModel?
+    @NSManaged public var tripModel: TripModel
 
 }
 

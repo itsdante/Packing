@@ -25,7 +25,7 @@ struct HomeCard: View {
     private static var buttonColor: Color = Color.init(UIColor(hex: 0x654DFF))
     private static var buttonShadowColor: Color = Color.init(UIColor.init(hex: 0x2704FE, alpha: 0.2))
     
-    var trip: Trip
+    var trip: TripModel
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -56,7 +56,7 @@ struct HomeCard: View {
                                 .padding(.trailing, 30)
                         }
                     }
-                    NavigationLink(destination: LuggageView(trip: trip)) {
+                    NavigationLink(destination: LuggageView(uuid: trip.id)) {
                         RoundedRectangle(cornerRadius: 18)
                             .shadow(color: HomeCard.buttonShadowColor, radius: 4, y: 5)
                             .overlay(
@@ -64,9 +64,10 @@ struct HomeCard: View {
                                     .font(HomeCard.poppinsSemiBold12)
                                     .foregroundColor(.white)
                         )
-                    }.frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.04)
-                        .foregroundColor(HomeCard.buttonColor)
-                        .padding(.top, 25)
+                    }
+                    .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.04)
+                    .foregroundColor(HomeCard.buttonColor)
+                    .padding(.top, 25)
                 }
             }
             .frame(height: UIScreen.main.bounds.width * 0.6)
@@ -104,17 +105,17 @@ struct HomeCard: View {
 }
 
 #if DEBUG
-struct HomeCard_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            HomeCard(trip: tripTestData)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-                .previewDisplayName("iPhone 8")
-            
-            HomeCard(trip: tripTestData)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-                .previewDisplayName("iPhone 11")
-        }
-    }
-}
+//struct HomeCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            HomeCard(trip: tripTestData)
+//                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+//                .previewDisplayName("iPhone 8")
+//            
+//            HomeCard(trip: tripTestData)
+//                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+//                .previewDisplayName("iPhone 11")
+//        }
+//    }
+//}
 #endif

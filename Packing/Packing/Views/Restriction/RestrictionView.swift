@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct RestrictionView: View {
-    var trip: Trip
+//    var trip: Trip
     
     var body: some View {
         ScrollView {
-            ForEach(trip.restrictions) { restriction in
+            ForEach(restrictionArray) { restriction in
                 RestrictionListCard(restriction: restriction)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -24,17 +24,17 @@ struct RestrictionView: View {
 }
 
 #if DEBUG
-struct RestrictionView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            RestrictionView(trip: tripTestData)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-                .previewDisplayName("iPhone 8")
-            
-            RestrictionView(trip: tripTestData)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-                .previewDisplayName("iPhone 11")
-        }
-    }
-}
+//struct RestrictionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            RestrictionView(trip: tripTestData)
+//                .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+//                .previewDisplayName("iPhone 8")
+//            
+//            RestrictionView(trip: tripTestData)
+//                .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
+//                .previewDisplayName("iPhone 11")
+//        }
+//    }
+//}
 #endif

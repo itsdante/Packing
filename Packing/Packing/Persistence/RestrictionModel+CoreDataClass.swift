@@ -13,4 +13,14 @@ import CoreData
 @objc(RestrictionModel)
 public class RestrictionModel: NSManagedObject {
 
+    public var restrictionDetailModelArray: [RestrictionDetailModel] {
+        let set = restrictionDetailModel as? Set<RestrictionDetailModel> ?? []
+        return set.sorted()
+    }
+}
+
+extension RestrictionModel: Comparable {
+    public static func < (lhs: RestrictionModel, rhs: RestrictionModel) -> Bool {
+        lhs.mainTitle < rhs.mainTitle
+    }
 }

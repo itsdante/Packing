@@ -13,7 +13,7 @@ struct LuggageMenuCard: View {
     
     @Binding var isMenuPresented: Bool
     
-    var trip: Trip
+//    var trip: Trip
     
     var body: some View {
         ZStack {
@@ -26,7 +26,7 @@ struct LuggageMenuCard: View {
             if isMenuPresented {
                 GeometryReader { (proxy: GeometryProxy) in
                     VStack(alignment: .leading) {
-                        NavigationLink(destination: RestrictionView(trip: self.trip)) {
+                        NavigationLink(destination: RestrictionView()) {
                             Text("View Restricted Items")
                                 .modifier(EditButtonModifier())
                         }

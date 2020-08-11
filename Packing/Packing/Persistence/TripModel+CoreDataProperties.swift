@@ -11,27 +11,27 @@ import Foundation
 import CoreData
 
 
-extension TripModel {
+extension TripModel: Identifiable {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<TripModel> {
         return NSFetchRequest<TripModel>(entityName: "TripModel")
     }
 
-    @NSManaged public var id: UUID?
-    @NSManaged public var bookingNumber: String?
-    @NSManaged public var airline: String?
-    @NSManaged public var flightNumber: String?
-    @NSManaged public var originAirportCode: String?
-    @NSManaged public var originAirport: String?
-    @NSManaged public var originCity: String?
-    @NSManaged public var originCountry: String?
-    @NSManaged public var destinationAirportCode: String?
-    @NSManaged public var destinationAirport: String?
-    @NSManaged public var destinationCity: String?
-    @NSManaged public var destinationCountry: String?
-    @NSManaged public var departureDate: Date?
-    @NSManaged public var arrivalDate: Date?
-    @NSManaged public var createdAt: Date?
+    @NSManaged public var id: UUID
+    @NSManaged public var bookingNumber: String
+    @NSManaged public var airline: String
+    @NSManaged public var flightNumber: String
+    @NSManaged public var originAirportCode: String
+    @NSManaged public var originAirport: String
+    @NSManaged public var originCity: String
+    @NSManaged public var originCountry: String
+    @NSManaged public var destinationAirportCode: String
+    @NSManaged public var destinationAirport: String
+    @NSManaged public var destinationCity: String
+    @NSManaged public var destinationCountry: String
+    @NSManaged public var departureDate: Date
+    @NSManaged public var arrivalDate: Date
+    @NSManaged public var createdAt: Date
     @NSManaged public var luggageModel: NSSet?
     @NSManaged public var restrictionModel: NSSet?
 

@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-
-
 struct LuggageListCard: View {
     private static let sectionFont: Font = Font.custom("Poppins-SemiBold", size: 18)
     private static let sectionFontColor: Color = Color(UIColor.init(hex: 0x4E4D4D))
@@ -26,22 +24,22 @@ struct LuggageListCard: View {
     
     private static let listShadowColor: Color = Color.init(UIColor.init(hex: 0x0068FD, alpha: 0.07))
     
-    @State var luggage: Luggage
-    @State var itemArray: [Item] = []
+    @Environment(\.managedObjectContext) var moc
+    @ObservedObject var luggage: LuggageModel
     
     @Binding var isWarningPresented: Bool
-    @State private var isExpanded: Bool = true
-    @State private var newItem = ""
+    @State var isExpanded: Bool = false
+    @State var newItem = ""
     
     var body: some View {
         
         VStack(alignment: .leading) {
             HStack {
-                Text(luggage.categoryString)
+                Text(luggage.category)
                     .font(LuggageListCard.sectionFont)
                     .foregroundColor(LuggageListCard.sectionFontColor)
                 Spacer()
-                Text("\(self.itemArray.filter({ $0.isCompleted == true }).count )/\(self.itemArray.count) items")
+                Text("\(luggage.itemModelArray.filter({ $0.isCompleted == true }).count )/\(luggage.itemModelArray.count) items")
                     .font(LuggageListCard.sectionCountFont)
                     .foregroundColor(LuggageListCard.sectionCountColor)
                 Image(systemName: self.isExpanded ? LuggageListCard.dropDownImageDown : LuggageListCard.dropDownImageUp)
@@ -64,12 +62,6 @@ struct LuggageListCard: View {
                                 .resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(LuggageListCard.addItemColor)
-                            .onTapGesture {
-                                print(self.itemArray)
-                                let newItemss = Item(name: self.newItem, quantity: 1, isCompleted: false, isRestricted: false, createdAt: Date())
-                                self.itemArray.append(newItemss)
-                                self.newItem = ""
-                            }
                             TextField("Add New Item", text: self.$newItem, onCommit: {
                                 
                             })
@@ -77,17 +69,21 @@ struct LuggageListCard: View {
                                 .foregroundColor(LuggageListCard.addItemColor)
                         }
                         .padding(.vertical, 5)
-                        
-                        ForEach(self.itemArray.sorted { $0.isCompleted && $1.isCompleted }) { item in
-                            LuggageItemCell(isWarningPresented: self.$isWarningPresented, item: item)
+                        ForEach(luggage.itemModelArray.sorted { $0.isCompleted && $1.isCompleted }) { item in
+                            LuggageItemCell(isWarningPresented: self.$isWarningPresented, item: item).environment(\.managedObjectContext, self.moc)
                         }
+//                        .onDelete { indexSet in
+//                            let deleteOne = self.luggage.itemModel[indexSet.first!]
+//                            self.moc.delete(deleteOne)
+//                            try? self.moc.save()
+//                        }
                     }
                     .padding(.leading, 22)
                     .onAppear {
                         UITableView.appearance().separatorStyle = .none
                     }
                 }
-                .frame(height: CGFloat(self.itemArray.count + 1) * CGFloat(45))
+                .frame(height: CGFloat(luggage.itemModelArray.count + 1) * CGFloat(45))
                 .cornerRadius(14)
                 .padding(.horizontal, 7)
                 .shadow(
@@ -97,10 +93,6 @@ struct LuggageListCard: View {
             }
         }
         .padding(.top, 14)
-    .onAppear()
-        {
-            self.itemArray = self.luggage.items
-        }
     }
 }
 
@@ -112,10 +104,3 @@ struct LuggageListCard: View {
 //    }
 //}
 #endif
-
-struct LuggageListCard_Previews: PreviewProvider {
-    @State static var warn : Bool = true
-    static var previews: some View {
-        LuggageListCard(luggage: luggage1, itemArray: [item1], isWarningPresented: $warn)
-    }
-}

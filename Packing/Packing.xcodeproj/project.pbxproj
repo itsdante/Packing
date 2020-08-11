@@ -53,6 +53,7 @@
 		897836D124E0E61400853D0E /* ItemModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897836C724E0E61400853D0E /* ItemModel+CoreDataProperties.swift */; };
 		897836D224E0E61400853D0E /* RestrictionDetailModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897836C824E0E61400853D0E /* RestrictionDetailModel+CoreDataClass.swift */; };
 		897836D324E0E61400853D0E /* RestrictionDetailModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897836C924E0E61400853D0E /* RestrictionDetailModel+CoreDataProperties.swift */; };
+		897836D524E25C9800853D0E /* PredefinedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897836D424E25C9800853D0E /* PredefinedHelper.swift */; };
 		8979139E24DFFE00007A87FE /* FlightInfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8979139D24DFFE00007A87FE /* FlightInfoPage.swift */; };
 		897AB15E24D26E1100B308C9 /* Packing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 897AB15C24D26E1100B308C9 /* Packing.xcdatamodeld */; };
 		897AB16024D26E4000B308C9 /* InputBookingNumberPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897AB15F24D26E4000B308C9 /* InputBookingNumberPage.swift */; };
@@ -155,6 +156,7 @@
 		897836C724E0E61400853D0E /* ItemModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		897836C824E0E61400853D0E /* RestrictionDetailModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestrictionDetailModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		897836C924E0E61400853D0E /* RestrictionDetailModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestrictionDetailModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		897836D424E25C9800853D0E /* PredefinedHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefinedHelper.swift; sourceTree = "<group>"; };
 		8979139D24DFFE00007A87FE /* FlightInfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightInfoPage.swift; sourceTree = "<group>"; };
 		897AB15D24D26E1100B308C9 /* Packing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Packing.xcdatamodel; sourceTree = "<group>"; };
 		897AB15F24D26E4000B308C9 /* InputBookingNumberPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBookingNumberPage.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 				89B413A224D5619600B5189E /* KeyboardResponder.swift */,
 				89FDDFB124DC5B40006C69B3 /* StatefulPreviewWrapper.swift */,
 				89BD4D2C24DE23CA0043CCCD /* PageControl.swift */,
+				897836D424E25C9800853D0E /* PredefinedHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -810,6 +813,7 @@
 				897AB15E24D26E1100B308C9 /* Packing.xcdatamodeld in Sources */,
 				FECAA3AB24B3944C004B85AD /* AppDelegate.swift in Sources */,
 				FECAA3AD24B3944C004B85AD /* SceneDelegate.swift in Sources */,
+				897836D524E25C9800853D0E /* PredefinedHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

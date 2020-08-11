@@ -12,5 +12,18 @@ import CoreData
 
 @objc(TripModel)
 public class TripModel: NSManagedObject {
+    
+    var rawDestinationCity: String {
+        return destinationCity.replacingOccurrences(of: " ", with: "").lowercased()
+    }
 
+    public var luggageModelArray: [LuggageModel] {
+        let set = luggageModel as? Set<LuggageModel> ?? []
+        return set.sorted()
+    }
+    
+    public var restrictionModelArray: [RestrictionModel] {
+           let set = luggageModel as? Set<RestrictionModel> ?? []
+           return set.sorted()
+       }
 }
