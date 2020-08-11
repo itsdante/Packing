@@ -79,7 +79,16 @@ struct LuggageListCard: View {
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(LuggageListCard.addItemColor)
                             TextField("Add New Item", text: self.$newItem, onCommit: {
-                                
+                                let newItem = ItemModel(context: self.moc)
+                                newItem.id = UUID()
+                                newItem.name = self.newItem
+                                newItem.quantity = 1
+                                newItem.isRestricted = false
+                                newItem.isCompleted = false
+                                newItem.createdAt = Date()
+                                self.luggage.addToItemModel(newItem)
+                                try? self.moc.save()
+                                self.newItem = ""
                             })
                                 .font(LuggageListCard.addItemFont)
                                 .foregroundColor(LuggageListCard.addItemColor)
