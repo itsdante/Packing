@@ -48,13 +48,16 @@ struct HomeView: View {
     private static let poppinsMedium12: Font = Font.custom("Poppins-Medium", size: 12)
     private static let poppinsRegular14: Font = Font.custom("Poppins-Regular", size: 14)
     
-    @FetchRequest(entity: TripModel.entity(), sortDescriptors: []) var trips: FetchedResults<TripModel>
+    @FetchRequest(entity: TripModel.entity(), sortDescriptors: [
+        NSSortDescriptor(key: "departureDate" , ascending: false)
+    ]) var trips: FetchedResults<TripModel>
     @EnvironmentObject var appState: AppState
     @State var isNavigationBarHidden: Bool = true
     
     @ObservedObject var networkManager = NetworkManager()
     @State var isPresented = false
     @State var pageIndex: Int = 0
+    
     
     var body: some View {
         NavigationView {
@@ -133,7 +136,7 @@ struct HomeView: View {
                     }
                 }
             }
-            //.background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
+        
             .navigationBarTitle("")
             .navigationBarHidden(isNavigationBarHidden)
             .navigationBarBackButtonHidden(true)
@@ -146,8 +149,13 @@ struct HomeView: View {
                     self.isNavigationBarHidden = false
                 }
             }
+        
             .animation(.linear)
-        }   
+//            .background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
+            
+
+        }
+    
     }
 }
 

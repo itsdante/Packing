@@ -24,6 +24,6 @@ public class TripModel: NSManagedObject {
     
     public var restrictionModelArray: [RestrictionModel] {
            let set = luggageModel as? Set<RestrictionModel> ?? []
-           return set.sorted()
+        return set.sorted()
        }
 }
