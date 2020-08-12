@@ -47,5 +47,7 @@ let tripHongKong = Trip(bookingNumber: "71938JC", airline: "Lion Air", flightNum
 
 let tripAmsterdam = Trip(bookingNumber: "60827IB", airline: "Turkish Airlines", flightNumber: "FZ3717", originAirportCode: "CGK", originAirport: "Soekarno-Hatta Int. Airport", originCity: "Jakarta", originCountry: "Indonesia", destinationAirportCode: "AMS", destinationAirport: "Amsterdam Airport Schiphol", destinationCity: "Amsterdam", destinationCountry: "Netherlands", departureDate: Calendar.current.date(byAdding: .day, value: 7, to: Date())!, arrivalDate: Calendar.current.date(byAdding: .day, value: 10, to: Date())!.addingTimeInterval(5000), createdAt: Date(), luggages: [], restrictions: restrictionArray)
 
+let tripAmerica = Trip(bookingNumber: "28327JT", airline: "All Nippon Airways", flightNumber: "PN3827", originAirportCode: "CGK", originAirport: "Soekarno-Hatta Int. Airport", originCity: "Jakarta", originCountry: "Indonesia", destinationAirportCode: "NRT", destinationAirport: "Tokyo Narita Airport", destinationCity: "Tokyo", destinationCountry: "Japan", departureDate: Calendar.current.date(byAdding: .day, value: 7, to: Date())!, arrivalDate: Calendar.current.date(byAdding: .day, value: 7, to: Date())!.addingTimeInterval(5000), createdAt: Date(), luggages: [], restrictions: restrictionArray)
+
 var tripArray: [Trip] = []
 #endif
