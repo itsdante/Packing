@@ -89,6 +89,7 @@ struct LuggageView: View {
                 LuggagePopup(isWarningPresented: self.$isWarningPresented)
             }
         }
+        .background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
         .navigationBarTitle("My Luggage", displayMode: .inline)
         .navigationBarItems(trailing: editButton)
         .onAppear {

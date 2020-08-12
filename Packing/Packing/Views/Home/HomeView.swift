@@ -104,7 +104,7 @@ struct HomeView: View {
                             .padding(.horizontal, 35)
                             HomeScrollView(pageIndex: self.$pageIndex, trips: trips.compactMap { $0 })
                             if trips[pageIndex].departureDate <= Date() {
-                                Text("Weather for Post Trip")
+                                Text("Weather for Past Trip")
                                     .font(HomeView.poppinsMedium20)
                                     .foregroundColor(HomeView.darkGrey)
                                     .padding(.leading, 35)
@@ -133,6 +133,7 @@ struct HomeView: View {
                     }
                 }
             }
+            //.background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
             .navigationBarTitle("")
             .navigationBarHidden(isNavigationBarHidden)
             .navigationBarBackButtonHidden(true)

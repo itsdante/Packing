@@ -18,6 +18,7 @@ struct RestrictionView: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
+        .background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
         .padding(.top, 20)
         .navigationBarTitle("Restricted Items", displayMode: .inline)
     }

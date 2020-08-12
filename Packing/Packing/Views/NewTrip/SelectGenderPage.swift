@@ -11,6 +11,8 @@ import SwiftUI
 struct SelectGenderPage: View {
     @State var selectedGender = ""
     
+    private static var bgColor: Color = Color.init(UIColor.init(hex: 0xF7F8FC))
+    
     var trip: Trip
     
     var body: some View {
@@ -68,9 +70,11 @@ struct SelectGenderPage: View {
                                 .font(Font.custom("Poppins-SemiBold", size: 14))
                     )
                 }
+                
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
             }
         }
+        .background(SelectGenderPage.bgColor.edgesIgnoringSafeArea(.all))
     }
 }
 

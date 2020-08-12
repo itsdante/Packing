@@ -16,6 +16,7 @@ struct OnboardingView: View {
     private static var darkGrey: Color = Color.init(UIColor.init(hex: 0x4E4D4D))
     private static var lightGrey: Color = Color.init(UIColor.init(hex: 0x666666))
     private static let yellow: Color = Color.init(UIColor.init(hex: 0xF9B710))
+    private static var bgColor: Color = Color.init(UIColor.init(hex: 0xF7F8FC))
     
     private static let yellowShadowColor: Color = Color.init(UIColor.init(hex: 0xD58411, alpha: 0.21))
     private static var purpleShadowColor: Color = Color.init(UIColor.init(hex: 0x2704FE, alpha: 0.2))
@@ -135,6 +136,8 @@ struct OnboardingView: View {
             .frame(height: UIScreen.main.bounds.height * 0.05)
             Spacer()
         }
+        .background(OnboardingView.bgColor)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

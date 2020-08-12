@@ -18,6 +18,7 @@ struct FlightInfoPage: View {
     private static var cardShadow: Color = Color(UIColor.init(hex: 0x3A4C82, alpha: 0.0723))
     private static var buttonShadow: Color = Color(UIColor.init(hex: 0x2704FE, alpha: 0.4))
     private static var buttonColor: Color = Color(UIColor.init(hex: 0x654CFF))
+    private static var bgColor: Color = Color.init(UIColor.init(hex: 0xF7F8FC))
     
     private static var poppinsBold: Font = Font.custom("Poppins-Bold", size: 28)
     private static var poppinsSemiBold28: Font = Font.custom("Poppins-SemiBold", size: 28)
@@ -38,7 +39,8 @@ struct FlightInfoPage: View {
                         .font(FlightInfoPage.poppinsSemiBold22)
                     Text(trip.bookingNumber)
                         .foregroundColor(FlightInfoPage.purple)
-                        .font(FlightInfoPage.poppinsSemiBold28)
+                    .font(.system(size: 28))
+                        .fontWeight(.semibold)
                 }
                 Spacer()
             }
@@ -55,7 +57,7 @@ struct FlightInfoPage: View {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(.white)
                     .shadow(color: FlightInfoPage.cardShadow, radius: 10, y: 11)
-                    .frame(width: UIScreen.main.bounds.width * 0.925, height: UIScreen.main.bounds.height * 0.185)
+                    .frame(width: UIScreen.main.bounds.width * 0.925, height: UIScreen.main.bounds.height * 0.2)
                     .overlay(
                         HStack {
                             InfoStack(alignment: .leading, date: basicDateFormatter.string(from: trip.departureDate), code: trip.originAirportCode, airport: trip.originAirport, time: timeFormater.string(from: trip.departureDate))
@@ -87,6 +89,7 @@ struct FlightInfoPage: View {
             }
             .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
         }
+        .background(FlightInfoPage.bgColor.edgesIgnoringSafeArea(.all))
         .onAppear {
             self.appState.isNavigationBarHidden = false
         }
@@ -110,13 +113,15 @@ struct FlightInfoPage: View {
                 Text(airport)
                     .foregroundColor(FlightInfoPage.black)
                     .font(FlightInfoPage.poppinsRegular)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(2)
                     .multilineTextAlignment(alignment == .leading ? .leading : .trailing)
                 Spacer()
                 Text(time)
                     .foregroundColor(FlightInfoPage.black)
                     .font(.system(size: 24, weight: .semibold))
             }
-            .padding(.top, 24)
+            .padding(.top, 23)
             .padding(.bottom, 19)
         }
     }

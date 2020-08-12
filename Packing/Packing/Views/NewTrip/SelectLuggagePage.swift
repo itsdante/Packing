@@ -68,6 +68,7 @@ struct SelectLuggagePage: View {
                 }
             }
         }
+        .background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
     }
 }
 

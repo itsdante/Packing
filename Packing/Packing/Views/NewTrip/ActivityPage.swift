@@ -13,6 +13,8 @@ struct ActivityPage: View {
     @EnvironmentObject var appState: AppState
     @State var selectedActivity: [String] = []
     
+    private static var bgColor: Color = Color.init(UIColor.init(hex: 0xF7F8FC))
+    
     var selectedGender: String
     var selectedLuggage: [Int]
     var trip: Trip
@@ -62,6 +64,7 @@ struct ActivityPage: View {
             }
             .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
         }
+        .background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
     }
     
     func finalTouch() {
