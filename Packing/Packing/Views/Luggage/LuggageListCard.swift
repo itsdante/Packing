@@ -28,7 +28,7 @@ struct LuggageListCard: View {
     @ObservedObject var luggage: LuggageModel
     @State var completedItem: Int = 0
     @Binding var isWarningPresented: Bool
-    @State var isExpanded: Bool = false
+    @State var isExpanded: Bool = true
     @State var newItem = ""
     func addNewItem(x:String){
         if x != "" {
