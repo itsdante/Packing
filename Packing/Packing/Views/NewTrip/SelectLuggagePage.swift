@@ -11,6 +11,8 @@ import SwiftUI
 struct SelectLuggagePage: View {
     @EnvironmentObject var appState: AppState
     @State var selectedLuggage: [Int] = []
+
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var selectedGender: String
     var trip: Trip
@@ -68,6 +70,14 @@ struct SelectLuggagePage: View {
                 }
             }
         }
+        .padding(.top, 35)
+        .navigationBarTitle("New Trip")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action : {
+            self.mode.wrappedValue.dismiss()
+        }){
+            Image(systemName: "arrow.left")
+        })
         .background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
     }
 }

@@ -16,6 +16,8 @@ struct LuggageView: View {
     }
     
     @EnvironmentObject var appState: AppState
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
     @State private var selected = 0
     @State var isWarningPresented: Bool = false
     @State var isMenuPresented: Bool = false
@@ -90,8 +92,17 @@ struct LuggageView: View {
             }
         }
         .background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(
+            leading: Button(action : {
+                self.mode.wrappedValue.dismiss()
+            }){
+                Image(systemName: "arrow.left")
+            },
+
+            trailing: editButton
+        )
         .navigationBarTitle("My Luggage", displayMode: .inline)
-        .navigationBarItems(trailing: editButton)
         .onAppear {
             self.appState.isNavigationBarHidden = false
         }

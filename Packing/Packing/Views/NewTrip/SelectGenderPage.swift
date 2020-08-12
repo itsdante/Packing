@@ -10,6 +10,8 @@ import SwiftUI
 
 struct SelectGenderPage: View {
     @State var selectedGender = ""
+
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     private static var bgColor: Color = Color.init(UIColor.init(hex: 0xF7F8FC))
     
@@ -74,6 +76,14 @@ struct SelectGenderPage: View {
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
             }
         }
+        .padding(.top, 35)
+        .navigationBarTitle("New Trip")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action : {
+            self.mode.wrappedValue.dismiss()
+        }){
+            Image(systemName: "arrow.left")
+        })
         .background(SelectGenderPage.bgColor.edgesIgnoringSafeArea(.all))
     }
 }

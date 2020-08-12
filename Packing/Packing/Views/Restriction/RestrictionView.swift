@@ -10,6 +10,7 @@ import SwiftUI
 
 struct RestrictionView: View {
 //    var trip: Trip
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
         ScrollView {
@@ -20,6 +21,12 @@ struct RestrictionView: View {
         }
         .background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
         .padding(.top, 20)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action : {
+            self.mode.wrappedValue.dismiss()
+        }){
+            Image(systemName: "arrow.left")
+        })
         .navigationBarTitle("Restricted Items", displayMode: .inline)
     }
 }

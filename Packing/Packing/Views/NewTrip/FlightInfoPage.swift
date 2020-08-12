@@ -89,6 +89,7 @@ struct FlightInfoPage: View {
             }
             .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.7)
         }
+        .padding(.top, 35)
         .background(FlightInfoPage.bgColor.edgesIgnoringSafeArea(.all))
         .onAppear {
             self.appState.isNavigationBarHidden = false
@@ -101,6 +102,8 @@ struct FlightInfoPage: View {
         var code: String
         var airport: String
         var time: String
+        
+        @Environment(\.presentationMode) var mode: Binding<PresentationMode>
         
         var body: some View {
             VStack(alignment: alignment){
@@ -123,6 +126,13 @@ struct FlightInfoPage: View {
             }
             .padding(.top, 23)
             .padding(.bottom, 19)
+            .navigationBarTitle("New Trip", displayMode: .inline)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: Button(action : {
+                self.mode.wrappedValue.dismiss()
+            }){
+                Image(systemName: "arrow.left")
+            })
         }
     }
 }
