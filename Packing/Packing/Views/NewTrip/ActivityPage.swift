@@ -99,6 +99,7 @@ struct ActivityPage: View {
         essentialsLuggage.id = UUID()
         essentialsLuggage.category = "Essentials"
         essentialsLuggage.isCheckedIn = self.selectedLuggage.contains(1) ? false : true
+        essentialsLuggage.order = 1
         essentialsLuggage.gender = self.selectedGender
         for item in predefinedItem(gender: self.selectedGender, category: "Essentials", isCheckedIn: self.selectedLuggage.contains(1) ? false : true) {
             let newItem = ItemModel(context: self.moc)
@@ -112,27 +113,11 @@ struct ActivityPage: View {
         }
         newTrip.addToLuggageModel(essentialsLuggage)
         
-        let toiletriesLuggage = LuggageModel(context: self.moc)
-        toiletriesLuggage.id = UUID()
-        toiletriesLuggage.category = "Toiletries"
-        toiletriesLuggage.isCheckedIn = self.selectedLuggage.contains(1) ? false : true
-        toiletriesLuggage.gender = self.selectedGender
-        for item in predefinedItem(gender: self.selectedGender, category: "Toiletries", isCheckedIn: self.selectedLuggage.contains(1) ? false : true) {
-            let newItem = ItemModel(context: self.moc)
-            newItem.id = UUID()
-            newItem.name = item
-            newItem.quantity = 1
-            newItem.isRestricted = false
-            newItem.isCompleted = false
-            newItem.createdAt = Date()
-            toiletriesLuggage.addToItemModel(newItem)
-        }
-        newTrip.addToLuggageModel(toiletriesLuggage)
-        
         let clothingLuggage = LuggageModel(context: self.moc)
         clothingLuggage.id = UUID()
         clothingLuggage.category = "Clothing"
         clothingLuggage.isCheckedIn = self.selectedLuggage.contains(1) ? false : true
+        clothingLuggage.order = 2
         clothingLuggage.gender = self.selectedGender
         for item in predefinedItem(gender: self.selectedGender, category: "Clothing", isCheckedIn: self.selectedLuggage.contains(1) ? false : true) {
             let newItem = ItemModel(context: self.moc)
@@ -146,11 +131,68 @@ struct ActivityPage: View {
         }
         newTrip.addToLuggageModel(clothingLuggage)
         
+        let toiletriesLuggage = LuggageModel(context: self.moc)
+        toiletriesLuggage.id = UUID()
+        toiletriesLuggage.category = "Toiletries"
+        toiletriesLuggage.isCheckedIn = self.selectedLuggage.contains(1) ? false : true
+        toiletriesLuggage.order = 3
+        toiletriesLuggage.gender = self.selectedGender
+        for item in predefinedItem(gender: self.selectedGender, category: "Toiletries", isCheckedIn: self.selectedLuggage.contains(1) ? false : true) {
+            let newItem = ItemModel(context: self.moc)
+            newItem.id = UUID()
+            newItem.name = item
+            newItem.quantity = 1
+            newItem.isRestricted = false
+            newItem.isCompleted = false
+            newItem.createdAt = Date()
+            toiletriesLuggage.addToItemModel(newItem)
+        }
+        newTrip.addToLuggageModel(toiletriesLuggage)
+        
+        if self.selectedGender != "Male" && self.selectedLuggage.count > 1 {
+            let femaleClothing = LuggageModel(context: self.moc)
+            femaleClothing.id = UUID()
+            femaleClothing.category = "Clothing"
+            femaleClothing.isCheckedIn = self.selectedLuggage.contains(2) ? true : false
+            femaleClothing.order = 2
+            femaleClothing.gender = self.selectedGender
+            for item in predefinedItem(gender: self.selectedGender, category: "Clothing", isCheckedIn: self.selectedLuggage.contains(2) ? true : false) {
+                let newItem = ItemModel(context: self.moc)
+                newItem.id = UUID()
+                newItem.name = item
+                newItem.quantity = 1
+                newItem.isRestricted = false
+                newItem.isCompleted = false
+                newItem.createdAt = Date()
+                femaleClothing.addToItemModel(newItem)
+            }
+            newTrip.addToLuggageModel(femaleClothing)
+            
+            let femaleToiletries = LuggageModel(context: self.moc)
+            femaleToiletries.id = UUID()
+            femaleToiletries.category = "Toiletries"
+            femaleToiletries.isCheckedIn = self.selectedLuggage.contains(2) ? true : false
+            femaleToiletries.order = 3
+            femaleToiletries.gender = self.selectedGender
+            for item in predefinedItem(gender: self.selectedGender, category: "Toiletries", isCheckedIn: self.selectedLuggage.contains(2) ? true : false) {
+                let newItem = ItemModel(context: self.moc)
+                newItem.id = UUID()
+                newItem.name = item
+                newItem.quantity = 1
+                newItem.isRestricted = false
+                newItem.isCompleted = false
+                newItem.createdAt = Date()
+                femaleToiletries.addToItemModel(newItem)
+            }
+            newTrip.addToLuggageModel(femaleToiletries)
+        }
+        
         for activity in selectedActivity {
             let activityLuggage = LuggageModel(context: self.moc)
             activityLuggage.id = UUID()
             activityLuggage.category = activity
             activityLuggage.isCheckedIn = self.selectedLuggage.contains(2) ? true : false
+            activityLuggage.order = 4
             activityLuggage.gender = self.selectedGender
             for item in predefinedItem(gender: self.selectedGender, category: activity, isCheckedIn: self.selectedLuggage.contains(2) ? true : false) {
                 let newItem = ItemModel(context: self.moc)

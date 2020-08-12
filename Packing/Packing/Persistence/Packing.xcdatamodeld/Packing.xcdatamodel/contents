@@ -14,6 +14,7 @@
         <attribute name="gender" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isCheckedIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="itemModel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemModel" inverseName="luggageModel" inverseEntity="ItemModel"/>
         <relationship name="tripModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TripModel" inverseName="luggageModel" inverseEntity="TripModel"/>
     </entity>
@@ -51,10 +52,10 @@
         <relationship name="restrictionModel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RestrictionModel" inverseName="tripModel" inverseEntity="RestrictionModel"/>
     </entity>
     <elements>
-        <element name="TripModel" positionX="-63" positionY="-18" width="128" height="298"/>
         <element name="ItemModel" positionX="-54" positionY="-9" width="128" height="148"/>
-        <element name="LuggageModel" positionX="-36" positionY="9" width="128" height="133"/>
-        <element name="RestrictionModel" positionX="-18" positionY="27" width="128" height="118"/>
+        <element name="LuggageModel" positionX="-36" positionY="9" width="128" height="148"/>
         <element name="RestrictionDetailModel" positionX="0" positionY="45" width="128" height="118"/>
+        <element name="RestrictionModel" positionX="-18" positionY="27" width="128" height="118"/>
+        <element name="TripModel" positionX="-63" positionY="-18" width="128" height="298"/>
     </elements>
 </model>

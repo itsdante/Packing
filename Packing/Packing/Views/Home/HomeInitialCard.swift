@@ -90,6 +90,8 @@ struct HomeInitialCard: View {
                             })
                                 .font(HomeInitialCard.poppinsRegular11)
                                 .multilineTextAlignment(TextAlignment.center)
+                                .autocapitalization(.allCharacters)
+                                .disableAutocorrection(true)
                                 .padding(10)
                     ).frame(width: UIScreen.main.bounds.width * 0.53, height: UIScreen.main.bounds.height * 0.04)
                     

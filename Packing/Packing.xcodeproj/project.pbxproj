@@ -187,7 +187,7 @@
 		ECF64CFEAEF01DBCDDA86BCA /* Pods_PackingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PackingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3FD50024CE73ED000CCA69 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		FEAD3DF0A1C4E5B1D7202791 /* Pods-PackingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackingTests.debug.xcconfig"; path = "Target Support Files/Pods-PackingTests/Pods-PackingTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FECAA3A724B3944C004B85AD /* Packing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Packing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FECAA3A724B3944C004B85AD /* PackHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FECAA3AA24B3944C004B85AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FECAA3AC24B3944C004B85AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FECAA3B624B3944F004B85AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -460,7 +460,7 @@
 		FECAA3A824B3944C004B85AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FECAA3A724B3944C004B85AD /* Packing.app */,
+				FECAA3A724B3944C004B85AD /* PackHack.app */,
 				FECAA3C024B39450004B85AD /* PackingTests.xctest */,
 				FECAA3CB24B39450004B85AD /* PackingUITests.xctest */,
 			);
@@ -522,7 +522,7 @@
 			);
 			name = Packing;
 			productName = Packing;
-			productReference = FECAA3A724B3944C004B85AD /* Packing.app */;
+			productReference = FECAA3A724B3944C004B85AD /* PackHack.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FECAA3BF24B39450004B85AD /* PackingTests */ = {
@@ -987,7 +987,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = C3S1MC3.Packing;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PackHack;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1006,7 +1006,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = C3S1MC3.Packing;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PackHack;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -20,6 +20,7 @@ extension LuggageModel: Identifiable {
     @NSManaged public var id: UUID
     @NSManaged public var category: String
     @NSManaged public var isCheckedIn: Bool
+    @NSManaged public var order: Int32
     @NSManaged public var gender: String
     @NSManaged public var itemModel: NSSet?
     @NSManaged public var tripModel: TripModel

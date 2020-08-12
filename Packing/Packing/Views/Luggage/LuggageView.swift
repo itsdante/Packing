@@ -10,8 +10,8 @@ import SwiftUI
 
 struct LuggageView: View {
     init(uuid: UUID) {
-        self._luggageCarryOnResults = FetchRequest(entity: LuggageModel.entity(), sortDescriptors: [], predicate: NSPredicate(format: "tripModel.id == %@ && isCheckedIn == false", uuid as CVarArg))
-        self._luggageCheckInResults = FetchRequest(entity: LuggageModel.entity(), sortDescriptors: [], predicate: NSPredicate(format: "tripModel.id == %@ && isCheckedIn == true", uuid as CVarArg))
+        self._luggageCarryOnResults = FetchRequest(entity: LuggageModel.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \LuggageModel.order, ascending: true)], predicate: NSPredicate(format: "tripModel.id == %@ && isCheckedIn == false", uuid as CVarArg))
+        self._luggageCheckInResults = FetchRequest(entity: LuggageModel.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \LuggageModel.order, ascending: true)], predicate: NSPredicate(format: "tripModel.id == %@ && isCheckedIn == true", uuid as CVarArg))
         self.uuid = uuid
     }
     

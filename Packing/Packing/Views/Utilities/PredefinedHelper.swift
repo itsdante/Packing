@@ -45,7 +45,7 @@ func predefinedItem(gender: String, category: String, isCheckedIn: Bool) -> [Str
             
         case "Business":
             
-            return ["Swimsuit", "Goggles", "Towel", "Swimming Cap", "Aloe Vera/After Sun Care"]
+            return ["Business Cards", "Laptop", "Laptop Charger", "Work Badge", "Work Phone", "Work Phone Charger"]
             
         case "Formal":
             
@@ -75,11 +75,19 @@ func predefinedItem(gender: String, category: String, isCheckedIn: Bool) -> [Str
             }
             else {
                 
-                return ["Toothbrush", "Toothpaste", "Dental Floss", "Soap", "Deodorant", "Brush/Comb", "Face Cleanser", "Face Lotion", "Sunscreen", "Moisturizer", "Contact Lenses/Solution", "Female-Hygiene Products", "Hand Sanitizer", "Bandages"]
+                return ["Shampoo/conditioner", "Toner", "Moisturizer", "Body soap", "Face cleanser", "Face lotion", "Perfume", "Mouthwash", "Hairstyling tools", "Shaving supplies", "Makeup", "Makeup remover", "Cotton pads", "Cotton buds", "Lip balm with SPF", "Travel first aid kit", "Nail clippers", "Tweezers"]
             }
         case "Clothing":
-            
-            return ["Underwear", "Bras", "Sleepwear", "T-shirts", "Jeans/Pants", "Skirts", "Dress", "Belt", "Jewelry", "Skirt", "Socks"]
+            if isCheckedIn == false {
+                
+                return ["Underwear", "Shirt", "Trousers", "Sandals/Flip Flops", "Collapsible Totebag", "Purse/small daily bag"]
+                
+            }
+            else {
+                
+                return ["Underwear", "Bras", "Sleepwear", "T-shirts", "Jeans/Pants", "Skirts", "Dress", "Belt", "Jewelry", "Skirt", "Socks"]
+                
+            }
             
         case "Beach":
             
