@@ -28,7 +28,36 @@ struct HomePopup: View {
     @State private var newbookingNumber = ""
     @Binding var isPresented: Bool
     
-    var trip: Trip = Trip(bookingNumber: "71938JC", airline: "Lion Air", flightNumber: "GA4828", originAirportCode: "CGK", originAirport: "Soekarno-Hatta Int. Airport", originCity: "Jakarta", originCountry: "Indonesia", destinationAirportCode: "HKG", destinationAirport: "Hong Kong Int. Airport", destinationCity: "Hong Kong", destinationCountry: "China", departureDate: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, arrivalDate: Calendar.current.date(byAdding: .day, value: 4, to: Date())!.addingTimeInterval(5000), createdAt: Date(), luggages: [], restrictions: restrictionArray)
+    let BookCode = ["60827IB","71938JC","82049KD","28327JT"]
+
+    func checkTripReal(x: String) -> Bool {
+        if BookCode.contains(x)
+        {
+            return false
+        }
+        return true
+    }
+    
+    @State var isRealTrip: Bool = false
+
+    func checkTrip(x: String) -> Trip {
+        if x == "71938JC" {
+          return tripHongKong
+        }
+        else if x == "28327JT"
+        {
+            return tripJepang
+        }
+        else if x == "60827IB"
+        {
+            return tripAmsterdam
+        }
+        else if x == "82049KD"
+        {
+           return tripTestData
+        }
+        return tripJepang
+    }
     
     var body: some View {
         ZStack {
@@ -74,7 +103,7 @@ struct HomePopup: View {
                                         .disableAutocorrection(true)
                                         .padding(10)
                             ).frame(width: UIScreen.main.bounds.width * 0.53, height: UIScreen.main.bounds.height * 0.04)
-                            NavigationLink(destination: FlightInfoPage(trip: trip), isActive: $isRootActive) {
+                            NavigationLink(destination: FlightInfoPage(trip: checkTrip(x: self.newbookingNumber)), isActive: $isRootActive) {
                                 RoundedRectangle(cornerRadius: 18)
                                     .shadow(color: HomePopup.buttonShadowColor, radius: 4, y: 5)
                                     .overlay(
@@ -87,6 +116,13 @@ struct HomePopup: View {
                             .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.04)
                             .foregroundColor(HomePopup.buttonColor)
                             .padding(.top, 20)
+                            .disabled(checkTripReal(x: self.newbookingNumber))
+                            .simultaneousGesture(TapGesture().onEnded{
+                                if self.checkTripReal(x: self.newbookingNumber)
+                                {
+                                    self.isRealTrip.toggle()
+                                }
+                            })
                         }
                     }
             )
@@ -98,6 +134,9 @@ struct HomePopup: View {
                 self.isRootActive = false
                 self.appState.moveToRoot = false
             }
+        }.alert(isPresented: self.$isRealTrip)
+        {
+            Alert(title: Text("Flight Not Found"), message: Text("The booking code that you input is not valid"), dismissButton: nil)
         }
     }
 }

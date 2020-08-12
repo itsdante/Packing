@@ -42,21 +42,21 @@ struct HomeInitialCard: View {
 
     func checkTrip(x: String) -> Trip {
         if x == "71938JC" {
-          return Trip(bookingNumber: "71938JC", airline: "Lion Air", flightNumber: "GA4828", originAirportCode: "CGK", originAirport: "Soekarno-Hatta Int. Airport", originCity: "Jakarta", originCountry: "Indonesia", destinationAirportCode: "HKG", destinationAirport: "Hong Kong Int. Airport", destinationCity: "Hong Kong", destinationCountry: "China", departureDate: Calendar.current.date(byAdding: .hour, value: 24, to: Date())!, arrivalDate: Calendar.current.date(byAdding: .day, value: 4, to: Date())!.addingTimeInterval(5000), createdAt: Date(), luggages: [], restrictions: [])
+          return tripHongKong
         }
         else if x == "28327JT"
         {
-            return Trip(bookingNumber: "28327JT", airline: "All Nippon Airways", flightNumber: "PN3827", originAirportCode: "CGK", originAirport: "Soekarno-Hatta Int. Airport", originCity: "Jakarta", originCountry: "Indonesia", destinationAirportCode: "NRT", destinationAirport: "Tokyo Narita Airport", destinationCity: "Tokyo", destinationCountry: "Japan", departureDate: Calendar.current.date(byAdding: .day, value: 7, to: Date())!, arrivalDate: Calendar.current.date(byAdding: .day, value: 7, to: Date())!.addingTimeInterval(5000), createdAt: Date(), luggages: [], restrictions: restrictionArray)
+            return tripJepang
         }
         else if x == "60827IB"
         {
-            return Trip(bookingNumber: "60827IB", airline: "Turkish Airlines", flightNumber: "FZ3717", originAirportCode: "CGK", originAirport: "Soekarno-Hatta Int. Airport", originCity: "Jakarta", originCountry: "Indonesia", destinationAirportCode: "AMS", destinationAirport: "Amsterdam Airport Schiphol", destinationCity: "Amsterdam", destinationCountry: "Netherlands", departureDate: Calendar.current.date(byAdding: .day, value: 7, to: Date())!, arrivalDate: Calendar.current.date(byAdding: .day, value: 10, to: Date())!.addingTimeInterval(5000), createdAt: Date(), luggages: [], restrictions: restrictionArray)
+            return tripAmsterdam
         }
         else if x == "82049KD"
         {
-           return Trip(bookingNumber: "82049KD", airline: "Emirates", flightNumber: "HB5939", originAirportCode: "CGK", originAirport: "Soekarno-Hatta Int. Airport", originCity: "Jakarta", originCountry: "Indonesia", destinationAirportCode: "LHR", destinationAirport: "London Heathrow Airport", destinationCity: "London", destinationCountry: "United Kingdom", departureDate: Calendar.current.date(byAdding: .day, value: -7, to: Date())!, arrivalDate: Calendar.current.date(byAdding: .day, value: -5, to: Date())!.addingTimeInterval(5000), createdAt: Date(), luggages: luggageArray, restrictions: restrictionArray)
+           return tripTestData
         }
-        return Trip(bookingNumber: "28327JT", airline: "All Nippon Airways", flightNumber: "PN3827", originAirportCode: "CGK", originAirport: "Soekarno-Hatta Int. Airport", originCity: "Jakarta", originCountry: "Indonesia", destinationAirportCode: "NRT", destinationAirport: "Tokyo Narita Airport", destinationCity: "Tokyo", destinationCountry: "Japan", departureDate: Calendar.current.date(byAdding: .day, value: 7, to: Date())!, arrivalDate: Calendar.current.date(byAdding: .day, value: 7, to: Date())!.addingTimeInterval(5000), createdAt: Date(), luggages: [], restrictions: restrictionArray)
+        return tripJepang
     }
     
     
