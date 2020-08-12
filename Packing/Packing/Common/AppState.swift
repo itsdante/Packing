@@ -21,4 +21,5 @@ class AppState: ObservableObject {
     @Published var moveToRoot: Bool = false
     @Published var isNavigationBarHidden: Bool = true
     @Published var didLaunchBefore: Bool
+    @Published var moveToLuggage: Bool = false
 }

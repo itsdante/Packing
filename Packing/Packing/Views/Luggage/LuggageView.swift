@@ -12,12 +12,14 @@ struct LuggageView: View {
     init(uuid: UUID) {
         self._luggageCarryOnResults = FetchRequest(entity: LuggageModel.entity(), sortDescriptors: [], predicate: NSPredicate(format: "tripModel.id == %@ && isCheckedIn == false", uuid as CVarArg))
         self._luggageCheckInResults = FetchRequest(entity: LuggageModel.entity(), sortDescriptors: [], predicate: NSPredicate(format: "tripModel.id == %@ && isCheckedIn == true", uuid as CVarArg))
+        self.uuid = uuid
     }
     
     @EnvironmentObject var appState: AppState
     @State private var selected = 0
     @State var isWarningPresented: Bool = false
-    @State var isMenuPresented: Bool = true
+    @State var isMenuPresented: Bool = false
+    var uuid: UUID
     
     @FetchRequest var luggageCarryOnResults: FetchedResults<LuggageModel>
     @FetchRequest var luggageCheckInResults: FetchedResults<LuggageModel>
@@ -45,6 +47,10 @@ struct LuggageView: View {
                 .overlay(
                     Image("edit-button")
             )
+        }
+        .onAppear {
+            self.isMenuPresented = false
+            self.appState.isNavigationBarHidden = false
         }
     }
     
@@ -77,7 +83,7 @@ struct LuggageView: View {
                 }
             }
             if isMenuPresented {
-                LuggageMenuCard(isMenuPresented: self.$isMenuPresented)
+                LuggageMenuCard(uuid: self.uuid, isMenuPresented: self.$isMenuPresented)
             }
             if isWarningPresented {
                 LuggagePopup(isWarningPresented: self.$isWarningPresented)
@@ -86,7 +92,6 @@ struct LuggageView: View {
         .navigationBarTitle("My Luggage", displayMode: .inline)
         .navigationBarItems(trailing: editButton)
         .onAppear {
-            self.isMenuPresented.toggle()
             self.appState.isNavigationBarHidden = false
         }
     }

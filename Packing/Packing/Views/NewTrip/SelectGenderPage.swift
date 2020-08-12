@@ -57,7 +57,7 @@ struct SelectGenderPage: View {
             }
             .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.3)
             if selectedGender != "" {
-                NavigationLink(destination: SelectLuggagePage(selectedGender: selectedGender, trip: trip)) {
+                NavigationLink(destination: SelectLuggagePage(selectedGender: selectedGender, trip: trip, isEditMode: false)) {
                     RoundedRectangle(cornerRadius: 12)
                         .foregroundColor(Color(UIColor.init(hex: 0x654CFF)))
                         .frame(width: UIScreen.main.bounds.width * 0.936, height: UIScreen.main.bounds.height * 0.058)
