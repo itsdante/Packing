@@ -52,11 +52,11 @@ struct LuggageMenuCard: View {
                             Divider().frame(width: UIScreen.main.bounds.width * 0.3)
                         }
                         Group {
-                            NavigationLink(destination: SelectLuggagePage(selectedGender: self.tripResults.first!.luggageModelArray.first!.gender, trip: self.trip, isEditMode: true), isActive: self.$isEditActive) {
+//                            NavigationLink(destination: SelectLuggagePage(selectedGender: self.tripResults.first!.luggageModelArray.first!.gender, trip: self.trip, isEditMode: true), isActive: self.$isEditActive) {
                                 Text("Edit Luggage")
                                     .modifier(EditButtonModifier())
-                            }
-                            .isDetailLink(false)
+//                            }
+//                            .isDetailLink(false)
                             Divider().frame(width: UIScreen.main.bounds.width * 0.3)
                         }
                         Group {
