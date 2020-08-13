@@ -41,6 +41,8 @@ struct HomeView: View {
     private static let lightPurple: Color = Color.init(UIColor.init(hex: 0x9388D4))
     private static let yellow: Color = Color.init(UIColor.init(hex: 0xF9B710))
     
+    private static var bgColor: Color = Color.init(UIColor.init(hex: 0xF7F8FC))
+    
     private static let buttonShadowColor: Color = Color.init(UIColor.init(hex: 0xD58411, alpha: 0.21))
     
     private static let poppinsSemiBold28: Font = Font.custom("Poppins-SemiBold", size: 28)
@@ -62,6 +64,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                HomeView.bgColor.edgesIgnoringSafeArea(.all)
                 if appState.didLaunchBefore == false {
                     OnboardingView()
                 } else {
@@ -146,7 +149,9 @@ struct HomeView: View {
                 }
             }
             .onReceive(self.networkManager.$weathers, perform: { (weathers) in
-                self.networkManager.fetchData(cityName: self.trips[self.pageIndex].rawDestinationCity)
+                if !weathers.isEmpty {
+                    self.networkManager.fetchData(cityName: self.trips[self.pageIndex].rawDestinationCity)
+                }
             })
                 .animation(.linear)
         }
