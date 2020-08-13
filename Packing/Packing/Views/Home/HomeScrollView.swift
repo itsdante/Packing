@@ -10,6 +10,7 @@ import SwiftUI
 import SwiftUIPager
 
 struct HomeScrollView: View {
+    @ObservedObject var networkManager = NetworkManager()
     @Binding var pageIndex: Int
     
     var trips: [TripModel]
@@ -26,6 +27,9 @@ struct HomeScrollView: View {
                         HomeCard(trip: tripModel)
                 })
                     .itemAspectRatio(0.86)
+                    .onPageChanged({ (index) in
+                        self.networkManager.fetchData(cityName: self.trips[index].rawDestinationCity)
+                    })
         )
     }
 }

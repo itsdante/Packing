@@ -122,9 +122,6 @@ struct HomeView: View {
                                 .foregroundColor(HomeView.lightPurple)
                                 .padding(.leading, 35)
                             WeatherScrollView(weathers: networkManager.weathers)
-                                .onAppear {
-                                    self.networkManager.fetchData(cityName: self.trips[self.pageIndex].rawDestinationCity)
-                            }
                             Text("OpenWeather")
                                 .font(HomeView.poppinsRegular14)
                                 .foregroundColor(HomeView.lightGrey)
@@ -136,7 +133,6 @@ struct HomeView: View {
                     }
                 }
             }
-        
             .navigationBarTitle("")
             .navigationBarHidden(isNavigationBarHidden)
             .navigationBarBackButtonHidden(true)
@@ -149,13 +145,11 @@ struct HomeView: View {
                     self.isNavigationBarHidden = false
                 }
             }
-        
-            .animation(.linear)
-//            .background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
-            
-
+            .onReceive(self.networkManager.$weathers, perform: { (weathers) in
+                self.networkManager.fetchData(cityName: self.trips[self.pageIndex].rawDestinationCity)
+            })
+                .animation(.linear)
         }
-    
     }
 }
 
