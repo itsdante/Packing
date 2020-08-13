@@ -39,6 +39,7 @@ struct WeatherCard: View {
                     Text(weather.temperatureString)
                         .font(.system(size: 24))
                         .fontWeight(.light)
+                        .foregroundColor(WeatherCard.black)
                         .padding(.bottom, 15)
                 }
         )
