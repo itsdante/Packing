@@ -160,19 +160,32 @@ struct HomeView: View {
                 .animation(.linear)
         }
     }
-
+    
     func countPastTrip() -> Int {
-            var totalPastTrip = 0
-            let currentDate = Date()
-            
-            for i in trips {
-                if i.departureDate < currentDate  {
-                     totalPastTrip += 1
-                }
+        var totalPastTrip = 0
+        let currentDate = Date()
+        var totalUpcomingTrip = 0
+        
+        for i in trips {
+            if i.departureDate < currentDate  {
+                totalPastTrip += 1
             }
-            
+        }
+        
+        for i in trips {
+            if i.departureDate > currentDate  {
+                totalUpcomingTrip += 1
+            }
+        }
+        if totalPastTrip >= 1 && totalUpcomingTrip == 0{
+            return totalPastTrip - 1
+        }
+        else
+        {
             return totalPastTrip
         }
+        
+    }
 }
 
 #if DEBUG
