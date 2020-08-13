@@ -25,7 +25,7 @@ struct ActivityCard: View {
             } else {
                 Rectangle()
                     .frame(width: UIScreen.main.bounds.width * 0.27, height: UIScreen.main.bounds.height * 0.14)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                     .cornerRadius(20)
                     .shadow(color: .init(UIColor(red: 0.396, green: 0.298, blue: 1, alpha: 0.1)), radius: 21, x: 0, y: 6)
                 Image("\(option[optionIndex].lowercased())")

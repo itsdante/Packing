@@ -986,7 +986,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = C3S1MC3.Packing;
+				PRODUCT_BUNDLE_IDENTIFIER = "Apple-Academy.PackHack";
 				PRODUCT_NAME = PackHack;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1005,7 +1005,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = C3S1MC3.Packing;
+				PRODUCT_BUNDLE_IDENTIFIER = "Apple-Academy.PackHack";
 				PRODUCT_NAME = PackHack;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

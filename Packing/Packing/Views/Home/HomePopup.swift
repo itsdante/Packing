@@ -66,7 +66,7 @@ struct HomePopup: View {
                     self.isPresented.toggle()
             }
             Rectangle()
-                .foregroundColor(.white)
+                .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                 .frame(width: UIScreen.main.bounds.width * 0.83, height: UIScreen.main.bounds.height * 0.28)
                 .cornerRadius(22)
                 .padding(.vertical, 5)
@@ -109,7 +109,7 @@ struct HomePopup: View {
                                     .overlay(
                                         Text("Add New Trip")
                                             .font(HomePopup.poppinsSemiBold12)
-                                            .foregroundColor(.white)
+                                            .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                                 )
                             }
                             .isDetailLink(false)

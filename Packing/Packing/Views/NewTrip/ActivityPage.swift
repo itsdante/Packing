@@ -26,10 +26,10 @@ struct ActivityPage: View {
             VStack(alignment: .leading, spacing: 3) {
                 Text("Activities")
                     .font(.custom("Poppins-SemiBold", size: 22))
-                    .foregroundColor(.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
+                    .foregroundColor(Color.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
                 Text("What Activities Will You Do")
                     .font(.custom("Poppins-Medium", size: 16))
-                    .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
+                    .foregroundColor(Color.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
             }
             .frame(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.height * 0.1)
             .position(x: UIScreen.main.bounds.width * 0.33, y: UIScreen.main.bounds.height * 0)
@@ -60,7 +60,7 @@ struct ActivityPage: View {
                     .shadow(color: Color(UIColor.init(hex: 0x2704FE, alpha: 0.4)), radius: 5, y: 2)
                     .overlay(
                         Text("Next")
-                            .foregroundColor(.white)
+                            .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                             .font(Font.custom("Poppins-SemiBold", size: 14))
                 )
             }
@@ -74,7 +74,7 @@ struct ActivityPage: View {
         }){
             Image(systemName: "arrow.left")
         })
-        .background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
+            .background(Color.init(UIColor.init(hex: 0xF7F8FC)).edgesIgnoringSafeArea(.all))
     }
     
     func finalTouch() {
@@ -188,23 +188,43 @@ struct ActivityPage: View {
         }
         
         for activity in selectedActivity {
-            let activityLuggage = LuggageModel(context: self.moc)
-            activityLuggage.id = UUID()
-            activityLuggage.category = activity
-            activityLuggage.isCheckedIn = self.selectedLuggage.contains(2) ? true : false
-            activityLuggage.order = 4
-            activityLuggage.gender = self.selectedGender
-            for item in predefinedItem(gender: self.selectedGender, category: activity, isCheckedIn: self.selectedLuggage.contains(2) ? true : false) {
-                let newItem = ItemModel(context: self.moc)
-                newItem.id = UUID()
-                newItem.name = item
-                newItem.quantity = 1
-                newItem.isRestricted = false
-                newItem.isCompleted = false
-                newItem.createdAt = Date()
-                activityLuggage.addToItemModel(newItem)
+            if activity == "Photography" || activity == "Business" {
+                let activityLuggage = LuggageModel(context: self.moc)
+                activityLuggage.id = UUID()
+                activityLuggage.category = activity
+                activityLuggage.isCheckedIn = self.selectedLuggage.contains(1) ? false : true
+                activityLuggage.order = 4
+                activityLuggage.gender = self.selectedGender
+                for item in predefinedItem(gender: self.selectedGender, category: activity, isCheckedIn: self.selectedLuggage.contains(1) ? false : true) {
+                    let newItem = ItemModel(context: self.moc)
+                    newItem.id = UUID()
+                    newItem.name = item
+                    newItem.quantity = 1
+                    newItem.isRestricted = false
+                    newItem.isCompleted = false
+                    newItem.createdAt = Date()
+                    activityLuggage.addToItemModel(newItem)
+                }
+                newTrip.addToLuggageModel(activityLuggage)
+            } else {
+                let activityLuggage = LuggageModel(context: self.moc)
+                activityLuggage.id = UUID()
+                activityLuggage.category = activity
+                activityLuggage.isCheckedIn = self.selectedLuggage.contains(2) ? true : false
+                activityLuggage.order = 4
+                activityLuggage.gender = self.selectedGender
+                for item in predefinedItem(gender: self.selectedGender, category: activity, isCheckedIn: self.selectedLuggage.contains(2) ? true : false) {
+                    let newItem = ItemModel(context: self.moc)
+                    newItem.id = UUID()
+                    newItem.name = item
+                    newItem.quantity = 1
+                    newItem.isRestricted = false
+                    newItem.isCompleted = false
+                    newItem.createdAt = Date()
+                    activityLuggage.addToItemModel(newItem)
+                }
+                newTrip.addToLuggageModel(activityLuggage)
             }
-            newTrip.addToLuggageModel(activityLuggage)
         }
         
         try? self.moc.save()

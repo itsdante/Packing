@@ -79,7 +79,7 @@ struct HomeInitialCard: View {
             )
             ZStack {
                 Rectangle()
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                 VStack(alignment: .center) {
                     Text("Let’s fetch your flight details")
                         .font(HomeInitialCard.poppinsSemiBold16)
@@ -104,7 +104,7 @@ struct HomeInitialCard: View {
                             .overlay(
                                 Text("Add New Trip")
                                     .font(HomeInitialCard.poppinsSemiBold12)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                         )
                         }
                         

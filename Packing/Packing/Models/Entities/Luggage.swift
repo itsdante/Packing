@@ -405,9 +405,9 @@ struct Luggage: Identifiable {
     }
 }
 
-#if DEBUG
+//#if DEBUG
 let luggage1 = Luggage(category: .esssentials, isCheckedIn: false, gender: "Male")
 let luggage2 = Luggage(category: .toiletries, isCheckedIn: false, gender: "Male")
 let luggage3 = Luggage(category: .formal, isCheckedIn: true, gender: "Male")
 let luggage4 = Luggage(category: .beach, isCheckedIn: true, gender: "Male")
-#endif
+//#endif

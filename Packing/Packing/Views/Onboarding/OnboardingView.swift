@@ -103,7 +103,7 @@ struct OnboardingView: View {
                         .overlay(
                             Text("Let's Start!")
                                 .font(OnboardingView.poppinsSemiBold12)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                     )
                         .foregroundColor(OnboardingView.purple)
                         .onTapGesture {
@@ -126,7 +126,7 @@ struct OnboardingView: View {
                                 .shadow(color: OnboardingView.yellowShadowColor, radius: 4, y: 7)
                                 .overlay(Image(systemName: "chevron.right")
                                     .font(.system(size: 24, weight: .semibold))
-                                    .foregroundColor(.white)
+                                    .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                             )
                         }
                         .padding(.trailing, 35)

@@ -25,7 +25,7 @@ struct LuggagePopup: View {
                     self.isWarningPresented.toggle()
             }
             Rectangle()
-                .foregroundColor(.white)
+                .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                 .frame(width: UIScreen.main.bounds.width * 0.83, height: UIScreen.main.bounds.height * 0.39)
                 .cornerRadius(22)
                 .padding(.vertical, 5)

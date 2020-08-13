@@ -102,7 +102,7 @@ struct LuggageItemCell: View {
                         .foregroundColor(LuggageItemCell.darkGrey)
                         .overlay(
                             Text("\(item.quantity)")
-                                .foregroundColor(.white)
+                                .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                     )
                         .onTapGesture {
                             self.isEditMode.toggle()

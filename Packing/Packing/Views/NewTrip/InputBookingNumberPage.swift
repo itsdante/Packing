@@ -64,7 +64,7 @@ struct middleRectangle: View {
             
             
             RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .fill(Color.white)
+                .fill(Color(UIColor.init(hex: 0xFFFFFF)))
                 .frame(width: UIScreen.main.bounds.width * 0.824, height: UIScreen.main.bounds.height * 0.31)
                 //                    .offset(x: 0, y: 125)
                 .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height * 0.34)

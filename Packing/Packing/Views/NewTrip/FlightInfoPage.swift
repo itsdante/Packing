@@ -55,7 +55,7 @@ struct FlightInfoPage: View {
                 }
                 .padding(.horizontal, 23)
                 RoundedRectangle(cornerRadius: 20)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                     .shadow(color: FlightInfoPage.cardShadow, radius: 10, y: 11)
                     .frame(width: UIScreen.main.bounds.width * 0.925, height: UIScreen.main.bounds.height * 0.2)
                     .overlay(
@@ -83,7 +83,7 @@ struct FlightInfoPage: View {
                     .shadow(color: Color(UIColor.init(hex: 0x2704FE, alpha: 0.4)), radius: 5, y: 2)
                     .overlay(
                         Text("Next")
-                            .foregroundColor(.white)
+                            .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                             .font(Font.custom("Poppins-SemiBold", size: 14))
                 )
             }

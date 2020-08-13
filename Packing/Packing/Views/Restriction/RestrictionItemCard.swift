@@ -22,7 +22,7 @@ struct RestrictionItemCard: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(.white)
+                .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
             
             HStack {
                 Rectangle()

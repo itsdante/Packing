@@ -59,7 +59,7 @@ struct RestrictionListCard: View {
         }.padding(.vertical, 22)
         .background(
             RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(.white)
+                .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                 .shadow(
                     color: RestrictionListCard.shadowColor,
                     radius: 4,

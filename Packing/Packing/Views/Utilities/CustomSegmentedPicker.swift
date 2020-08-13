@@ -11,7 +11,7 @@ import SwiftUI
 struct CustomSegmentedPickerView: View {
     private static let SelectedSegmentColor: Color = Color(UIColor.init(hex: 0x654CFF))
     private static let SegmentColor: Color = Color.clear
-    private static let SelectedTextColor: Color = Color(.white)
+    private static let SelectedTextColor: Color = Color(UIColor.init(hex: 0xFFFFFF))
     private static let TextColor: Color = Color(.secondaryLabel)
     
     let type: [String] = ["Carry On", "Check In"]
@@ -58,7 +58,7 @@ struct SegmentedPickerModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding(8)
-            .background(Color(.white))
+            .background(Color(UIColor.init(hex: 0xFFFFFF)))
             .clipShape(Capsule())
             .shadow(color: SegmentedPickerModifier.primaryShadowColor,
                     radius: SegmentedPickerModifier.shadowRadius,

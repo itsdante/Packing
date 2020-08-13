@@ -51,7 +51,7 @@ struct HomeCard: View {
                 .contentShape(Rectangle())
             ZStack {
                 Rectangle()
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                 VStack(alignment: .center) {
                     Text(trip.departureDate <= Date() ? "Past Trip" : checkDepartureTime(x: remainingTime(departureDate: Date(), arrivalDate: trip.departureDate)))
                         .font(HomeCard.poppinsSemiBold18)
@@ -74,7 +74,7 @@ struct HomeCard: View {
                             .overlay(
                                 Text("View Packing List")
                                     .font(HomeCard.poppinsSemiBold12)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                         )
                     }
                     .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.04)

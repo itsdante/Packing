@@ -36,7 +36,7 @@ struct Trip: Identifiable, Equatable {
     }
 }
 
-#if DEBUG
+//#if DEBUG
 let restrictionArray = [Restriction(mainTitle: .restrictedArticles), Restriction(mainTitle: .dangerousGoods), Restriction(mainTitle: .liquids), Restriction(mainTitle: .batteries)]
 
 let luggageArray = [luggage1, luggage2, luggage3, luggage4]
@@ -50,4 +50,4 @@ let tripAmsterdam = Trip(bookingNumber: "60827IB", airline: "Turkish Airlines", 
 let tripJepang = Trip(bookingNumber: "28327JT", airline: "All Nippon Airways", flightNumber: "PN3827", originAirportCode: "CGK", originAirport: "Soekarno-Hatta Int. Airport", originCity: "Jakarta", originCountry: "Indonesia", destinationAirportCode: "NRT", destinationAirport: "Tokyo Narita Airport", destinationCity: "Tokyo", destinationCountry: "Japan", departureDate: Calendar.current.date(byAdding: .day, value: 7, to: Date())!, arrivalDate: Calendar.current.date(byAdding: .day, value: 7, to: Date())!.addingTimeInterval(5000), createdAt: Date(), luggages: [], restrictions: restrictionArray)
 
 var tripArray: [Trip] = [tripAmsterdam,tripHongKong,tripTestData,tripJepang]
-#endif
+//#endif

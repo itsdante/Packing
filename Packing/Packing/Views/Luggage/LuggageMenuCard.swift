@@ -87,7 +87,7 @@ struct LuggageMenuCard: View {
                         }
                     }
                     .padding()
-                    .background(Color.init(.white)
+                    .background(Color.init(UIColor.init(hex: 0xFFFFFF))
                     .cornerRadius(11)
                     .shadow(color: LuggageMenuCard.shadowColor, radius: 2, y: 2))
                     .animation(.spring())

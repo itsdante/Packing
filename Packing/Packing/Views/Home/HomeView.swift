@@ -103,7 +103,7 @@ struct HomeView: View {
                                         .overlay(Image(systemName: "plus")
                                             .font(.system(size: 24))
                                             .font(Font.title.weight(.regular))
-                                            .foregroundColor(.white)
+                                            .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                                     )
                                 }
                             }

@@ -17,7 +17,7 @@ struct WeatherCard: View {
     
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
-            .foregroundColor(.white)
+            .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
             .overlay(
                 VStack{
                     Text(weather.dateTimeString)

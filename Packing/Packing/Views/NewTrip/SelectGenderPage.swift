@@ -22,10 +22,10 @@ struct SelectGenderPage: View {
             VStack(alignment: .leading) {
                 Text("Gender")
                     .font(.custom("Poppins-SemiBold", size: 22))
-                    .foregroundColor(.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
+                    .foregroundColor(Color.init(UIColor(red: 0.306, green: 0.302, blue: 0.302, alpha: 1)))
                 Text("Choose Your Gender")
                     .font(.custom("Poppins-Medium", size: 16))
-                    .foregroundColor(.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
+                    .foregroundColor(Color.init(UIColor(red: 0.577, green: 0.535, blue: 0.833, alpha: 1)))
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.1)
             .position(x: UIScreen.main.bounds.width * 0.27, y: UIScreen.main.bounds.height * 0)
@@ -68,7 +68,7 @@ struct SelectGenderPage: View {
                         .shadow(color: Color(UIColor.init(hex: 0x2704FE, alpha: 0.4)), radius: 5, y: 2)
                         .overlay(
                             Text("Next")
-                                .foregroundColor(.white)
+                                .foregroundColor(Color(UIColor.init(hex: 0xFFFFFF)))
                                 .font(Font.custom("Poppins-SemiBold", size: 14))
                     )
                 }
