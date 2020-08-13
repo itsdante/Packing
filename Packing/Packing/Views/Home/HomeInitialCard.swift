@@ -41,6 +41,9 @@ struct HomeInitialCard: View {
     @State var isRealTrip: Bool = false
 
     func checkTrip(x: String) -> Trip {
+        if x == "ABC123" || x == "ABC122" {
+            checkBooking(bookingId: x)
+        }
         if x == "71938JC" {
           return tripHongKong
         }
@@ -86,7 +89,7 @@ struct HomeInitialCard: View {
                         .foregroundColor(HomeInitialCard.lightGrey)
                         .overlay(
                             TextField("Input your booking number", text: self.$newbookingNumber, onCommit: {
-                                // Call to API
+                                checkBooking(bookingId: self.newbookingNumber)
                             })
                                 .font(HomeInitialCard.poppinsRegular11)
                                 .multilineTextAlignment(TextAlignment.center)
@@ -156,3 +159,22 @@ struct HomeEmptyCard_Previews: PreviewProvider {
     }
 }
 #endif
+
+func checkBooking(bookingId:String) {
+    print(bookingId)
+    APIManager.sharedInstance.checkBookingCode(bookingCode: bookingId, onSuccess: { json in
+        DispatchQueue.main.async {
+            let newData = json["data"]
+            let count = newData.count
+            if(count > 0){
+                
+                //Masukin data ke Model tinggal di uncomment
+//                let data = Trip(bookingNumber: bookingId, airline: String(describing:newData["flight"][0]["airlines"]), flightNumber: String(describing:newData["flight"][0]["flightCode"]), originAirportCode: String(describing:newData["flight"][0]["departureCode"]), originAirport:  String(describing:newData["flight"][0]["departureAirport"]), originCity:  String(describing:newData["flight"][0]["city"]), originCountry:  String(describing:newData["flight"][0]["departureCountry"]), destinationAirportCode: String(describing:newData["flight"][0]["arrivalCode"]), destinationAirport: String(describing:newData["flight"][0]["arrivalAirport"]), destinationCity: String(describing:newData["flight"][0]["arrivalCity"]), destinationCountry: String(describing:newData["flight"][0]["arrivalCountry"]), departureDate: String(describing:newData["flight"][0]["arrivalDate"]), arrivalDate:Date(newData["flight"][0]["departureDate"]), createdAt: Date(), luggages: luggageHongKong, restrictions: restrictionArray)
+                //Kemudian go to next page
+                
+            }
+        }
+    }) { error in
+        print(error.localizedDescription)
+    }
+}
