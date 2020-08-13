@@ -47,6 +47,8 @@ struct HomeCard: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.3)
             )
+                .clipped()
+                .contentShape(Rectangle())
             ZStack {
                 Rectangle()
                     .foregroundColor(.white)
