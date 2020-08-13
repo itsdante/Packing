@@ -51,7 +51,7 @@ struct HomeView: View {
     private static let poppinsRegular14: Font = Font.custom("Poppins-Regular", size: 14)
     
     @FetchRequest(entity: TripModel.entity(), sortDescriptors: [
-        NSSortDescriptor(key: "departureDate" , ascending: false)
+        NSSortDescriptor(key: "departureDate" , ascending: true)
     ]) var trips: FetchedResults<TripModel>
     @EnvironmentObject var appState: AppState
     @State var isNavigationBarHidden: Bool = true
@@ -125,6 +125,9 @@ struct HomeView: View {
                                 .foregroundColor(HomeView.lightPurple)
                                 .padding(.leading, 35)
                             WeatherScrollView(weathers: networkManager.weathers)
+                                .onAppear {
+                                    self.networkManager.fetchData(cityName: self.trips[self.pageIndex].rawDestinationCity)
+                            }
                             Text("OpenWeather")
                                 .font(HomeView.poppinsRegular14)
                                 .foregroundColor(HomeView.lightGrey)
@@ -140,6 +143,7 @@ struct HomeView: View {
             .navigationBarHidden(isNavigationBarHidden)
             .navigationBarBackButtonHidden(true)
             .onAppear {
+                self.pageIndex = self.countPastTrip()
                 self.isPresented = false
                 self.isNavigationBarHidden = true
             }
@@ -156,6 +160,19 @@ struct HomeView: View {
                 .animation(.linear)
         }
     }
+
+    func countPastTrip() -> Int {
+            var totalPastTrip = 0
+            let currentDate = Date()
+            
+            for i in trips {
+                if i.departureDate < currentDate  {
+                     totalPastTrip += 1
+                }
+            }
+            
+            return totalPastTrip
+        }
 }
 
 #if DEBUG
