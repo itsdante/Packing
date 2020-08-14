@@ -89,7 +89,7 @@ struct LuggageListCard: View {
             }
             .padding(.horizontal, 30)
             .onTapGesture {
-                self.isExpanded.toggle()
+//                self.isExpanded.toggle()
             }
             if self.isExpanded{
                 ZStack{
@@ -113,7 +113,7 @@ struct LuggageListCard: View {
                                 .foregroundColor(LuggageListCard.addItemColor)
                         }
                         .padding(.vertical, 5)
-                        ForEach(luggage.itemModelArray.sorted { $0.isCompleted && $1.isCompleted },id: \.self) { item in
+                        ForEach(luggage.itemModelArray,id: \.self) { item in
                             LuggageItemCell(completedItem: self.$completedItem, isWarningPresented: self.$isWarningPresented, item: item).environment(\.managedObjectContext, self.moc)
                         }
                     .onDelete(perform: removeItem)

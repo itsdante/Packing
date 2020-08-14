@@ -15,7 +15,9 @@ public class LuggageModel: NSManagedObject {
 
     public var itemModelArray: [ItemModel] {
         let set = itemModel as? Set<ItemModel> ?? []
-        return set.sorted()
+        return set.sorted { (item1, item2) -> Bool in
+            return !item1.isCompleted
+        }
     }
     
     var categoryColor: UIColor {

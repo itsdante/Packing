@@ -39,22 +39,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6D2B082B-6CD7-4B4A-BDBD-1E9F3A91A689"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Packing/Views/NewTrip/ActivityPage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "finalTouch()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3C6F7549-5441-401C-91B0-AA53637BBE71"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -66,22 +50,6 @@
             endingLineNumber = "60"
             landmarkName = "body"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E536449B-A197-4AC2-B145-8DB2A9FBA231"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Packing/Views/NewTrip/ActivityPage.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "finalTouch()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -161,15 +129,127 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C48C12F5-F908-4AAF-90EF-A8D2B1268A17"
+            uuid = "78BBDA3D-AA6F-4F7F-940C-EA0BB862845C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Packing/Views/Luggage/LuggageView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "78BBDA3D-AA6F-4F7F-940C-EA0BB862845C - 465e576158016979"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;&gt;)&gt;&gt;, Swift.Optional&lt;PackHack.LuggageMenuCard&gt;, Swift.Optional&lt;PackHack.LuggagePopup&gt;)&gt; in PackHack.LuggageView.body.getter : some"
+                  moduleName = "PackHack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shamano/Desktop/Packing/Packing/Packing/Views/Luggage/LuggageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "129">
+               </Location>
+               <Location
+                  uuid = "78BBDA3D-AA6F-4F7F-940C-EA0BB862845C - 9e144c27155f4843"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PackHack.LuggageModel) -&gt; PackHack.LuggageListCard in closure #2 () -&gt; SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;&gt;)&gt;&gt;, Swift.Optional&lt;PackHack.LuggageMenuCard&gt;, Swift.Optional&lt;PackHack.LuggagePopup&gt;)&gt; in PackHack.LuggageView.body.getter : some"
+                  moduleName = "PackHack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shamano/Desktop/Packing/Packing/Packing/Views/Luggage/LuggageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "122">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "363E12DD-7C3A-4813-AD43-3B6D08EFB3DC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Packing/Views/Luggage/LuggageView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "363E12DD-7C3A-4813-AD43-3B6D08EFB3DC - 1c6b8de9c5988378"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;&gt;)&gt;&gt;, Swift.Optional&lt;PackHack.LuggageMenuCard&gt;, Swift.Optional&lt;PackHack.LuggagePopup&gt;)&gt; in PackHack.LuggageView.body.getter : some"
+                  moduleName = "PackHack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shamano/Desktop/Packing/Packing/Packing/Views/Luggage/LuggageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "129">
+               </Location>
+               <Location
+                  uuid = "363E12DD-7C3A-4813-AD43-3B6D08EFB3DC - 9e144c27155f4843"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PackHack.LuggageModel) -&gt; PackHack.LuggageListCard in closure #1 () -&gt; SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;, SwiftUI._ConditionalContent&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;SwiftUI.FetchedResults&lt;PackHack.LuggageModel&gt;, PackHack.LuggageModel, PackHack.LuggageListCard&gt;&gt;, PackHack.LuggageEmptyState&gt;&gt;)&gt;&gt;, Swift.Optional&lt;PackHack.LuggageMenuCard&gt;, Swift.Optional&lt;PackHack.LuggagePopup&gt;)&gt; in PackHack.LuggageView.body.getter : some"
+                  moduleName = "PackHack"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shamano/Desktop/Packing/Packing/Packing/Views/Luggage/LuggageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "122">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "324BF3D9-258D-4165-8E1E-6A2C899C964C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Packing/Views/Luggage/LuggageListCard.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E42D0591-DF90-488F-B015-96B5AA17FF27"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Packing/Views/Luggage/LuggageListCard.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
